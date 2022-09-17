@@ -1,0 +1,27 @@
+{
+  "name": "native-tuner",
+  "version": "1.0.0",
+  "description": "NativeUI Car Tuner for Alt:V",
+  "main": "./server/server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ExXTreMe315/native-tuner.git"
+  },
+  "keywords": [
+    "altv",
+    "multiplayer",
+    "tuner",
+    "script",
+    "nativeui"
+  ],
+  "author": "ExXTreMe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ExXTreMe315/native-tuner/issues"
+  },
+  "homepage": "https://github.com/ExXTreMe315/native-tuner#readme",
+  "type": "module"
+}
