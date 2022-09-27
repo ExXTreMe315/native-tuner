@@ -1928,220 +1928,437 @@ const colors2 = [
     }
 ];
 
+const partList = [
+    "Spoiler",
+    "fbumper",
+    "rbumper",
+    "sskirt",
+    "exhaust",
+    "frame",
+    "grille",
+    "hood",
+    "lwing",
+    "rwing",
+    "roof",
+    
+    "engine",
+    "brakes",
+    "trans",
+    "horns",
+    "suspension",
+    "armor",
+    "turbo",
+    
+    "xenon",
+    "fwheels",
+    "bwheels",
+    "plateh",
+    "platev",
+    "trimdesign",
+    "ornaments",
+    "dialdesign",
+    "doorint",
+    "seats",
+    "steeringw",
+    "shiftlever",
+    "plaques",
+    "hydraulics",
+    "engineb",
+    "airfilter",
+    "strutbar",
+    "archcover",
+    "antenna",
+    "exteriorp",
+    "tank",
+    "door",
+    "wroh",
+    "stickers",
+    "plate",
+    "windowtint"
+
+]
+
+
 //Hauptmenu
 const bennys = new NativeUI.Menu("", "Bennys Original Motorwork's", new NativeUI.Point(1450, 50));
 bennys.GetTitle().Scale = 1.2;
 bennys.GetTitle().DropShadow = true;
 
-    //Tunable Categories
-    let paintJob = (new NativeUI.UIMenuItem("Lackierung", "Lackierung ändern"));
-    bennys.AddItem(paintJob);
-    let lights = (new NativeUI.UIMenuItem("Lichter", "Lichter ändern"));
-    bennys.AddItem(lights);
+//Tunable Categories
+let paintJob = (new NativeUI.UIMenuItem("Lackierung", "Lackierung ändern"));
+bennys.AddItem(paintJob);
+let lights = (new NativeUI.UIMenuItem("Lichter", "Lichter ändern"));
+bennys.AddItem(lights);
+let parts = (new NativeUI.UIMenuItem("Karosserie", "Karosserie ändern"));
+bennys.AddItem(parts);
 
-        //Paintmenu
-        const paintMenu = new NativeUI.Menu("", "Lackierung ändern", new NativeUI.Point(1450, 50));
-        paintMenu.GetTitle().Scale = 1.2;
-        paintMenu.GetTitle().DropShadow = true;
-        bennys.AddSubMenu(paintMenu, paintJob);
+    //Paintmenu
+    const paintMenu = new NativeUI.Menu("", "Lackierung ändern", new NativeUI.Point(1450, 50));
+    paintMenu.GetTitle().Scale = 1.2;
+    paintMenu.GetTitle().DropShadow = true;
+    bennys.AddSubMenu(paintMenu, paintJob);
 
-            let primaryColor = (new NativeUI.UIMenuItem('Primärfarbe', 'Primärfarbe'));
-            paintMenu.AddItem(primaryColor);
-            let secondaryColor = (new NativeUI.UIMenuItem('Sekundärfarbe', 'Sekundärfarbe'));
-            paintMenu.AddItem(secondaryColor);
-                
-                //Primary Color Menu
-                const primaryColorMenu = new NativeUI.Menu("", "Primärfarbe ändern", new NativeUI.Point(1450, 50));
-                primaryColorMenu.GetTitle().Scale = 1.2;
-                primaryColorMenu.GetTitle().DropShadow = true;
-                paintMenu.AddSubMenu(primaryColorMenu, primaryColor);
+    let primaryColor = (new NativeUI.UIMenuItem('Primärfarbe', 'Primärfarbe'));
+    paintMenu.AddItem(primaryColor);
+    let secondaryColor = (new NativeUI.UIMenuItem('Sekundärfarbe', 'Sekundärfarbe'));
+    paintMenu.AddItem(secondaryColor);
+    let livery = (new NativeUI.UIMenuItem('Livery', 'Livery'));
+    paintMenu.AddItem(livery);
+        
+        //Primary Color Menu
+        const primaryColorMenu = new NativeUI.Menu("", "Primärfarbe ändern", new NativeUI.Point(1450, 50));
+        primaryColorMenu.GetTitle().Scale = 1.2;
+        primaryColorMenu.GetTitle().DropShadow = true;
+        paintMenu.AddSubMenu(primaryColorMenu, primaryColor);
 
-                    //Primary Colors
-                    colors.forEach(createItemPrimaryColor);
-                                    
-                    function createItemPrimaryColor(item, index, arr) {
-                        arr[index] = item.description;
-                        primaryColorMenu.AddItem((new NativeUI.UIMenuItem(arr[index], "Fahrzeug "+arr[index]+" Färben")));
-                    }
+            //Primary Colors
+            colors.forEach(createItemPrimaryColor);
+                            
+            function createItemPrimaryColor(item, index, arr) {
+                arr[index] = item.description;
+                primaryColorMenu.AddItem((new NativeUI.UIMenuItem(arr[index], "Fahrzeug "+arr[index]+" Färben")));
+            }
 
-                    primaryColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
-                    alt.emitServer('primaryColor', selectedItemIndex);            
-                    });
-                    
-                //Secondary Color Menu
-                const secondaryColorMenu = new NativeUI.Menu("", "Sekundärfarbe ändern", new NativeUI.Point(1450, 50));
-                secondaryColorMenu.GetTitle().Scale = 1.2;
-                secondaryColorMenu.GetTitle().DropShadow = true;
-                paintMenu.AddSubMenu(secondaryColorMenu, secondaryColor);
+            primaryColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                alt.emitServer('primaryColor', selectedItemIndex);            
+            });
+            
+        //Secondary Color Menu
+        const secondaryColorMenu = new NativeUI.Menu("", "Sekundärfarbe ändern", new NativeUI.Point(1450, 50));
+        secondaryColorMenu.GetTitle().Scale = 1.2;
+        secondaryColorMenu.GetTitle().DropShadow = true;
+        paintMenu.AddSubMenu(secondaryColorMenu, secondaryColor);
 
-                    //Secondayr Colors
-                    colors2.forEach(createItemSecondaryColor);                       
-                    
-                    function createItemSecondaryColor(item, index, arr) {
-                        arr[index] = item.description;
-                        secondaryColorMenu.AddItem((new NativeUI.UIMenuItem(arr[index], "Fahrzeug "+arr[index]+" Färben")));
-                    }
+            //Secondayr Colors
+            colors2.forEach(createItemSecondaryColor);                       
+            
+            function createItemSecondaryColor(item, index, arr) {
+                arr[index] = item.description;
+                secondaryColorMenu.AddItem((new NativeUI.UIMenuItem(arr[index], "Fahrzeug "+arr[index]+" Färben")));
+            }
 
-                    secondaryColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
-                        alt.emitServer('secondaryColor', selectedItemIndex);
-                    });
+            secondaryColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                alt.emitServer('secondaryColor', selectedItemIndex);
+            });
+
+        //Livery Menu
+        const liveryMenu = new NativeUI.Menu("", "Livery ändern", new NativeUI.Point(1450, 50));
+        liveryMenu.GetTitle().Scale = 1.2;
+        liveryMenu.GetTitle().DropShadow = true;
+        paintMenu.AddSubMenu(liveryMenu, livery);
+
+        //Livery Menu
+        const partsMenu = new NativeUI.Menu("", "Karosserie ändern", new NativeUI.Point(1450, 50));
+        partsMenu.GetTitle().Scale = 1.2;
+        partsMenu.GetTitle().DropShadow = true;
+        bennys.AddSubMenu(partsMenu, parts);
+
+        alt.onServer('getModsCountAnswer', (type, nblivery, nbroofs, modscount, currentmods) => {
+            //Spoiler
+            let spoiler_n = 0;
+            var spoiler_x = [];
+
+            while (spoiler_n <= modscount.spoiler) {
+                spoiler_x.push(spoiler_n);
+                spoiler_n++
+            }
+
+            partsMenu.Clear();
+
+            if(spoiler_x <= 0){
+                var spoilers = (new NativeUI.UIMenuListItem(
+                    partList[0],
+                    partList[0]+" anpassen",
+                    new NativeUI.ItemsCollection(['Keine Spoiler vorhanden'])
+                ));
+            } else {
+                var spoilers = (new NativeUI.UIMenuListItem(
+                    partList[0],
+                    partList[0]+" anpassen",
+                    new NativeUI.ItemsCollection(spoiler_x)
+                ));
+            }
+
+            partsMenu.AddItem(spoilers);
+
+            partsMenu.ItemSelect.on(item => {
+                let mod_index = JSON.parse(item.Index);
+                let type;
+                alt.emitServer('changeVehMod', 0, mod_index);
+            });
+
+            //liverys
+            let livery_n = 0;
+            var livery_x = [];
+
+            while (livery_n <= modscount.stickers) {
+                livery_x.push(livery_n);
+                livery_n++
+            }
+
+            liveryMenu.Clear();
+
+            if(livery_x <= 0){
+                var liverys = (new NativeUI.UIMenuListItem(
+                    "Sticker",
+                    "Sticker anpassen",
+                    new NativeUI.ItemsCollection(['Keine Sticker vorhanden'])
+                ));
+            } else {
+                var liverys = (new NativeUI.UIMenuListItem(
+                    "Sticker",
+                    "Sticker anpassen",
+                    new NativeUI.ItemsCollection(livery_x)
+                ));
+            }
+
+            liveryMenu.AddItem(liverys);
+
+            liveryMenu.ItemSelect.on(item => {
+                let index = JSON.parse(item.SelectedItem.DisplayText);
+                alt.emitServer('changeVehMod', 48, index);
+            });
+        });
+
 
     //LightsMenu
     const lightsMenu = new NativeUI.Menu("", "Scheinwerfer/Unterboden ändern", new NativeUI.Point(1450, 50));
     lightsMenu.GetTitle().Scale = 1.2;
     lightsMenu.GetTitle().DropShadow = true;
     bennys.AddSubMenu(lightsMenu, lights);
-        //Light Colors
 
-        const lightColors = [
-            { hex: 'FFFFFF',  name: 'White',           value: 0  },
-            { hex: '008080',  name: 'Xenon',           value: -1 },
-            { hex: '0000FF',  name: 'Blue',            value: 1  },
-            { hex: '00FFFF',  name: 'Electric',        value: 2  },
-            { hex: '008000',  name: 'Green',           value: 3  },
-            { hex: '00FF00',  name: 'Light Green',     value: 4  },
-            { hex: 'FFFF00',  name: 'Yellow',          value: 5  },
-            { hex: '808000',  name: 'Golden Shower',   value: 6  },
-            { hex: 'FF8200',  name: 'Orange',          value: 7  },
-            { hex: 'FF0000',  name: 'Red',             value: 8  },
-            { hex: 'FF00FF',  name: 'Pony Pink',       value: 9  },
-            { hex: 'FF0080',  name: 'Hot Pink',        value: 10 },
-            { hex: '800080',  name: 'Purple',          value: 11 },
-            { hex: 'ffffff22',  name: 'Black Light',   value: 12 }
-        ];
-/*
-        lightColors.forEach(createItemLightColors);
-                                        
-        function createItemLightColors(item, index, arr) {
-            arr[index] = item.name;
-            lightsMenu.AddItem((new NativeUI.UIMenuItem(arr[index], "Scheinwerfer "+arr[index]+" Färben")));
-        }
-*/
-        let white = new NativeUI.UIMenuItem("White", "Scheinwerfer Weiß Färben");
-        lightsMenu.AddItem(white);
-        let xenon = new NativeUI.UIMenuItem("Xenon", "Scheinwerfer Weiß Färben");
-        lightsMenu.AddItem(xenon);
-        let blue = new NativeUI.UIMenuItem("Blue", "Scheinwerfer Weiß Färben");
-        lightsMenu.AddItem(blue);
-        let electric = new NativeUI.UIMenuItem("Electric", "Scheinwerfer Weiß Färben");
-        lightsMenu.AddItem(electric);
-        let green = new NativeUI.UIMenuItem("Green", "Scheinwerfer Weiß Färben");
-        lightsMenu.AddItem(green);
-        let lightGreen = new NativeUI.UIMenuItem("Light Green", "Scheinwerfer Weiß Färben");
-        lightsMenu.AddItem(lightGreen);
-        let yellow = new NativeUI.UIMenuItem("Yellow", "Scheinwerfer Weiß Färben");
-        lightsMenu.AddItem(yellow);
-        let goldenShower = new NativeUI.UIMenuItem("Golden Shower", "Scheinwerfer Weiß Färben");
-        lightsMenu.AddItem(goldenShower);
-        let orange = new NativeUI.UIMenuItem("Orange", "Scheinwerfer Weiß Färben");
-        lightsMenu.AddItem(orange);
-        let red = new NativeUI.UIMenuItem("Red", "Scheinwerfer Weiß Färben");
-        lightsMenu.AddItem(red);
-        let ponyPink = new NativeUI.UIMenuItem("Pony Pink", "Scheinwerfer Weiß Färben");
-        lightsMenu.AddItem(ponyPink);
-        let hotPink = new NativeUI.UIMenuItem("Hot Pink", "Scheinwerfer Weiß Färben");
-        lightsMenu.AddItem(hotPink);
-        let purple = new NativeUI.UIMenuItem("Purple", "Scheinwerfer Weiß Färben");
-        lightsMenu.AddItem(purple);
-        let blackLight = new NativeUI.UIMenuItem("Black Light", "Scheinwerfer Weiß Färben");
-        lightsMenu.AddItem(blackLight);
+    let spotlight = (new NativeUI.UIMenuItem("Scheinwerfer", "Scheinwerfer ändern"));
+    lightsMenu.AddItem(spotlight);
+    let neon = (new NativeUI.UIMenuItem("Unterboden", "Unterboden ändern"));
+    lightsMenu.AddItem(neon);
 
-        lightsMenu.ItemSelect.on(item => {
-            if(item == white){
-                let id = 0;
-                alt.emitServer('lightsColor', id);
-            }
-            if(item == xenon){
-                let id = -1;
-                alt.emitServer('lightsColor', id);
-            }
-            if(item == blue){
-                let id = 1;
-                alt.emitServer('lightsColor', id);
-            }
-            if(item == electric){
-                let id = 2;
-                alt.emitServer('lightsColor', id);
-            }
-            if(item == green){
-                let id = 3;
-                alt.emitServer('lightsColor', id);
-            }
-            if(item == lightGreen){
-                let id = 4;
-                alt.emitServer('lightsColor', id);
-            }
-            if(item == yellow){
-                let id = 5;
-                alt.emitServer('lightsColor', id);
-            }
-            if(item == goldenShower){
-                let id = 6;
-                alt.emitServer('lightsColor', id);
-            }
-            if(item == orange){
-                let id = 7;
-                alt.emitServer('lightsColor', id);
-            }
-            if(item == red){
-                let id = 8;
-                alt.emitServer('lightsColor', id);
-            }
-            if(item == ponyPink){
-                let id = 9;
-                alt.emitServer('lightsColor', id);
-            }
-            if(item == hotPink){
-                let id = 10;
-                alt.emitServer('lightsColor', id);
-            }
-            if(item == purple){
-                let id = 11;
-                alt.emitServer('lightsColor', id);
-            }
-            if(item == blackLight){
-                let id = 12;
-                alt.emitServer('lightsColor', id);
+
+        //SpotlightsMenu (scheinwerfer)
+        const spotlightMenu = new NativeUI.Menu("", "Scheinwerfer ändern", new NativeUI.Point(1450, 50));
+        spotlightMenu.GetTitle().Scale = 1.2;
+        spotlightMenu.GetTitle().DropShadow = true;
+        lightsMenu.AddSubMenu(spotlightMenu, spotlight);
+
+            let white = new NativeUI.UIMenuItem("White", "Scheinwerfer Weiß Färben");
+            spotlightMenu.AddItem(white);
+            let xenon = new NativeUI.UIMenuItem("Xenon", "Scheinwerfer Weiß Färben");
+            spotlightMenu.AddItem(xenon);
+            let blue = new NativeUI.UIMenuItem("Blue", "Scheinwerfer Weiß Färben");
+            spotlightMenu.AddItem(blue);
+            let electric = new NativeUI.UIMenuItem("Electric", "Scheinwerfer Weiß Färben");
+            spotlightMenu.AddItem(electric);
+            let green = new NativeUI.UIMenuItem("Green", "Scheinwerfer Weiß Färben");
+            spotlightMenu.AddItem(green);
+            let lightGreen = new NativeUI.UIMenuItem("Light Green", "Scheinwerfer Weiß Färben");
+            spotlightMenu.AddItem(lightGreen);
+            let yellow = new NativeUI.UIMenuItem("Yellow", "Scheinwerfer Weiß Färben");
+            spotlightMenu.AddItem(yellow);
+            let goldenShower = new NativeUI.UIMenuItem("Golden Shower", "Scheinwerfer Weiß Färben");
+            spotlightMenu.AddItem(goldenShower);
+            let orange = new NativeUI.UIMenuItem("Orange", "Scheinwerfer Weiß Färben");
+            spotlightMenu.AddItem(orange);
+            let red = new NativeUI.UIMenuItem("Red", "Scheinwerfer Weiß Färben");
+            spotlightMenu.AddItem(red);
+            let ponyPink = new NativeUI.UIMenuItem("Pony Pink", "Scheinwerfer Weiß Färben");
+            spotlightMenu.AddItem(ponyPink);
+            let hotPink = new NativeUI.UIMenuItem("Hot Pink", "Scheinwerfer Weiß Färben");
+            spotlightMenu.AddItem(hotPink);
+            let purple = new NativeUI.UIMenuItem("Purple", "Scheinwerfer Weiß Färben");
+            spotlightMenu.AddItem(purple);
+            let blackLight = new NativeUI.UIMenuItem("Black Light", "Scheinwerfer Weiß Färben");
+            spotlightMenu.AddItem(blackLight);
+
+            spotlightMenu.ItemSelect.on(item => {
+                if(item == white){
+                    let id = 0;
+                    alt.emitServer('lightsColor', id);
+                }
+                if(item == xenon){
+                    let id = -1;
+                    alt.emitServer('lightsColor', id);
+                }
+                if(item == blue){
+                    let id = 1;
+                    alt.emitServer('lightsColor', id);
+                }
+                if(item == electric){
+                    let id = 2;
+                    alt.emitServer('lightsColor', id);
+                }
+                if(item == green){
+                    let id = 3;
+                    alt.emitServer('lightsColor', id);
+                }
+                if(item == lightGreen){
+                    let id = 4;
+                    alt.emitServer('lightsColor', id);
+                }
+                if(item == yellow){
+                    let id = 5;
+                    alt.emitServer('lightsColor', id);
+                }
+                if(item == goldenShower){
+                    let id = 6;
+                    alt.emitServer('lightsColor', id);
+                }
+                if(item == orange){
+                    let id = 7;
+                    alt.emitServer('lightsColor', id);
+                }
+                if(item == red){
+                    let id = 8;
+                    alt.emitServer('lightsColor', id);
+                }
+                if(item == ponyPink){
+                    let id = 9;
+                    alt.emitServer('lightsColor', id);
+                }
+                if(item == hotPink){
+                    let id = 10;
+                    alt.emitServer('lightsColor', id);
+                }
+                if(item == purple){
+                    let id = 11;
+                    alt.emitServer('lightsColor', id);
+                }
+                if(item == blackLight){
+                    let id = 12;
+                    alt.emitServer('lightsColor', id);
+                }
+            });
+
+        //NeonMenu (Unterbodenbeleuchtung)
+        const neonMenu = new NativeUI.Menu("", "Unterbodenbeleuchtung ändern", new NativeUI.Point(1450, 50));
+        neonMenu.GetTitle().Scale = 1.2;
+        neonMenu.GetTitle().DropShadow = true;
+        lightsMenu.AddSubMenu(neonMenu, neon);
+
+        let neon_off = new NativeUI.UIMenuItem("Aus", "Unterbodenbeleuchtung ausbauen");
+        neonMenu.AddItem(neon_off);
+        let neon_half = new NativeUI.UIMenuItem("Halb", "Unterbodenbeleuchtung Links und Rechts einbauen");
+        neonMenu.AddItem(neon_half);
+        let neon_all = new NativeUI.UIMenuItem("Alle", "Unterbodenbeleuchtung überall einbauen");
+        neonMenu.AddItem(neon_all);
+        let neon_color = new NativeUI.UIMenuItem("Farbe", "Farbe der Unterbodenbeleuchtung ändern");
+        neonMenu.AddItem(neon_color);
+        
+        neonMenu.ItemSelect.on(item => {
+            if(item == neon_off){
+                let neonConfig = 0
+                alt.emitServer('vehNeon', neonConfig);
+                neon_off.SetRightBadge(12);
+                neon_half.SetRightBadge(0);
+                neon_all.SetRightBadge(0);
+            } else if(item == neon_half){
+                let neonConfig = 2
+                alt.emitServer('vehNeon', neonConfig);
+                neon_off.SetRightBadge(0);
+                neon_half.SetRightBadge(12);
+                neon_all.SetRightBadge(0);
+            } else if(item == neon_all){
+                let neonConfig = 4
+                alt.emitServer('vehNeon', neonConfig);
+                neon_off.SetRightBadge(0);
+                neon_half.SetRightBadge(0);
+                neon_all.SetRightBadge(12);
             }
         });
-        
 
+        //NeonFarben (Unterbodenbeleuchtung)
+        const neonColors = new NativeUI.Menu("", "Neon Farbe ändern", new NativeUI.Point(1450, 50));
+        neonColors.GetTitle().Scale = 1.2;
+        neonColors.GetTitle().DropShadow = true;
+        neonMenu.AddSubMenu(neonColors, neon_color);
+        
+        neonColors.AddItem(white);
+        neonColors.AddItem(xenon);
+        neonColors.AddItem(blue);
+        neonColors.AddItem(electric);
+        neonColors.AddItem(green);
+        neonColors.AddItem(lightGreen);
+        neonColors.AddItem(yellow);
+        neonColors.AddItem(goldenShower);
+        neonColors.AddItem(orange);
+        neonColors.AddItem(red);
+        neonColors.AddItem(ponyPink);
+        neonColors.AddItem(hotPink);
+        neonColors.AddItem(purple);
+        neonColors.AddItem(blackLight);
+
+        neonColors.ItemSelect.on(item => {
+            if(item == white){
+                var rgb = {r: 255, g: 0, b: 0};
+                alt.emitServer('neoncolor', rgb);
+            }
+            if(item == xenon){
+                var rgb = {r: 0, g: 255, b: 0};
+                alt.emitServer('neoncolor', rgb);
+            }
+            if(item == blue){
+                var rgb = {r: 0, g: 0, b: 255};
+                alt.emitServer('neoncolor', rgb);
+            }
+            if(item == electric){
+                var rgb = {r: 255, g: 255, b: 0};
+                alt.emitServer('neoncolor', rgb);
+            }
+            if(item == green){
+                var rgb = {r: 255, g: 0, b: 255};
+                alt.emitServer('neoncolor', rgb);
+            }
+            if(item == lightGreen){
+                var rgb = {r: 0, g: 255, b: 255};
+                alt.emitServer('neoncolor', rgb);
+            }
+});
 //Keys zuweisen
 alt.on('keyup', (key) => {
     if (key === 116) {
-        if (bennys.Visible || paintMenu.Visible || primaryColorMenu.Visible || secondaryColorMenu.Visible || lightsMenu.Visible){
+        if (bennys.Visible || paintMenu.Visible || primaryColorMenu.Visible || secondaryColorMenu.Visible || lightsMenu.Visible || spotlight.Visible || liveryMenu.Visible || partsMenu.Visible){
             bennys.Close();
             paintMenu.Close();
             primaryColorMenu.Close();
             secondaryColorMenu.Close();
             lightsMenu.Close();
+            spotlightMenu.Close();
+            neonMenu.Close();
+            liveryMenu.Close();
+            partsMenu.Close();
 
+        } else{
+            bennys.Open();
+            alt.emitServer('getModsCount');
         }
-        else
-        bennys.Open();
     }
 });
 
 alt.on('keyup', (key) => {
     if (key === 27) {
-        if (bennys.Visible || paintMenu.Visible || primaryColorMenu.Visible || secondaryColorMenu.Visible || lightsMenu.Visible){
+        if (bennys.Visible || paintMenu.Visible || primaryColorMenu.Visible || secondaryColorMenu.Visible || lightsMenu.Visible || spotlight.Visible || liveryMenu.Visible || partsMenu.Visible){
             bennys.Close();
             paintMenu.Close();
             primaryColorMenu.Close();
             secondaryColorMenu.Close();
             lightsMenu.Close();
+            spotlightMenu.Close();
+            neonMenu.Close();
+            liveryMenu.Close();
+            partsMenu.Close();
         }
     }
 });
 
 alt.on('keyup', (key) => {
     if (key === 70) {
-        if (bennys.Visible || paintMenu.Visible || primaryColorMenu.Visible || secondaryColorMenu.Visible || lightsMenu.Visible){
+        if (bennys.Visible || paintMenu.Visible || primaryColorMenu.Visible || secondaryColorMenu.Visible || lightsMenu.Visible || spotlight.Visible  || liveryMenu.Visible || partsMenu.Visible){
             bennys.Close();
             paintMenu.Close();
             primaryColorMenu.Close();
             secondaryColorMenu.Close();
             lightsMenu.Close();
+            neonMenu.Close();
+            liveryMenu.Close();
+            partsMenu.Close();
         }
     }
 });
@@ -2187,6 +2404,10 @@ paintMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBan
 primaryColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
 secondaryColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
 lightsMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+spotlightMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+neonMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+liveryMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+partsMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
 
 alt.onServer('getNumVehicleMods', (vehicle, modType) => {
     let modTypeCount = native.getNumVehicleMods(vehicle, modType);
