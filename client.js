@@ -1929,52 +1929,58 @@ const colors2 = [
 ];
 
 const partList = [
-    "Spoiler",
-    "fbumper",
-    "rbumper",
-    "sskirt",
-    "exhaust",
-    "frame",
-    "grille",
-    "hood",
-    "lwing",
-    "rwing",
-    "roof",
+    "Spoiler",//0
+    "Front Stoßstange",//1
+    "Heck Stoßstange",//2
+    "Seitenverkleidung",//3
+    "exhaust",//4
+    "frame",//5
+    "grille",//6
+    "hood",//7
+    "lwing",//8
+    "rwing",//9
+    "roof",//10
     
-    "engine",
-    "brakes",
-    "trans",
-    "horns",
-    "suspension",
-    "armor",
-    "turbo",
+    "engine",//11
+    "brakes",//12
+    "trans",//13
+    "horns",//14
+    "suspension",//15
+    "armor",//16
+    "",//17
+    "turbo",//18
     
-    "xenon",
-    "fwheels",
-    "bwheels",
-    "plateh",
-    "platev",
-    "trimdesign",
-    "ornaments",
-    "dialdesign",
-    "doorint",
-    "seats",
-    "steeringw",
-    "shiftlever",
-    "plaques",
-    "hydraulics",
-    "engineb",
-    "airfilter",
-    "strutbar",
-    "archcover",
-    "antenna",
-    "exteriorp",
-    "tank",
-    "door",
-    "wroh",
-    "stickers",
-    "plate",
-    "windowtint"
+    "",//19
+    "",//20
+    "",//21
+
+    "xenon",//22
+    "fwheels",//23 -
+    "bwheels",//24 -
+    "plateh",//25 -
+    "platev",//26
+    "trimdesign",//27
+    "ornaments",//28
+    "",//29
+    "dialdesign",//30
+    "doorint",//31
+    "seats",//32
+    "steeringw",//33
+    "shiftlever",//34
+    "plaques",//35
+    //36 Rear Shelf
+    //37 Trunk
+    "hydraulics",//38
+    "engineb",//39
+    "airfilter",//40
+    "strutbar",//41
+    "archcover",//42
+    "antenna",//43
+    "exteriorp",//44
+    "tank",//45
+    "door",//46 -
+    "wroh",//47
+    "stickers"//48 ()
 
 ]
 
@@ -1991,6 +1997,8 @@ let lights = (new NativeUI.UIMenuItem("Lichter", "Lichter ändern"));
 bennys.AddItem(lights);
 let parts = (new NativeUI.UIMenuItem("Karosserie", "Karosserie ändern"));
 bennys.AddItem(parts);
+let performance = (new NativeUI.UIMenuItem("Performance", "Performance ändern"));
+bennys.AddItem(performance);
 
     //Paintmenu
     const paintMenu = new NativeUI.Menu("", "Lackierung ändern", new NativeUI.Point(1450, 50));
@@ -2047,44 +2055,749 @@ bennys.AddItem(parts);
         liveryMenu.GetTitle().DropShadow = true;
         paintMenu.AddSubMenu(liveryMenu, livery);
 
-        //Livery Menu
+        //Parts Menu
         const partsMenu = new NativeUI.Menu("", "Karosserie ändern", new NativeUI.Point(1450, 50));
         partsMenu.GetTitle().Scale = 1.2;
         partsMenu.GetTitle().DropShadow = true;
         bennys.AddSubMenu(partsMenu, parts);
 
+        
+        //Performance Menu
+        const performanceMenu = new NativeUI.Menu("", "Performance ändern", new NativeUI.Point(1450, 50));
+        performanceMenu.GetTitle().Scale = 1.2;
+        performanceMenu.GetTitle().DropShadow = true;
+        bennys.AddSubMenu(performanceMenu, performance);
+
         alt.onServer('getModsCountAnswer', (type, nblivery, nbroofs, modscount, currentmods) => {
+            partsMenu.Clear();
+            performanceMenu.Clear();
+            let modtype;
+
             //Spoiler
             let spoiler_n = 0;
-            var spoiler_x = [];
-
+            let spoiler_x = [];
+            modtype = 0;
+            
             while (spoiler_n <= modscount.spoiler) {
                 spoiler_x.push(spoiler_n);
                 spoiler_n++
             }
 
-            partsMenu.Clear();
-
             if(spoiler_x <= 0){
                 var spoilers = (new NativeUI.UIMenuListItem(
-                    partList[0],
-                    partList[0]+" anpassen",
-                    new NativeUI.ItemsCollection(['Keine Spoiler vorhanden'])
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`-`])
                 ));
             } else {
                 var spoilers = (new NativeUI.UIMenuListItem(
-                    partList[0],
-                    partList[0]+" anpassen",
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
                     new NativeUI.ItemsCollection(spoiler_x)
                 ));
             }
 
+            //fbumper
+            let fbumper_n = 0;
+            var fbumper_x = [];
+            modtype = 1;
+
+            while (fbumper_n <= modscount.fbumper) {
+                fbumper_x.push(fbumper_n);
+                fbumper_n++
+            }
+
+            if(fbumper_x <= 0){
+                var fbumpers = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`-`])
+                ));
+            } else {
+                var fbumpers = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(fbumper_x)
+                ));
+            }
+
+            //rbumper
+            let rbumper_n = 0;
+            var rbumper_x = [];
+            modtype = 2;
+
+            while (rbumper_n <= modscount.rbumper) {
+                rbumper_x.push(rbumper_n);
+                rbumper_n++
+            }
+
+            if(rbumper_x <= 0){
+                var rbumpers = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`-`])
+                ));
+            } else {
+                var rbumpers = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(rbumper_x)
+                ));
+            }
+
+            //sskirt
+            let sskirt_n = 0;
+            var sskirt_x = [];
+            modtype = 3;
+
+            while (sskirt_n <= modscount.sskirt) {
+                sskirt_x.push(sskirt_n);
+                sskirt_n++
+            }
+
+            if(sskirt_x <= 0){
+                var sskirts = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`-`])
+                ));
+            } else {
+                var sskirts = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(sskirt_x)
+                ));
+            }
+
+            //exhaust
+            let exhaust_n = 0;
+            var exhaust_x = [];
+            modtype = 4;
+
+            while (exhaust_n <= modscount.exhaust) {
+                exhaust_x.push(exhaust_n);
+                exhaust_n++
+            }
+
+            if(exhaust_x <= 0){
+                var exhaust = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`-`])
+                ));
+            } else {
+                var exhaust = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(exhaust_x)
+                ));
+            }
+
+            //frame
+            let frame_n = 0;
+            var frame_x = [];
+            modtype = 5;
+
+            while (frame_n <= modscount.frame) {
+                frame_x.push(frame_n);
+                frame_n++
+            }
+
+            if(frame_x <= 0){
+                var frame = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`-`])
+                ));
+            } else {
+                var frame = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(frame_x)
+                ));
+            }
+            
+            //grille
+            let grille_n = 0;
+            var grille_x = [];
+            modtype = 6;
+
+            while (grille_n <= modscount.grille) {
+                grille_x.push(grille_n);
+                grille_n++
+            }
+
+            if(grille_x <= 0){
+                var grille = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`-`])
+                ));
+            } else {
+                var grille = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(grille_x)
+                ));
+            }
+
+            //hood
+            let hood_n = 0;
+            var hood_x = [];
+            modtype = 7;
+
+            while (hood_n <= modscount.hood) {
+                hood_x.push(hood_n);
+                hood_n++
+            }
+
+            if(hood_x <= 0){
+                var hood = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`-`])
+                ));
+            } else {
+                var hood = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(hood_x)
+                ));
+            }
+
+            //lwing
+            let lwing_n = 0;
+            var lwing_x = [];
+            modtype = 8;
+
+            while (lwing_n <= modscount.lwing) {
+                lwing_x.push(lwing_n);
+                lwing_n++
+            }
+
+            if(lwing_x <= 0){
+                var lwing = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`-`])
+                ));
+            } else {
+                var lwing = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(lwing_x)
+                ));
+            }
+
+            //rwing
+            let rwing_n = 0;
+            var rwing_x = [];
+            modtype = 9;
+
+            while (rwing_n <= modscount.rwing) {
+                rwing_x.push(rwing_n);
+                rwing_n++
+            }
+
+            if(rwing_x <= 0){
+                var rwing = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`-`])
+                ));
+            } else {
+                var rwing = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(rwing_x)
+                ));
+            }
+
+            //roof
+            let roof_n = 0;
+            var roof_x = [];
+            modtype = 10;
+
+            while (roof_n <= modscount.roof) {
+                roof_x.push(roof_n);
+                roof_n++
+            }
+
+            if(roof_x <= 0){
+                var roof = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`-`])
+                ));
+            } else {
+                var roof = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(roof_x)
+                ));
+            }
+
+            //engine
+            let engine_n = 0;
+            var engine_x = [];
+            modtype = 11;
+
+            while (engine_n <= modscount.engine) {
+                engine_x.push(engine_n);
+                engine_n++
+            }
+
+            if(engine_x <= 0){
+                var engine = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`Keine ${partList[modtype]} vorhanden`])
+                ));
+            } else {
+                var engine = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(engine_x)
+                ));
+            }
+
+            //brakes
+            let brakes_n = 0;
+            var brakes_x = [];
+            modtype = 12;
+
+            while (brakes_n <= modscount.brakes) {
+                brakes_x.push(brakes_n);
+                brakes_n++
+            }
+
+            if(brakes_x <= 0){
+                var brakes = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`Keine ${partList[modtype]} vorhanden`])
+                ));
+            } else {
+                var brakes = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(brakes_x)
+                ));
+            }
+
+            //trans
+            let trans_n = 0;
+            var trans_x = [];
+            modtype = 13;
+
+            while (trans_n <= modscount.trans) {
+                trans_x.push(trans_n);
+                trans_n++
+            }
+
+            if(trans_x <= 0){
+                var trans = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`Keine ${partList[modtype]} vorhanden`])
+                ));
+            } else {
+                var trans = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(trans_x)
+                ));
+            }
+            
+            //horns
+            let horns_n = 0;
+            var horns_x = [];
+            modtype = 14;
+
+            while (horns_n <= modscount.horns) {
+                horns_x.push(horns_n);
+                horns_n++
+            }
+
+            if(horns_x <= 0){
+                var horns = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`Keine ${partList[modtype]} vorhanden`])
+                ));
+            } else {
+                var horns = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(horns_x)
+                ));
+            }
+
+            //suspension
+            let suspension_n = 0;
+            var suspension_x = [];
+            modtype = 15;
+
+            while (suspension_n <= modscount.suspension) {
+                suspension_x.push(suspension_n);
+                suspension_n++
+            }
+
+            if(suspension_x <= 0){
+                var suspension = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`Keine ${partList[modtype]} vorhanden`])
+                ));
+            } else {
+                var suspension = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(suspension_x)
+                ));
+            }
+
+            //armor
+            let armor_n = 0;
+            var armor_x = [];
+            modtype = 16;
+
+            while (armor_n <= modscount.armor) {
+                armor_x.push(armor_n);
+                armor_n++
+            }
+
+            if(armor_x <= 0){
+                var armor = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`Keine ${partList[modtype]} vorhanden`])
+                ));
+            } else {
+                var armor = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(armor_x)
+                ));
+            }
+
+            //turbo
+            let turbo_n = 0;
+            var turbo_x = [];
+            modtype = 18;
+
+            while (turbo_n <= modscount.turbo) {
+                turbo_x.push(turbo_n);
+                turbo_n++
+            }
+
+            if(turbo_x <= 0){
+                var turbo = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`Keine ${partList[modtype]} vorhanden`])
+                ));
+            } else {
+                var turbo = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(turbo_x)
+                ));
+            }
+            
+            //plateh
+            let plateh_n = 0;
+            var plateh_x = [];
+            modtype = 25;
+
+            while (plateh_n <= modscount.plateh) {
+                plateh_x.push(plateh_n);
+                plateh_n++
+            }
+
+            if(plateh_x <= 0){
+                var plateh = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`Keine ${partList[modtype]} vorhanden`])
+                ));
+            } else {
+                var plateh = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(plateh_x)
+                ));
+            }
+
+            //platev
+            let platev_n = 0;
+            var platev_x = [];
+            modtype = 26;
+
+            while (platev_n <= modscount.platev) {
+                platev_x.push(platev_n);
+                platev_n++
+            }
+
+            if(platev_x <= 0){
+                var platev = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`Keine ${partList[modtype]} vorhanden`])
+                ));
+            } else {
+                var platev = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(platev_x)
+                ));
+            }
+
+            //Karrosserie
             partsMenu.AddItem(spoilers);
+            partsMenu.AddItem(fbumpers);
+            partsMenu.AddItem(rbumpers);
+            partsMenu.AddItem(sskirts);
+            partsMenu.AddItem(exhaust);
+            partsMenu.AddItem(frame);
+            partsMenu.AddItem(grille);
+            partsMenu.AddItem(hood);
+            partsMenu.AddItem(lwing);
+            partsMenu.AddItem(rwing);
+            partsMenu.AddItem(roof);
+            partsMenu.AddItem(plateh);
+            partsMenu.AddItem(platev);
+
+            //Performance
+            performanceMenu.AddItem(engine);
+            performanceMenu.AddItem(brakes);
+            performanceMenu.AddItem(trans);
+            performanceMenu.AddItem(horns);
+            performanceMenu.AddItem(suspension);
+            performanceMenu.AddItem(armor);
+            performanceMenu.AddItem(turbo);
 
             partsMenu.ItemSelect.on(item => {
                 let mod_index = JSON.parse(item.Index);
-                let type;
-                alt.emitServer('changeVehMod', 0, mod_index);
+                
+                if(item.Text == partList[0]){
+                    alt.emitServer('changeVehMod', 0, mod_index);                    
+                }
+                if(item.Text == partList[1]){
+                    alt.emitServer('changeVehMod', 1, mod_index);                    
+                }
+                if(item.Text == partList[2]){
+                    alt.emitServer('changeVehMod', 2, mod_index);                    
+                }
+                if(item.Text == partList[3]){
+                    alt.emitServer('changeVehMod', 3, mod_index);                    
+                }
+                if(item.Text == partList[4]){
+                    alt.emitServer('changeVehMod', 4, mod_index);                    
+                }
+                if(item.Text == partList[5]){
+                    alt.emitServer('changeVehMod', 5, mod_index);                    
+                }
+                if(item.Text == partList[6]){
+                    alt.emitServer('changeVehMod', 6, mod_index);                    
+                }
+                if(item.Text == partList[7]){
+                    alt.emitServer('changeVehMod', 7, mod_index);                    
+                }
+                if(item.Text == partList[8]){
+                    alt.emitServer('changeVehMod', 8, mod_index);                    
+                }
+                if(item.Text == partList[9]){
+                    alt.emitServer('changeVehMod', 9, mod_index);                    
+                }
+                if(item.Text == partList[10]){
+                    alt.emitServer('changeVehMod', 10, mod_index);                    
+                }
+                if(item.Text == partList[11]){
+                    alt.emitServer('changeVehMod', 11, mod_index);
+                }
+                if(item.Text == partList[12]){
+                    alt.emitServer('changeVehMod', 12, mod_index);
+                }
+                if(item.Text == partList[13]){
+                    alt.emitServer('changeVehMod', 13, mod_index);
+                }
+                if(item.Text == partList[14]){
+                    alt.emitServer('changeVehMod', 14, mod_index);
+                }
+                if(item.Text == partList[15]){
+                    alt.emitServer('changeVehMod', 15, mod_index);
+                }
+                if(item.Text == partList[16]){
+                    alt.emitServer('changeVehMod', 16, mod_index);
+                }
+                if(item.Text == partList[18]){
+                    alt.emitServer('changeVehMod', 18, mod_index);
+                }
+                if(item.Text == partList[20]){
+                    alt.emitServer('changeVehMod', 20, mod_index);
+                }
+                if(item.Text == partList[22]){
+                    alt.emitServer('changeVehMod', 22, mod_index);
+                }
+                if(item.Text == partList[23]){
+                    alt.emitServer('changeVehMod', 23, mod_index);
+                }
+                if(item.Text == partList[25]){
+                    alt.emitServer('changeVehMod', 25, mod_index);
+                }
+                if(item.Text == partList[26]){
+                    alt.emitServer('changeVehMod', 26, mod_index);
+                }
+                if(item.Text == partList[27]){
+                    alt.emitServer('changeVehMod', 27, mod_index);
+                }
+                if(item.Text == partList[28]){
+                    alt.emitServer('changeVehMod', 28, mod_index);
+                }
+                if(item.Text == partList[30]){
+                    alt.emitServer('changeVehMod', 30, mod_index);
+                }
+                if(item.Text == partList[33]){
+                    alt.emitServer('changeVehMod', 33, mod_index);
+                }
+                if(item.Text == partList[34]){
+                    alt.emitServer('changeVehMod', 34, mod_index);
+                }
+                if(item.Text == partList[35]){
+                    alt.emitServer('changeVehMod', 35, mod_index);
+                }
+                if(item.Text == partList[38]){
+                    alt.emitServer('changeVehMod', 38, mod_index);
+                }
+                if(item.Text == partList[40]){
+                    alt.emitServer('changeVehMod', 40, mod_index);
+                }
+                if(item.Text == partList[48]){
+                    alt.emitServer('changeVehMod', 48, mod_index);
+                }
+                if(item.Text == partList[55]){
+                    alt.emitServer('changeVehMod', 55, mod_index);
+                }
+                if(item.Text == partList[62]){
+                    alt.emitServer('changeVehMod', 62, mod_index);
+                }
+                if(item.Text == partList[66]){
+                    alt.emitServer('changeVehMod', 66, mod_index);
+                }
+                if(item.Text == partList[67]){
+                    alt.emitServer('changeVehMod', 67, mod_index);
+                }
+            });
+
+            performanceMenu.ItemSelect.on(item => {
+                let mod_index = JSON.parse(item.Index);
+                
+                if(item.Text == partList[0]){
+                    alt.emitServer('changeVehMod', 0, mod_index);                    
+                }
+                if(item.Text == partList[1]){
+                    alt.emitServer('changeVehMod', 1, mod_index);                    
+                }
+                if(item.Text == partList[2]){
+                    alt.emitServer('changeVehMod', 2, mod_index);                    
+                }
+                if(item.Text == partList[3]){
+                    alt.emitServer('changeVehMod', 3, mod_index);                    
+                }
+                if(item.Text == partList[4]){
+                    alt.emitServer('changeVehMod', 4, mod_index);                    
+                }
+                if(item.Text == partList[5]){
+                    alt.emitServer('changeVehMod', 5, mod_index);                    
+                }
+                if(item.Text == partList[6]){
+                    alt.emitServer('changeVehMod', 6, mod_index);                    
+                }
+                if(item.Text == partList[7]){
+                    alt.emitServer('changeVehMod', 7, mod_index);                    
+                }
+                if(item.Text == partList[8]){
+                    alt.emitServer('changeVehMod', 8, mod_index);                    
+                }
+                if(item.Text == partList[9]){
+                    alt.emitServer('changeVehMod', 9, mod_index);                    
+                }
+                if(item.Text == partList[10]){
+                    alt.emitServer('changeVehMod', 10, mod_index);                    
+                }
+                if(item.Text == partList[11]){
+                    alt.emitServer('changeVehMod', 11, mod_index);
+                }
+                if(item.Text == partList[12]){
+                    alt.emitServer('changeVehMod', 12, mod_index);
+                }
+                if(item.Text == partList[13]){
+                    alt.emitServer('changeVehMod', 13, mod_index);
+                }
+                if(item.Text == partList[14]){
+                    alt.emitServer('changeVehMod', 14, mod_index);
+                }
+                if(item.Text == partList[15]){
+                    alt.emitServer('changeVehMod', 15, mod_index);
+                }
+                if(item.Text == partList[16]){
+                    alt.emitServer('changeVehMod', 16, mod_index);
+                }
+                if(item.Text == partList[18]){
+                    alt.emitServer('changeVehMod', 18, mod_index);
+                }
+                if(item.Text == partList[20]){
+                    alt.emitServer('changeVehMod', 20, mod_index);
+                }
+                if(item.Text == partList[22]){
+                    alt.emitServer('changeVehMod', 22, mod_index);
+                }
+                if(item.Text == partList[23]){
+                    alt.emitServer('changeVehMod', 23, mod_index);
+                }
+                if(item.Text == partList[25]){
+                    alt.emitServer('changeVehMod', 25, mod_index);
+                }
+                if(item.Text == partList[27]){
+                    alt.emitServer('changeVehMod', 27, mod_index);
+                }
+                if(item.Text == partList[28]){
+                    alt.emitServer('changeVehMod', 28, mod_index);
+                }
+                if(item.Text == partList[30]){
+                    alt.emitServer('changeVehMod', 30, mod_index);
+                }
+                if(item.Text == partList[33]){
+                    alt.emitServer('changeVehMod', 33, mod_index);
+                }
+                if(item.Text == partList[34]){
+                    alt.emitServer('changeVehMod', 34, mod_index);
+                }
+                if(item.Text == partList[35]){
+                    alt.emitServer('changeVehMod', 35, mod_index);
+                }
+                if(item.Text == partList[38]){
+                    alt.emitServer('changeVehMod', 38, mod_index);
+                }
+                if(item.Text == partList[40]){
+                    alt.emitServer('changeVehMod', 40, mod_index);
+                }
+                if(item.Text == partList[48]){
+                    alt.emitServer('changeVehMod', 48, mod_index);
+                }
+                if(item.Text == partList[55]){
+                    alt.emitServer('changeVehMod', 55, mod_index);
+                }
+                if(item.Text == partList[62]){
+                    alt.emitServer('changeVehMod', 62, mod_index);
+                }
+                if(item.Text == partList[66]){
+                    alt.emitServer('changeVehMod', 66, mod_index);
+                }
+                if(item.Text == partList[67]){
+                    alt.emitServer('changeVehMod', 67, mod_index);
+                }
             });
 
             //liverys
@@ -2314,7 +3027,7 @@ bennys.AddItem(parts);
 //Keys zuweisen
 alt.on('keyup', (key) => {
     if (key === 116) {
-        if (bennys.Visible || paintMenu.Visible || primaryColorMenu.Visible || secondaryColorMenu.Visible || lightsMenu.Visible || spotlight.Visible || liveryMenu.Visible || partsMenu.Visible){
+        if (bennys.Visible || paintMenu.Visible || primaryColorMenu.Visible || secondaryColorMenu.Visible || lightsMenu.Visible || spotlight.Visible || liveryMenu.Visible || partsMenu.Visible || performanceMenu.Visible){
             bennys.Close();
             paintMenu.Close();
             primaryColorMenu.Close();
@@ -2324,6 +3037,7 @@ alt.on('keyup', (key) => {
             neonMenu.Close();
             liveryMenu.Close();
             partsMenu.Close();
+            performanceMenu.Close();
 
         } else{
             bennys.Open();
@@ -2334,7 +3048,7 @@ alt.on('keyup', (key) => {
 
 alt.on('keyup', (key) => {
     if (key === 27) {
-        if (bennys.Visible || paintMenu.Visible || primaryColorMenu.Visible || secondaryColorMenu.Visible || lightsMenu.Visible || spotlight.Visible || liveryMenu.Visible || partsMenu.Visible){
+        if (bennys.Visible || paintMenu.Visible || primaryColorMenu.Visible || secondaryColorMenu.Visible || lightsMenu.Visible || spotlight.Visible || liveryMenu.Visible || partsMenu.Visible || performanceMenu.Visible){
             bennys.Close();
             paintMenu.Close();
             primaryColorMenu.Close();
@@ -2344,13 +3058,14 @@ alt.on('keyup', (key) => {
             neonMenu.Close();
             liveryMenu.Close();
             partsMenu.Close();
+            performanceMenu.Close();
         }
     }
 });
 
 alt.on('keyup', (key) => {
     if (key === 70) {
-        if (bennys.Visible || paintMenu.Visible || primaryColorMenu.Visible || secondaryColorMenu.Visible || lightsMenu.Visible || spotlight.Visible  || liveryMenu.Visible || partsMenu.Visible){
+        if (bennys.Visible || paintMenu.Visible || primaryColorMenu.Visible || secondaryColorMenu.Visible || lightsMenu.Visible || spotlight.Visible  || liveryMenu.Visible || partsMenu.Visible || performanceMenu.Visible){
             bennys.Close();
             paintMenu.Close();
             primaryColorMenu.Close();
@@ -2359,6 +3074,7 @@ alt.on('keyup', (key) => {
             neonMenu.Close();
             liveryMenu.Close();
             partsMenu.Close();
+            performanceMenu.Close();
         }
     }
 });
@@ -2372,6 +3088,7 @@ const banners = [
     { dict: "shopui_title_barber4", name: "shopui_title_barber4" },
     { dict: "shopui_title_carmod", name: "shopui_title_carmod" },
     { dict: "shopui_title_carmod2", name: "shopui_title_carmod2" },
+    { dict: "shopui_title_supermod", name: "shopui_title_supermod" },
     { dict: "shopui_title_conveniencestore", name: "shopui_title_tennisstore" },
     { dict: "shopui_title_conveniencestore", name: "shopui_title_conveniencestore" },
     { dict: "shopui_title_darts", name: "shopui_title_darts" },
@@ -2398,7 +3115,7 @@ const banners = [
     { dict: "shopui_title_tennis", name: "shopui_title_tennis" }
 ];
 
-let currentBanner = banners[5];
+let currentBanner = banners[7];
 bennys.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
 paintMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
 primaryColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
@@ -2408,6 +3125,7 @@ spotlightMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, curren
 neonMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
 liveryMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
 partsMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+performanceMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
 
 alt.onServer('getNumVehicleMods', (vehicle, modType) => {
     let modTypeCount = native.getNumVehicleMods(vehicle, modType);

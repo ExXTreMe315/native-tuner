@@ -200,7 +200,7 @@ chat.registerCmd("test2", (player, args) => {
     }
 });
 
-chat.registerCmd("test3", (player, args) => {
+chat.registerCmd("modcount", (player, args) => {
     let vehicle = player.vehicle ? player.vehicle : null;
 
     let id = JSON.parse(args[0]);
@@ -209,6 +209,21 @@ chat.registerCmd("test3", (player, args) => {
         console.log("ids are numbers");
         vehicle.modKit = 1;
         let spoiler = vehicle.getModsCount(id);
+        console.log(spoiler);
+    } else {
+        console.log("ids arent numbers");
+    }
+})
+
+chat.registerCmd("getmod", (player, args) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+
+    let id = JSON.parse(args[0]);
+
+    if(!isNaN(id)){
+        console.log("ids are numbers");
+        vehicle.modKit = 1;
+        let spoiler = vehicle.getMod(id);
         console.log(spoiler);
     } else {
         console.log("ids arent numbers");
