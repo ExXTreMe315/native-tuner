@@ -167,20 +167,9 @@ alt.onClient('changeVehMod', (player, type, index) => {
     
     vehicle.modKit = 1;
     vehicle.setMod(type, index);
-    console.log(`${player.name} changed mod ${type} of Vehicle ${vehicle} to index ${index}`);
 });
 
 /////////////////////TestBereich
-
-chat.registerCmd("test", (player, args) => {
-    let vehicle = player.vehicle ? player.vehicle : null;
-    vehicle.modKit = 1;
-    let modType = JSON.parse(args[0]);
-    alt.emitClient(null, 'getNumVehicleMods', vehicle, modType);
-    alt.onClient('NumVehicleMods', (player, modTypeCount) => {
-        console.log(`@${player.name}: Alt:V found ${modTypeCount} Vehicle mods in the Natives`);
-    });
-});
 
 chat.registerCmd("tune", (player, args) => {
     let vehicle = player.vehicle ? player.vehicle : null;
@@ -228,4 +217,25 @@ chat.registerCmd("getmod", (player, args) => {
     } else {
         console.log("ids arent numbers");
     }
+})
+
+chat.registerCmd("setwheels", (player, args) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    let id1 = JSON.parse(args[0]);
+    let id2 = JSON.parse(args[1]);
+    
+    if(!isNaN(id1 && id2)){
+        vehicle.modKit = 1;
+        console.log("args are numbers");
+        console.log(typeof id1, id1);
+        console.log(typeof id2, id2);
+        vehicle.setWheels(id1, id2);
+    } else {
+        console.log("args arent numbers");        
+    }
+})
+
+chat.registerCmd("wheelsCount", (player) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    console.log(vehicle.wheelsCount);
 })
