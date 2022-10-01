@@ -2553,6 +2553,198 @@ bennys.AddItem(performance);
                 ));
             }
 
+            //trimdesign
+            let trimdesign_n = 0;
+            var trimdesign_x = [];
+            modtype = 27;
+
+            while (trimdesign_n <= modscount.trimdesign) {
+                trimdesign_x.push(trimdesign_n);
+                trimdesign_n++
+            }
+
+            if(trimdesign_x <= 0){
+                var trimdesign = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`Keine ${partList[modtype]} vorhanden`])
+                ));
+            } else {
+                var trimdesign = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(trimdesign_x)
+                ));
+            }
+
+            //ornaments
+            let ornaments_n = 0;
+            var ornaments_x = [];
+            modtype = 28;
+
+            while (ornaments_n <= modscount.ornaments) {
+                ornaments_x.push(ornaments_n);
+                ornaments_n++
+            }
+
+            if(ornaments_x <= 0){
+                var ornaments = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`Keine ${partList[modtype]} vorhanden`])
+                ));
+            } else {
+                var ornaments = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(ornaments_x)
+                ));
+            }
+
+            //dialdesign
+            let dialdesign_n = 0;
+            var dialdesign_x = [];
+            modtype = 30;
+
+            while (dialdesign_n <= modscount.dialdesign) {
+                dialdesign_x.push(dialdesign_n);
+                dialdesign_n++
+            }
+
+            if(dialdesign_x <= 0){
+                var dialdesign = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`Keine ${partList[modtype]} vorhanden`])
+                ));
+            } else {
+                var dialdesign = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(dialdesign_x)
+                ));
+            }
+
+            //doorint
+            let doorint_n = 0;
+            var doorint_x = [];
+            modtype = 31;
+
+            while (doorint_n <= modscount.doorint) {
+                doorint_x.push(doorint_n);
+                doorint_n++
+            }
+
+            if(doorint_x <= 0){
+                var doorint = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`Keine ${partList[modtype]} vorhanden`])
+                ));
+            } else {
+                var doorint = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(doorint_x)
+                ));
+            }
+
+            //seats
+            let seats_n = 0;
+            var seats_x = [];
+            modtype = 32;
+
+            while (seats_n <= modscount.seats) {
+                seats_x.push(seats_n);
+                seats_n++
+            }
+
+            if(seats_x <= 0){
+                var seats = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`Keine ${partList[modtype]} vorhanden`])
+                ));
+            } else {
+                var seats = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(seats_x)
+                ));
+            }
+
+            //steeringw
+            let steeringw_n = 0;
+            var steeringw_x = [];
+            modtype = 33;
+
+            while (steeringw_n <= modscount.steeringw) {
+                steeringw_x.push(steeringw_n);
+                steeringw_n++
+            }
+
+            if(steeringw_x <= 0){
+                var steeringw = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`Keine ${partList[modtype]} vorhanden`])
+                ));
+            } else {
+                var steeringw = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(steeringw_x)
+                ));
+            }
+
+            //shiftlever
+            let shiftlever_n = 0;
+            var shiftlever_x = [];
+            modtype = 34;
+
+            while (shiftlever_n <= modscount.shiftlever) {
+                shiftlever_x.push(shiftlever_n);
+                shiftlever_n++
+            }
+
+            if(shiftlever_x <= 0){
+                var shiftlever = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`Keine ${partList[modtype]} vorhanden`])
+                ));
+            } else {
+                var shiftlever = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(shiftlever_x)
+                ));
+            }
+
+            //plaques
+            let plaques_n = 0;
+            var plaques_x = [];
+            modtype = 35;
+
+            while (plaques_n <= modscount.plaques) {
+                plaques_x.push(plaques_n);
+                plaques_n++
+            }
+
+            if(plaques_x <= 0){
+                var plaques = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection([`Keine ${partList[modtype]} vorhanden`])
+                ));
+            } else {
+                var plaques = (new NativeUI.UIMenuListItem(
+                    partList[modtype],
+                    partList[modtype]+" anpassen",
+                    new NativeUI.ItemsCollection(plaques_x)
+                ));
+            }
+
             //Karrosserie
             partsMenu.AddItem(spoilers);
             partsMenu.AddItem(fbumpers);
@@ -2567,6 +2759,14 @@ bennys.AddItem(performance);
             partsMenu.AddItem(roof);
             partsMenu.AddItem(plateh);
             partsMenu.AddItem(platev);
+            partsMenu.AddItem(trimdesign);
+            partsMenu.AddItem(ornaments);
+            partsMenu.AddItem(dialdesign);
+            partsMenu.AddItem(doorint);
+            partsMenu.AddItem(seats);
+            partsMenu.AddItem(steeringw);
+            partsMenu.AddItem(shiftlever);
+            partsMenu.AddItem(plaques);
 
             //Performance
             performanceMenu.AddItem(engine);
@@ -2634,14 +2834,14 @@ bennys.AddItem(performance);
                 if(item.Text == partList[18]){
                     alt.emitServer('changeVehMod', 18, mod_index);
                 }
-                if(item.Text == partList[20]){
-                    alt.emitServer('changeVehMod', 20, mod_index);
-                }
                 if(item.Text == partList[22]){
                     alt.emitServer('changeVehMod', 22, mod_index);
                 }
                 if(item.Text == partList[23]){
                     alt.emitServer('changeVehMod', 23, mod_index);
+                }
+                if(item.Text == partList[24]){
+                    alt.emitServer('changeVehMod', 24, mod_index);
                 }
                 if(item.Text == partList[25]){
                     alt.emitServer('changeVehMod', 25, mod_index);
@@ -2658,6 +2858,12 @@ bennys.AddItem(performance);
                 if(item.Text == partList[30]){
                     alt.emitServer('changeVehMod', 30, mod_index);
                 }
+                if(item.Text == partList[31]){
+                    alt.emitServer('changeVehMod', 31, mod_index);
+                }
+                if(item.Text == partList[32]){
+                    alt.emitServer('changeVehMod', 32, mod_index);
+                }
                 if(item.Text == partList[33]){
                     alt.emitServer('changeVehMod', 33, mod_index);
                 }
@@ -2667,17 +2873,44 @@ bennys.AddItem(performance);
                 if(item.Text == partList[35]){
                     alt.emitServer('changeVehMod', 35, mod_index);
                 }
+                if(item.Text == partList[36]){
+                    alt.emitServer('changeVehMod', 36, mod_index);
+                }
+                if(item.Text == partList[37]){
+                    alt.emitServer('changeVehMod', 37, mod_index);
+                }
                 if(item.Text == partList[38]){
                     alt.emitServer('changeVehMod', 38, mod_index);
+                }
+                if(item.Text == partList[39]){
+                    alt.emitServer('changeVehMod', 39, mod_index);
                 }
                 if(item.Text == partList[40]){
                     alt.emitServer('changeVehMod', 40, mod_index);
                 }
+                if(item.Text == partList[41]){
+                    alt.emitServer('changeVehMod', 41, mod_index);
+                }
+                if(item.Text == partList[42]){
+                    alt.emitServer('changeVehMod', 42, mod_index);
+                }
+                if(item.Text == partList[43]){
+                    alt.emitServer('changeVehMod', 43, mod_index);
+                }
+                if(item.Text == partList[44]){
+                    alt.emitServer('changeVehMod', 44, mod_index);
+                }
+                if(item.Text == partList[45]){
+                    alt.emitServer('changeVehMod', 45, mod_index);
+                }
+                if(item.Text == partList[46]){
+                    alt.emitServer('changeVehMod', 46, mod_index);
+                }
+                if(item.Text == partList[47]){
+                    alt.emitServer('changeVehMod', 47, mod_index);
+                }
                 if(item.Text == partList[48]){
                     alt.emitServer('changeVehMod', 48, mod_index);
-                }
-                if(item.Text == partList[55]){
-                    alt.emitServer('changeVehMod', 55, mod_index);
                 }
                 if(item.Text == partList[62]){
                     alt.emitServer('changeVehMod', 62, mod_index);

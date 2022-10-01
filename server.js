@@ -182,7 +182,7 @@ chat.registerCmd("test", (player, args) => {
     });
 });
 
-chat.registerCmd("test2", (player, args) => {
+chat.registerCmd("tune", (player, args) => {
     let vehicle = player.vehicle ? player.vehicle : null;
 
     let id1 = JSON.parse(args[0]);
