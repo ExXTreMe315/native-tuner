@@ -169,6 +169,32 @@ alt.onClient('changeVehMod', (player, type, index) => {
     vehicle.setMod(type, index);
 });
 
+alt.onClient('changeWheels', (player, type, index) => {
+
+    let vehicle = player.vehicle ? player.vehicle : null;
+    
+    vehicle.modKit = 1;
+    vehicle.setWheels(type, index);
+});
+
+alt.onClient('wheelColor', (player, color) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    vehicle.modKit = 1;
+    vehicle.wheelColor = color;
+});
+
+alt.onClient('changePlate', (player, id) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    vehicle.modKit = 1;
+    vehicle.numberPlateIndex = id;
+});
+
+alt.onClient('pearlColor', (player, index) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    vehicle.modKit = 1;
+    vehicle.pearlColor = index;
+});
+
 /////////////////////TestBereich
 
 chat.registerCmd("tune", (player, args) => {
@@ -239,3 +265,26 @@ chat.registerCmd("wheelsCount", (player) => {
     let vehicle = player.vehicle ? player.vehicle : null;
     console.log(vehicle.wheelsCount);
 })
+
+chat.registerCmd("plate", (player, args) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    if(args[0]){
+        vehicle.numberPlateIndex = JSON.parse(args[0]);
+    } else if (!args[0]){
+        let currPlate = vehicle.numberPlateIndex
+        
+        if (currPlate == 5) {
+            currPlate = 0
+        } else {
+            currPlate ++
+        }
+        vehicle.numberPlateIndex = currPlate;
+    }
+});
+
+chat.registerCmd("pearl", (player, args) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    vehicle.modKit = 1;
+    let index = JSON.parse(args[0]);
+    vehicle.pearlColor = index;
+});
