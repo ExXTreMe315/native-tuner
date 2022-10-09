@@ -167,22 +167,69 @@ alt.onClient('changeVehMod', (player, type, index) => {
     
     vehicle.modKit = 1;
     vehicle.setMod(type, index);
-    console.log(`${player.name} changed mod ${type} of Vehicle ${vehicle} to index ${index}`);
+});
+
+alt.onClient('changeWheels', (player, type, index) => {
+
+    let vehicle = player.vehicle ? player.vehicle : null;
+    
+    vehicle.modKit = 1;
+    vehicle.setWheels(type, index);
+});
+
+alt.onClient('wheelColor', (player, color) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    vehicle.modKit = 1;
+    vehicle.wheelColor = color;
+});
+
+alt.onClient('changePlate', (player, id) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    vehicle.modKit = 1;
+    vehicle.numberPlateIndex = id;
+});
+
+alt.onClient('pearlColor', (player, index) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    vehicle.modKit = 1;
+    vehicle.pearlColor = index;
+});
+
+alt.onClient('setExtra', (player, index) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    vehicle.modKit = 1;
+
+    if(vehicle.getExtra(index)){
+        vehicle.setExtra(index, false);
+        console.log(index);
+        console.log(vehicle.getExtra(index));
+    } else if(!vehicle.getExtra(index)){
+        vehicle.setExtra(index, true);
+        console.log(index);
+        console.log(vehicle.getExtra(index));
+    }
+});
+
+alt.onClient("getExtraCount", (player) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    alt.emitClient(player, 'sendExtraCount', vehicle);
+});
+
+alt.onClient("setWindow", (player, id) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    vehicle.modKit = 1;
+    vehicle.windowTint = id;
+});
+
+alt.onClient('interiorColor', (player, color) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    vehicle.modKit = 1;
+    vehicle.interiorColor = color;
 });
 
 /////////////////////TestBereich
 
-chat.registerCmd("test", (player, args) => {
-    let vehicle = player.vehicle ? player.vehicle : null;
-    vehicle.modKit = 1;
-    let modType = JSON.parse(args[0]);
-    alt.emitClient(null, 'getNumVehicleMods', vehicle, modType);
-    alt.onClient('NumVehicleMods', (player, modTypeCount) => {
-        console.log(`@${player.name}: Alt:V found ${modTypeCount} Vehicle mods in the Natives`);
-    });
-});
-
-chat.registerCmd("test2", (player, args) => {
+chat.registerCmd("tune", (player, args) => {
     let vehicle = player.vehicle ? player.vehicle : null;
 
     let id1 = JSON.parse(args[0]);
@@ -196,11 +243,11 @@ chat.registerCmd("test2", (player, args) => {
         vehicle.setMod(id1, id2);
         //vehicle.headlightColor = id;
     } else {
-        console.log("ids arent numbers");
+        console.logWarning("ids arent numbers");
     }
 });
 
-chat.registerCmd("test3", (player, args) => {
+chat.registerCmd("modcount", (player, args) => {
     let vehicle = player.vehicle ? player.vehicle : null;
 
     let id = JSON.parse(args[0]);
@@ -211,6 +258,72 @@ chat.registerCmd("test3", (player, args) => {
         let spoiler = vehicle.getModsCount(id);
         console.log(spoiler);
     } else {
-        console.log("ids arent numbers");
+        console.logWarning("ids arent numbers");
     }
 })
+
+chat.registerCmd("getmod", (player, args) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+
+    let id = JSON.parse(args[0]);
+
+    if(!isNaN(id)){
+        console.log("ids are numbers");
+        vehicle.modKit = 1;
+        let spoiler = vehicle.getMod(id);
+        console.log(spoiler);
+    } else {
+        console.logWarning("ids arent numbers");
+    }
+})
+
+chat.registerCmd("setwheels", (player, args) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    let id1 = JSON.parse(args[0]);
+    let id2 = JSON.parse(args[1]);
+    
+    if(!isNaN(id1 && id2)){
+        vehicle.modKit = 1;
+        console.log("args are numbers");
+        console.log(typeof id1, id1);
+        console.log(typeof id2, id2);
+        vehicle.setWheels(id1, id2);
+    } else {
+        console.logWarning("args arent numbers");        
+    }
+})
+
+chat.registerCmd("wheelsCount", (player) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    console.log(vehicle.wheelsCount);
+})
+
+chat.registerCmd("plate", (player, args) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    if(args[0]){
+        vehicle.numberPlateIndex = JSON.parse(args[0]);
+    } else if (!args[0]){
+        let currPlate = vehicle.numberPlateIndex
+        
+        if (currPlate == 5) {
+            currPlate = 0
+        } else {
+            currPlate ++
+        }
+        vehicle.numberPlateIndex = currPlate;
+    }
+});
+
+chat.registerCmd("pearl", (player, args) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    vehicle.modKit = 1;
+    let index = JSON.parse(args[0]);
+    vehicle.pearlColor = index;
+});
+
+chat.registerCmd("window", (player, args) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    vehicle.modKit = 1;
+    let index = JSON.parse(args[0]);
+    vehicle.windowTint = index;
+});
