@@ -4,10 +4,7 @@ import * as chat from 'chat';
 alt.onClient('getModsCount', (player, type, nblivery, nbroofs) => {
 
     let vehicle = player.vehicle
-    /* 
-     never understood modkit to be honest but sound it always 
-     need to be 1 except for vehicle that cannot be customised ( like army mesa )
-    */
+
     try {
         vehicle.modKit = 1;
     } catch (error) {
@@ -225,105 +222,4 @@ alt.onClient('interiorColor', (player, color) => {
     let vehicle = player.vehicle ? player.vehicle : null;
     vehicle.modKit = 1;
     vehicle.interiorColor = color;
-});
-
-/////////////////////TestBereich
-
-chat.registerCmd("tune", (player, args) => {
-    let vehicle = player.vehicle ? player.vehicle : null;
-
-    let id1 = JSON.parse(args[0]);
-
-    let id2 = JSON.parse(args[1]);
-
-    
-    if(!isNaN(id1) && !isNaN(id2)){
-        console.log("ids are numbers");
-        vehicle.modKit = 1;
-        vehicle.setMod(id1, id2);
-        //vehicle.headlightColor = id;
-    } else {
-        console.logWarning("ids arent numbers");
-    }
-});
-
-chat.registerCmd("modcount", (player, args) => {
-    let vehicle = player.vehicle ? player.vehicle : null;
-
-    let id = JSON.parse(args[0]);
-
-    if(!isNaN(id)){
-        console.log("ids are numbers");
-        vehicle.modKit = 1;
-        let spoiler = vehicle.getModsCount(id);
-        console.log(spoiler);
-    } else {
-        console.logWarning("ids arent numbers");
-    }
-})
-
-chat.registerCmd("getmod", (player, args) => {
-    let vehicle = player.vehicle ? player.vehicle : null;
-
-    let id = JSON.parse(args[0]);
-
-    if(!isNaN(id)){
-        console.log("ids are numbers");
-        vehicle.modKit = 1;
-        let spoiler = vehicle.getMod(id);
-        console.log(spoiler);
-    } else {
-        console.logWarning("ids arent numbers");
-    }
-})
-
-chat.registerCmd("setwheels", (player, args) => {
-    let vehicle = player.vehicle ? player.vehicle : null;
-    let id1 = JSON.parse(args[0]);
-    let id2 = JSON.parse(args[1]);
-    
-    if(!isNaN(id1 && id2)){
-        vehicle.modKit = 1;
-        console.log("args are numbers");
-        console.log(typeof id1, id1);
-        console.log(typeof id2, id2);
-        vehicle.setWheels(id1, id2);
-    } else {
-        console.logWarning("args arent numbers");        
-    }
-})
-
-chat.registerCmd("wheelsCount", (player) => {
-    let vehicle = player.vehicle ? player.vehicle : null;
-    console.log(vehicle.wheelsCount);
-})
-
-chat.registerCmd("plate", (player, args) => {
-    let vehicle = player.vehicle ? player.vehicle : null;
-    if(args[0]){
-        vehicle.numberPlateIndex = JSON.parse(args[0]);
-    } else if (!args[0]){
-        let currPlate = vehicle.numberPlateIndex
-        
-        if (currPlate == 5) {
-            currPlate = 0
-        } else {
-            currPlate ++
-        }
-        vehicle.numberPlateIndex = currPlate;
-    }
-});
-
-chat.registerCmd("pearl", (player, args) => {
-    let vehicle = player.vehicle ? player.vehicle : null;
-    vehicle.modKit = 1;
-    let index = JSON.parse(args[0]);
-    vehicle.pearlColor = index;
-});
-
-chat.registerCmd("window", (player, args) => {
-    let vehicle = player.vehicle ? player.vehicle : null;
-    vehicle.modKit = 1;
-    let index = JSON.parse(args[0]);
-    vehicle.windowTint = index;
 });
