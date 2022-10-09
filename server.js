@@ -195,6 +195,38 @@ alt.onClient('pearlColor', (player, index) => {
     vehicle.pearlColor = index;
 });
 
+alt.onClient('setExtra', (player, index) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    vehicle.modKit = 1;
+
+    if(vehicle.getExtra(index)){
+        vehicle.setExtra(index, false);
+        console.log(index);
+        console.log(vehicle.getExtra(index));
+    } else if(!vehicle.getExtra(index)){
+        vehicle.setExtra(index, true);
+        console.log(index);
+        console.log(vehicle.getExtra(index));
+    }
+});
+
+alt.onClient("getExtraCount", (player) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    alt.emitClient(player, 'sendExtraCount', vehicle);
+});
+
+alt.onClient("setWindow", (player, id) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    vehicle.modKit = 1;
+    vehicle.windowTint = id;
+});
+
+alt.onClient('interiorColor', (player, color) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    vehicle.modKit = 1;
+    vehicle.interiorColor = color;
+});
+
 /////////////////////TestBereich
 
 chat.registerCmd("tune", (player, args) => {
@@ -211,7 +243,7 @@ chat.registerCmd("tune", (player, args) => {
         vehicle.setMod(id1, id2);
         //vehicle.headlightColor = id;
     } else {
-        console.log("ids arent numbers");
+        console.logWarning("ids arent numbers");
     }
 });
 
@@ -226,7 +258,7 @@ chat.registerCmd("modcount", (player, args) => {
         let spoiler = vehicle.getModsCount(id);
         console.log(spoiler);
     } else {
-        console.log("ids arent numbers");
+        console.logWarning("ids arent numbers");
     }
 })
 
@@ -241,7 +273,7 @@ chat.registerCmd("getmod", (player, args) => {
         let spoiler = vehicle.getMod(id);
         console.log(spoiler);
     } else {
-        console.log("ids arent numbers");
+        console.logWarning("ids arent numbers");
     }
 })
 
@@ -257,7 +289,7 @@ chat.registerCmd("setwheels", (player, args) => {
         console.log(typeof id2, id2);
         vehicle.setWheels(id1, id2);
     } else {
-        console.log("args arent numbers");        
+        console.logWarning("args arent numbers");        
     }
 })
 
@@ -287,4 +319,11 @@ chat.registerCmd("pearl", (player, args) => {
     vehicle.modKit = 1;
     let index = JSON.parse(args[0]);
     vehicle.pearlColor = index;
+});
+
+chat.registerCmd("window", (player, args) => {
+    let vehicle = player.vehicle ? player.vehicle : null;
+    vehicle.modKit = 1;
+    let index = JSON.parse(args[0]);
+    vehicle.windowTint = index;
 });

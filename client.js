@@ -2,7 +2,7 @@ import * as alt from "alt-client";
 import * as native from 'natives';
 import * as NativeUI from './includes/NativeUI/NativeUi';
 //Vorweg
-const colors = [
+const metallicColors = [
     {
         id: 0,
         description: 'Metallic Black',
@@ -74,96 +74,6 @@ const colors = [
         description: 'Metallic Anthracite Grey',
         hex: '#1d2129',
         rgb: '29, 33, 41'
-    },
-    {
-        id: 12,
-        description: 'Matte Black',
-        hex: '#13181f',
-        rgb: '19, 24, 31'
-    },
-    {
-        id: 13,
-        description: 'Matte Gray',
-        hex: '#26282a',
-        rgb: '38, 40, 42'
-    },
-    {
-        id: 14,
-        description: 'Matte Light Grey',
-        hex: '#515554',
-        rgb: '81, 85, 84'
-    },
-    {
-        id: 15,
-        description: 'Util Black',
-        hex: '#151921',
-        rgb: '21, 25, 33'
-    },
-    {
-        id: 16,
-        description: 'Util Black Poly',
-        hex: '#1e2429',
-        rgb: '30, 36, 41'
-    },
-    {
-        id: 17,
-        description: 'Util Dark Silver',
-        hex: '#333a3c',
-        rgb: '51, 58, 60'
-    },
-    {
-        id: 18,
-        description: 'Util Silver',
-        hex: '#8c9095',
-        rgb: '140, 144, 149'
-    },
-    {
-        id: 19,
-        description: 'Util Gun Metal',
-        hex: '#39434d',
-        rgb: '57, 67, 77'
-    },
-    {
-        id: 20,
-        description: 'Util Shadow Silver',
-        hex: '#506272',
-        rgb: '80, 98, 114'
-    },
-    {
-        id: 21,
-        description: 'Worn Black',
-        hex: '#1e232f',
-        rgb: '30, 35, 47'
-    },
-    {
-        id: 22,
-        description: 'Worn Graphite',
-        hex: '#363a3f',
-        rgb: '54, 58, 63'
-    },
-    {
-        id: 23,
-        description: 'Worn Silver Grey',
-        hex: '#a0a199',
-        rgb: '160, 161, 153'
-    },
-    {
-        id: 24,
-        description: 'Worn Silver',
-        hex: '#d3d3d3',
-        rgb: '211, 211, 211'
-    },
-    {
-        id: 25,
-        description: 'Worn Blue Silver',
-        hex: '#b7bfca',
-        rgb: '183, 191, 202'
-    },
-    {
-        id: 26,
-        description: 'Worn Shadow Silver',
-        hex: '#778794',
-        rgb: '119, 135, 148'
     },
     {
         id: 27,
@@ -238,66 +148,6 @@ const colors = [
         rgb: '247, 134, 22'
     },
     {
-        id: 39,
-        description: 'Matte Red',
-        hex: '#cf1f21',
-        rgb: '207, 31, 33'
-    },
-    {
-        id: 40,
-        description: 'Matte Dark Red',
-        hex: '#732021',
-        rgb: '115, 32, 33'
-    },
-    {
-        id: 41,
-        description: 'Matte Orange',
-        hex: '#f27d20',
-        rgb: '242, 125, 32'
-    },
-    {
-        id: 42,
-        description: 'Matte Yellow',
-        hex: '#ffc91f',
-        rgb: '255, 201, 31'
-    },
-    {
-        id: 43,
-        description: 'Util Red',
-        hex: '#9c1016',
-        rgb: '156, 16, 22'
-    },
-    {
-        id: 44,
-        description: 'Util Bright Red',
-        hex: '#de0f18',
-        rgb: '222, 15, 24'
-    },
-    {
-        id: 45,
-        description: 'Util Garnet Red',
-        hex: '#8f1e17',
-        rgb: '143, 30, 23'
-    },
-    {
-        id: 46,
-        description: 'Worn Red',
-        hex: '#a94744',
-        rgb: '169, 71, 68'
-    },
-    {
-        id: 47,
-        description: 'Worn Golden Red',
-        hex: '#b16c51',
-        rgb: '177, 108, 81'
-    },
-    {
-        id: 48,
-        description: 'Worn Dark Red',
-        hex: '#371c25',
-        rgb: '55, 28, 37'
-    },
-    {
         id: 49,
         description: 'Metallic Dark Green',
         hex: '#132428',
@@ -332,42 +182,6 @@ const colors = [
         description: 'Metallic Gasoline Blue Green',
         hex: '#1b6770',
         rgb: '27, 103, 112'
-    },
-    {
-        id: 55,
-        description: 'Matte Lime Green',
-        hex: '#66b81f',
-        rgb: '102, 184, 31'
-    },
-    {
-        id: 56,
-        description: 'Util Dark Green',
-        hex: '#22383e',
-        rgb: '34, 56, 62'
-    },
-    {
-        id: 57,
-        description: 'Util Green',
-        hex: '#1d5a3f',
-        rgb: '29, 90, 63'
-    },
-    {
-        id: 58,
-        description: 'Worn Dark Green',
-        hex: '#2d423f',
-        rgb: '45, 66, 63'
-    },
-    {
-        id: 59,
-        description: 'Worn Green',
-        hex: '#45594b',
-        rgb: '69, 89, 75'
-    },
-    {
-        id: 60,
-        description: 'Worn Sea Wash',
-        hex: '#65867f',
-        rgb: '101, 134, 127'
     },
     {
         id: 61,
@@ -452,84 +266,6 @@ const colors = [
         description: 'Metallic Bright Blue',
         hex: '#6ea3c6',
         rgb: '110, 163, 198'
-    },
-    {
-        id: 75,
-        description: 'Util Dark Blue',
-        hex: '#112552',
-        rgb: '17, 37, 82'
-    },
-    {
-        id: 76,
-        description: 'Util Midnight Blue',
-        hex: '#1b203e',
-        rgb: '27, 32, 62'
-    },
-    {
-        id: 77,
-        description: 'Util Blue',
-        hex: '#275190',
-        rgb: '39, 81, 144'
-    },
-    {
-        id: 78,
-        description: 'Util Sea Foam Blue',
-        hex: '#608592',
-        rgb: '96, 133, 146'
-    },
-    {
-        id: 79,
-        description: 'Util Lightning Blue',
-        hex: '#2446a8',
-        rgb: '36, 70, 168'
-    },
-    {
-        id: 80,
-        description: 'Util Maui Blue Poly',
-        hex: '#4271e1',
-        rgb: '66, 113, 225'
-    },
-    {
-        id: 81,
-        description: 'Util Bright Blue',
-        hex: '#3b39e0',
-        rgb: '59, 57, 224'
-    },
-    {
-        id: 82,
-        description: 'Matte Dark Blue',
-        hex: '#1f2852',
-        rgb: '31, 40, 82'
-    },
-    {
-        id: 83,
-        description: 'Matte Blue',
-        hex: '#253aa7',
-        rgb: '37, 58, 167'
-    },
-    {
-        id: 84,
-        description: 'Matte Midnight Blue',
-        hex: '#1c3551',
-        rgb: '28, 53, 81'
-    },
-    {
-        id: 85,
-        description: 'Worn Dark Blue',
-        hex: '#4c5f81',
-        rgb: '76, 95, 129'
-    },
-    {
-        id: 86,
-        description: 'Worn Blue',
-        hex: '#58688e',
-        rgb: '88, 104, 142'
-    },
-    {
-        id: 87,
-        description: 'Worn Light Blue',
-        hex: '#74b5d8',
-        rgb: '116, 181, 216'
     },
     {
         id: 88,
@@ -652,24 +388,6 @@ const colors = [
         rgb: '247, 237, 213'
     },
     {
-        id: 108,
-        description: 'Util Brown',
-        hex: '#3a2a1b',
-        rgb: '58, 42, 27'
-    },
-    {
-        id: 109,
-        description: 'Util Medium Brown',
-        hex: '#785f33',
-        rgb: '120, 95, 51'
-    },
-    {
-        id: 110,
-        description: 'Util Light Brown',
-        hex: '#b5a079',
-        rgb: '181, 160, 121'
-    },
-    {
         id: 111,
         description: 'Metallic White',
         hex: '#fffff6',
@@ -682,178 +400,16 @@ const colors = [
         rgb: '234, 234, 234'
     },
     {
-        id: 113,
-        description: 'Worn Honey Beige',
-        hex: '#b0ab94',
-        rgb: '176, 171, 148'
-    },
-    {
-        id: 114,
-        description: 'Worn Brown',
-        hex: '#453831',
-        rgb: '69, 56, 49'
-    },
-    {
-        id: 115,
-        description: 'Worn Dark Brown',
-        hex: '#2a282b',
-        rgb: '42, 40, 43'
-    },
-    {
-        id: 116,
-        description: 'Worn Straw Beige',
-        hex: '#726c57',
-        rgb: '114, 108, 87'
-    },
-    {
-        id: 117,
-        description: 'Brushed Steel',
-        hex: '#6a747c',
-        rgb: '106, 116, 124'
-    },
-    {
-        id: 118,
-        description: 'Brushed Black Steel',
-        hex: '#354158',
-        rgb: '53, 65, 88'
-    },
-    {
-        id: 119,
-        description: 'Brushed Aluminium',
-        hex: '#9ba0a8',
-        rgb: '155, 160, 168'
-    },
-    {
-        id: 120,
-        description: 'Chrome',
-        hex: '#5870a1',
-        rgb: '88, 112, 161'
-    },
-    {
-        id: 121,
-        description: 'Worn Off White',
-        hex: '#eae6de',
-        rgb: '234, 230, 222'
-    },
-    {
-        id: 122,
-        description: 'Util Off White',
-        hex: '#dfddd0',
-        rgb: '223, 221, 208'
-    },
-    {
-        id: 123,
-        description: 'Worn Orange',
-        hex: '#f2ad2e',
-        rgb: '242, 173, 46'
-    },
-    {
-        id: 124,
-        description: 'Worn Light Orange',
-        hex: '#f9a458',
-        rgb: '249, 164, 88'
-    },
-    {
         id: 125,
         description: 'Metallic Securicor Green',
         hex: '#83c566',
         rgb: '131, 197, 102'
     },
     {
-        id: 126,
-        description: 'Worn Taxi Yellow',
-        hex: '#f1cc40',
-        rgb: '241, 204, 64'
-    },
-    {
-        id: 127,
-        description: 'Police Car Blue',
-        hex: '#4cc3da',
-        rgb: '76, 195, 218'
-    },
-    {
-        id: 128,
-        description: 'Matte Green',
-        hex: '#4e6443',
-        rgb: '78, 100, 67'
-    },
-    {
-        id: 129,
-        description: 'Matte Brown',
-        hex: '#bcac8f',
-        rgb: '188, 172, 143'
-    },
-    {
-        id: 130,
-        description: 'Worn Orange',
-        hex: '#f8b658',
-        rgb: '248, 182, 88'
-    },
-    {
-        id: 131,
-        description: 'Matte White',
-        hex: '#fcf9f1',
-        rgb: '252, 249, 241'
-    },
-    {
-        id: 132,
-        description: 'Worn White',
-        hex: '#fffffb',
-        rgb: '255, 255, 251'
-    },
-    {
-        id: 133,
-        description: 'Worn Olive Army Green',
-        hex: '#81844c',
-        rgb: '129, 132, 76'
-    },
-    {
-        id: 134,
-        description: 'Pure White',
-        hex: '#ffffff',
-        rgb: '255, 255, 255'
-    },
-    {
-        id: 135,
-        description: 'Hot Pink',
-        hex: '#f21f99',
-        rgb: '242, 31, 153'
-    },
-    {
-        id: 136,
-        description: 'Salmon Pink',
-        hex: '#fdd6cd',
-        rgb: '253, 214, 205'
-    },
-    {
         id: 137,
         description: 'Metallic Vermillion Pink',
         hex: '#df5891',
         rgb: '223, 88, 145'
-    },
-    {
-        id: 138,
-        description: 'Orange',
-        hex: '#f6ae20',
-        rgb: '246, 174, 32'
-    },
-    {
-        id: 139,
-        description: 'Green',
-        hex: '#b0ee6e',
-        rgb: '176, 238, 110'
-    },
-    {
-        id: 140,
-        description: 'Blue',
-        hex: '#08e9fa',
-        rgb: '8, 233, 250'
-    },
-    {
-        id: 141,
-        description: 'Mettalic Black Blue',
-        hex: '#0a0c17',
-        rgb: '10, 12, 23'
     },
     {
         id: 142,
@@ -868,28 +424,103 @@ const colors = [
         rgb: '14, 13, 20'
     },
     {
-        id: 144,
-        description: 'Hunter Green',
-        hex: '#9f9e8a',
-        rgb: '159, 158, 138'
-    },
-    {
         id: 145,
         description: 'Metallic Purple',
         hex: '#621276',
         rgb: '98, 18, 118'
     },
     {
-        id: 146,
-        description: 'Metaillic V Dark Blue',
-        hex: '#0b1421',
-        rgb: '11, 20, 33'
+        id: 150,
+        description: 'Metallic Lava Red',
+        hex: '#bc1917',
+        rgb: '188, 25, 23'
+    }
+];
+
+const mattColors = [
+    {
+        id: 12,
+        description: 'Matte Black',
+        hex: '#13181f',
+        rgb: '19, 24, 31'
     },
     {
-        id: 147,
-        description: 'Modshop Black',
-        hex: '#11141a',
-        rgb: '17, 20, 26'
+        id: 13,
+        description: 'Matte Gray',
+        hex: '#26282a',
+        rgb: '38, 40, 42'
+    },
+    {
+        id: 14,
+        description: 'Matte Light Grey',
+        hex: '#515554',
+        rgb: '81, 85, 84'
+    },
+    {
+        id: 39,
+        description: 'Matte Red',
+        hex: '#cf1f21',
+        rgb: '207, 31, 33'
+    },
+    {
+        id: 40,
+        description: 'Matte Dark Red',
+        hex: '#732021',
+        rgb: '115, 32, 33'
+    },
+    {
+        id: 41,
+        description: 'Matte Orange',
+        hex: '#f27d20',
+        rgb: '242, 125, 32'
+    },
+    {
+        id: 42,
+        description: 'Matte Yellow',
+        hex: '#ffc91f',
+        rgb: '255, 201, 31'
+    },
+    {
+        id: 55,
+        description: 'Matte Lime Green',
+        hex: '#66b81f',
+        rgb: '102, 184, 31'
+    },
+    {
+        id: 82,
+        description: 'Matte Dark Blue',
+        hex: '#1f2852',
+        rgb: '31, 40, 82'
+    },
+    {
+        id: 83,
+        description: 'Matte Blue',
+        hex: '#253aa7',
+        rgb: '37, 58, 167'
+    },
+    {
+        id: 84,
+        description: 'Matte Midnight Blue',
+        hex: '#1c3551',
+        rgb: '28, 53, 81'
+    },
+    {
+        id: 128,
+        description: 'Matte Green',
+        hex: '#4e6443',
+        rgb: '78, 100, 67'
+    },
+    {
+        id: 129,
+        description: 'Matte Brown',
+        hex: '#bcac8f',
+        rgb: '188, 172, 143'
+    },
+    {
+        id: 131,
+        description: 'Matte White',
+        hex: '#fcf9f1',
+        rgb: '252, 249, 241'
     },
     {
         id: 148,
@@ -902,12 +533,6 @@ const colors = [
         description: 'Matte Dark Purple',
         hex: '#1e1d22',
         rgb: '30, 29, 34'
-    },
-    {
-        id: 150,
-        description: 'Metallic Lava Red',
-        hex: '#bc1917',
-        rgb: '188, 25, 23'
     },
     {
         id: 151,
@@ -938,6 +563,381 @@ const colors = [
         description: 'Matte Foilage Green',
         hex: '#5a6352',
         rgb: '90, 99, 82'
+    }
+];
+
+const utilColors = [
+    {
+        id: 15,
+        description: 'Util Black',
+        hex: '#151921',
+        rgb: '21, 25, 33'
+    },
+    {
+        id: 16,
+        description: 'Util Black Poly',
+        hex: '#1e2429',
+        rgb: '30, 36, 41'
+    },
+    {
+        id: 17,
+        description: 'Util Dark Silver',
+        hex: '#333a3c',
+        rgb: '51, 58, 60'
+    },
+    {
+        id: 18,
+        description: 'Util Silver',
+        hex: '#8c9095',
+        rgb: '140, 144, 149'
+    },
+    {
+        id: 19,
+        description: 'Util Gun Metal',
+        hex: '#39434d',
+        rgb: '57, 67, 77'
+    },
+    {
+        id: 20,
+        description: 'Util Shadow Silver',
+        hex: '#506272',
+        rgb: '80, 98, 114'
+    },
+    {
+        id: 43,
+        description: 'Util Red',
+        hex: '#9c1016',
+        rgb: '156, 16, 22'
+    },
+    {
+        id: 44,
+        description: 'Util Bright Red',
+        hex: '#de0f18',
+        rgb: '222, 15, 24'
+    },
+    {
+        id: 45,
+        description: 'Util Garnet Red',
+        hex: '#8f1e17',
+        rgb: '143, 30, 23'
+    },
+    {
+        id: 56,
+        description: 'Util Dark Green',
+        hex: '#22383e',
+        rgb: '34, 56, 62'
+    },
+    {
+        id: 57,
+        description: 'Util Green',
+        hex: '#1d5a3f',
+        rgb: '29, 90, 63'
+    },
+    {
+        id: 75,
+        description: 'Util Dark Blue',
+        hex: '#112552',
+        rgb: '17, 37, 82'
+    },
+    {
+        id: 76,
+        description: 'Util Midnight Blue',
+        hex: '#1b203e',
+        rgb: '27, 32, 62'
+    },
+    {
+        id: 77,
+        description: 'Util Blue',
+        hex: '#275190',
+        rgb: '39, 81, 144'
+    },
+    {
+        id: 78,
+        description: 'Util Sea Foam Blue',
+        hex: '#608592',
+        rgb: '96, 133, 146'
+    },
+    {
+        id: 79,
+        description: 'Util Lightning Blue',
+        hex: '#2446a8',
+        rgb: '36, 70, 168'
+    },
+    {
+        id: 80,
+        description: 'Util Maui Blue Poly',
+        hex: '#4271e1',
+        rgb: '66, 113, 225'
+    },
+    {
+        id: 81,
+        description: 'Util Bright Blue',
+        hex: '#3b39e0',
+        rgb: '59, 57, 224'
+    },
+    {
+        id: 108,
+        description: 'Util Brown',
+        hex: '#3a2a1b',
+        rgb: '58, 42, 27'
+    },
+    {
+        id: 109,
+        description: 'Util Medium Brown',
+        hex: '#785f33',
+        rgb: '120, 95, 51'
+    },
+    {
+        id: 110,
+        description: 'Util Light Brown',
+        hex: '#b5a079',
+        rgb: '181, 160, 121'
+    },
+    {
+        id: 122,
+        description: 'Util Off White',
+        hex: '#dfddd0',
+        rgb: '223, 221, 208'
+    }
+];
+
+const wornColors = [
+    {
+        id: 21,
+        description: 'Worn Black',
+        hex: '#1e232f',
+        rgb: '30, 35, 47'
+    },
+    {
+        id: 22,
+        description: 'Worn Graphite',
+        hex: '#363a3f',
+        rgb: '54, 58, 63'
+    },
+    {
+        id: 23,
+        description: 'Worn Silver Grey',
+        hex: '#a0a199',
+        rgb: '160, 161, 153'
+    },
+    {
+        id: 24,
+        description: 'Worn Silver',
+        hex: '#d3d3d3',
+        rgb: '211, 211, 211'
+    },
+    {
+        id: 25,
+        description: 'Worn Blue Silver',
+        hex: '#b7bfca',
+        rgb: '183, 191, 202'
+    },
+    {
+        id: 26,
+        description: 'Worn Shadow Silver',
+        hex: '#778794',
+        rgb: '119, 135, 148'
+    },
+    {
+        id: 46,
+        description: 'Worn Red',
+        hex: '#a94744',
+        rgb: '169, 71, 68'
+    },
+    {
+        id: 47,
+        description: 'Worn Golden Red',
+        hex: '#b16c51',
+        rgb: '177, 108, 81'
+    },
+    {
+        id: 48,
+        description: 'Worn Dark Red',
+        hex: '#371c25',
+        rgb: '55, 28, 37'
+    },
+    {
+        id: 58,
+        description: 'Worn Dark Green',
+        hex: '#2d423f',
+        rgb: '45, 66, 63'
+    },
+    {
+        id: 59,
+        description: 'Worn Green',
+        hex: '#45594b',
+        rgb: '69, 89, 75'
+    },
+    {
+        id: 60,
+        description: 'Worn Sea Wash',
+        hex: '#65867f',
+        rgb: '101, 134, 127'
+    },
+    {
+        id: 85,
+        description: 'Worn Dark Blue',
+        hex: '#4c5f81',
+        rgb: '76, 95, 129'
+    },
+    {
+        id: 86,
+        description: 'Worn Blue',
+        hex: '#58688e',
+        rgb: '88, 104, 142'
+    },
+    {
+        id: 87,
+        description: 'Worn Light Blue',
+        hex: '#74b5d8',
+        rgb: '116, 181, 216'
+    },
+    {
+        id: 113,
+        description: 'Worn Honey Beige',
+        hex: '#b0ab94',
+        rgb: '176, 171, 148'
+    },
+    {
+        id: 114,
+        description: 'Worn Brown',
+        hex: '#453831',
+        rgb: '69, 56, 49'
+    },
+    {
+        id: 115,
+        description: 'Worn Dark Brown',
+        hex: '#2a282b',
+        rgb: '42, 40, 43'
+    },
+    {
+        id: 116,
+        description: 'Worn Straw Beige',
+        hex: '#726c57',
+        rgb: '114, 108, 87'
+    },
+    {
+        id: 121,
+        description: 'Worn Off White',
+        hex: '#eae6de',
+        rgb: '234, 230, 222'
+    },
+    {
+        id: 123,
+        description: 'Worn Orange',
+        hex: '#f2ad2e',
+        rgb: '242, 173, 46'
+    },
+    {
+        id: 124,
+        description: 'Worn Light Orange',
+        hex: '#f9a458',
+        rgb: '249, 164, 88'
+    },
+    {
+        id: 126,
+        description: 'Worn Taxi Yellow',
+        hex: '#f1cc40',
+        rgb: '241, 204, 64'
+    },
+    {
+        id: 130,
+        description: 'Worn Orange',
+        hex: '#f8b658',
+        rgb: '248, 182, 88'
+    },
+    {
+        id: 132,
+        description: 'Worn White',
+        hex: '#fffffb',
+        rgb: '255, 255, 251'
+    },
+    {
+        id: 133,
+        description: 'Worn Olive Army Green',
+        hex: '#81844c',
+        rgb: '129, 132, 76'
+    }
+];
+
+const sonstigeColors = [
+    {
+        id: 117,
+        description: 'Brushed Steel',
+        hex: '#6a747c',
+        rgb: '106, 116, 124'
+    },
+    {
+        id: 118,
+        description: 'Brushed Black Steel',
+        hex: '#354158',
+        rgb: '53, 65, 88'
+    },
+    {
+        id: 119,
+        description: 'Brushed Aluminium',
+        hex: '#9ba0a8',
+        rgb: '155, 160, 168'
+    },
+    {
+        id: 120,
+        description: 'Chrome',
+        hex: '#5870a1',
+        rgb: '88, 112, 161'
+    },
+    {
+        id: 127,
+        description: 'Police Car Blue',
+        hex: '#4cc3da',
+        rgb: '76, 195, 218'
+    },
+    {
+        id: 134,
+        description: 'Pure White',
+        hex: '#ffffff',
+        rgb: '255, 255, 255'
+    },
+    {
+        id: 135,
+        description: 'Hot Pink',
+        hex: '#f21f99',
+        rgb: '242, 31, 153'
+    },
+    {
+        id: 136,
+        description: 'Salmon Pink',
+        hex: '#fdd6cd',
+        rgb: '253, 214, 205'
+    },
+    {
+        id: 138,
+        description: 'Orange',
+        hex: '#f6ae20',
+        rgb: '246, 174, 32'
+    },
+    {
+        id: 139,
+        description: 'Green',
+        hex: '#b0ee6e',
+        rgb: '176, 238, 110'
+    },
+    {
+        id: 140,
+        description: 'Blue',
+        hex: '#08e9fa',
+        rgb: '8, 233, 250'
+    },
+    {
+        id: 144,
+        description: 'Hunter Green',
+        hex: '#9f9e8a',
+        rgb: '159, 158, 138'
+    },
+    {
+        id: 147,
+        description: 'Modshop Black',
+        hex: '#11141a',
+        rgb: '17, 20, 26'
     },
     {
         id: 156,
@@ -970,54 +970,54 @@ const partList = [
     "Front Stoßstange",//1
     "Heck Stoßstange",//2
     "Seitenverkleidung",//3
-    "exhaust",//4
-    "frame",//5
-    "grille",//6
-    "hood",//7
-    "lwing",//8
-    "rwing",//9
-    "roof",//10
+    "Auspuff",//4
+    "Überrollbügel",//5
+    "Kühlergrill",//6
+    "Motorhaube",//7
+    "Kotflügel Links",//8
+    "Kotflügel Rechts",//9
+    "Dach",//10
     
-    "engine",//11
-    "brakes",//12
-    "trans",//13
-    "horns",//14
-    "suspension",//15
-    "armor",//16
+    "Motor",//11
+    "Bremsen",//12
+    "Getriebe",//13
+    "Hupe",//14
+    "Federung",//15
+    "Panzerung",//16
     "",//17
-    "turbo",//18
+    "Turbo",//18
     
     "",//19
     "",//20
     "",//21
 
-    "xenon",//22 ()
-    "fwheels",//23 -
-    "bwheels",//24 -
-    "plateh",//25 -
-    "platev",//26
-    "trimdesign",//27
-    "ornaments",//28
+    "Xenon",//22 ()
+    "Vorderrad",//23 -
+    "Hinterrad",//24 -
+    "Kennzeichenhalterung",//25 -
+    "Kennzeichen",//26
+    "Trimm Design",//27
+    "Ornamente",//28
     "",//29
-    "dialdesign",//30
-    "doorint",//31
-    "seats",//32
-    "steeringw",//33
-    "shiftlever",//34
-    "plaques",//35
+    "Tacho",//30
+    "Tür Innen",//31
+    "Sitze",//32
+    "Lenkrad",//33
+    "Schalthebel",//34
+    "Plaketten",//35
     "",//36 Rear Shelf
     "",//37 Trunk
-    "hydraulics",//38
-    "engineb",//39
-    "airfilter",//40
-    "strutbar",//41
-    "archcover",//42
-    "antenna",//43
-    "exteriorp",//44
-    "tank",//45
-    "door",//46 -
-    "wroh",//47
-    "stickers"//48 ()
+    "Hydraulik",//38
+    "Motorblock",//39
+    "Luftfilter",//40
+    "Strebe",//41
+    "Bogenabdeckung",//42
+    "Antenne",//43
+    "Dachaufbau",//44
+    "Tank",//45
+    "Tür",//46 -
+    "Wroh",//47
+    "Design"//48 ()
 
 ]
 
@@ -1188,29 +1188,18 @@ bennys.GetTitle().Scale = 1.2;
 bennys.GetTitle().DropShadow = true;
 
 //Tunable Categories
-let paintJob = (new NativeUI.UIMenuItem("Lackierung", "Lackierung ändern"));
+let paintJob = (new NativeUI.UIMenuItem("> Lackierung", "Lackierung ändern"));
 bennys.AddItem(paintJob);
-let lights = (new NativeUI.UIMenuItem("Lichter", "Lichter ändern"));
+let lights = (new NativeUI.UIMenuItem("> Lichter", "Lichter ändern"));
 bennys.AddItem(lights);
-let parts = (new NativeUI.UIMenuItem("Karosserie", "Karosserie ändern"));
+let parts = (new NativeUI.UIMenuItem("> Karosserie", "Karosserie ändern"));
 bennys.AddItem(parts);
-let performance = (new NativeUI.UIMenuItem("Performance", "Performance ändern"));
+let performance = (new NativeUI.UIMenuItem("> Performance", "Performance ändern"));
 bennys.AddItem(performance);
-let wheels = (new NativeUI.UIMenuItem("Reifen", "Reifen ändern"));
+let wheels = (new NativeUI.UIMenuItem("> Reifen", "Reifen ändern"));
 bennys.AddItem(wheels);
-let plates = new NativeUI.UIMenuListItem(
-    "Kennzeichen",
-    "Kennzeichen ändern",
-    new NativeUI.ItemsCollection(plateCollection)
-);
-bennys.AddItem(plates);
-
-    bennys.ItemSelect.on(item => {
-        if(item.Text == "Kennzeichen"){
-            let index = JSON.parse(item.Index);
-            alt.emitServer('changePlate', index);
-        }         
-    });
+let sonstiges = (new NativeUI.UIMenuItem("> Sonstiges", "Sonstiges ändern"));
+bennys.AddItem(sonstiges);
 
     //Paintmenu
     const paintMenu = new NativeUI.Menu("", "Lackierung ändern", new NativeUI.Point(1450, 50));
@@ -1218,16 +1207,18 @@ bennys.AddItem(plates);
     paintMenu.GetTitle().DropShadow = true;
     bennys.AddSubMenu(paintMenu, paintJob);
 
-    let primaryColor = (new NativeUI.UIMenuItem('Primärfarbe', 'Primärfarbe'));
+    let primaryColor = (new NativeUI.UIMenuItem('> Primärfarbe', 'Primärfarbe'));
     paintMenu.AddItem(primaryColor);
-    let secondaryColor = (new NativeUI.UIMenuItem('Sekundärfarbe', 'Sekundärfarbe'));
+    let secondaryColor = (new NativeUI.UIMenuItem('> Sekundärfarbe', 'Sekundärfarbe'));
     paintMenu.AddItem(secondaryColor);
-    let pearlColor = (new NativeUI.UIMenuItem('Perleffekt', 'Perleffekt'));
+    let pearlColor = (new NativeUI.UIMenuItem('> Perleffekt', 'Perleffekt'));
     paintMenu.AddItem(pearlColor);
-    let livery = (new NativeUI.UIMenuItem('Livery', 'Livery'));
+    let livery = (new NativeUI.UIMenuItem('> Livery', 'Livery'));
     paintMenu.AddItem(livery);
-    let wheelColor = (new NativeUI.UIMenuItem('Reifenfarbe', 'Reifenfarbe'));
+    let wheelColor = (new NativeUI.UIMenuItem('> Reifenfarbe', 'Reifenfarbe'));
     paintMenu.AddItem(wheelColor);
+    let interiorColor = (new NativeUI.UIMenuItem('> Innenraum Farbe', 'Innenraum Farbe anpassen'));
+    paintMenu.AddItem(interiorColor);
         
         //Primary Color Menu
         const primaryColorMenu = new NativeUI.Menu("", "Primärfarbe ändern", new NativeUI.Point(1450, 50));
@@ -1235,9 +1226,76 @@ bennys.AddItem(plates);
         primaryColorMenu.GetTitle().DropShadow = true;
         paintMenu.AddSubMenu(primaryColorMenu, primaryColor);
 
-            primaryColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
-                alt.emitServer('primaryColor', selectedItemIndex);            
-            });
+            let primaryMetallicColor = (new NativeUI.UIMenuItem('> Metallic Farben', 'Primär Metallic Farbe anpassen'));
+            primaryColorMenu.AddItem(primaryMetallicColor);
+            let primaryMattColor = (new NativeUI.UIMenuItem('> Matte Farben', 'Primär Matte Farbe anpassen'));
+            primaryColorMenu.AddItem(primaryMattColor);
+            let primaryUtilColor = (new NativeUI.UIMenuItem('> Util Farben', 'Primär Util Farbe anpassen'));
+            primaryColorMenu.AddItem(primaryUtilColor);
+            let primaryWornColor = (new NativeUI.UIMenuItem('> Worn Farben', 'Primär Worn Farbe anpassen'));
+            primaryColorMenu.AddItem(primaryWornColor);
+            let primarySonstigeColor = (new NativeUI.UIMenuItem('> Sonstige Farben', 'Primär Sonstige Farbe anpassen'));
+            primaryColorMenu.AddItem(primarySonstigeColor);
+
+                //Primary Metallic Menu
+                const primaryMetallicColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                primaryMetallicColorMenu.GetTitle().Scale = 1.2;
+                primaryMetallicColorMenu.GetTitle().DropShadow = true;
+                primaryColorMenu.AddSubMenu(primaryMetallicColorMenu, primaryMetallicColor);
+
+                primaryMetallicColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = metallicColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('primaryColor', colorIndex);            
+                });
+
+                //Primary Matt Menu
+                const primaryMattColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                primaryMattColorMenu.GetTitle().Scale = 1.2;
+                primaryMattColorMenu.GetTitle().DropShadow = true;
+                primaryColorMenu.AddSubMenu(primaryMattColorMenu, primaryMattColor);
+
+                primaryMattColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = mattColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('primaryColor', colorIndex);            
+                });
+
+                //Primary Util Menu
+                const primaryUtilColorMenu = new NativeUI.Menu("", "Util Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                primaryUtilColorMenu.GetTitle().Scale = 1.2;
+                primaryUtilColorMenu.GetTitle().DropShadow = true;
+                primaryColorMenu.AddSubMenu(primaryUtilColorMenu, primaryUtilColor);
+
+                primaryUtilColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = utilColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('primaryColor', colorIndex);            
+                });
+
+                //Primary Worn Menu
+                const primaryWornColorMenu = new NativeUI.Menu("", "Worn Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                primaryWornColorMenu.GetTitle().Scale = 1.2;
+                primaryWornColorMenu.GetTitle().DropShadow = true;
+                primaryColorMenu.AddSubMenu(primaryWornColorMenu, primaryWornColor);
+
+                primaryWornColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = wornColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('primaryColor', colorIndex);            
+                });
+
+                //Primary Sonstige Menu
+                const primarySonstigeColorMenu = new NativeUI.Menu("", "Sonstige Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                primarySonstigeColorMenu.GetTitle().Scale = 1.2;
+                primarySonstigeColorMenu.GetTitle().DropShadow = true;
+                primaryColorMenu.AddSubMenu(primarySonstigeColorMenu, primarySonstigeColor);
+
+                primarySonstigeColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = sonstigeColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('primaryColor', colorIndex);            
+                });
             
         //Secondary Color Menu
         const secondaryColorMenu = new NativeUI.Menu("", "Sekundärfarbe ändern", new NativeUI.Point(1450, 50));
@@ -1245,9 +1303,76 @@ bennys.AddItem(plates);
         secondaryColorMenu.GetTitle().DropShadow = true;
         paintMenu.AddSubMenu(secondaryColorMenu, secondaryColor);
 
-            secondaryColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
-                alt.emitServer('secondaryColor', selectedItemIndex);
-            });
+            let secondaryMetallicColor = (new NativeUI.UIMenuItem('> Metallic Farben', 'Primär Metallic Farbe anpassen'));
+            secondaryColorMenu.AddItem(secondaryMetallicColor);
+            let secondaryMattColor = (new NativeUI.UIMenuItem('> Matte Farben', 'Primär Matte Farbe anpassen'));
+            secondaryColorMenu.AddItem(secondaryMattColor);
+            let secondaryUtilColor = (new NativeUI.UIMenuItem('> Util Farben', 'Primär Util Farbe anpassen'));
+            secondaryColorMenu.AddItem(secondaryUtilColor);
+            let secondaryWornColor = (new NativeUI.UIMenuItem('> Worn Farben', 'Primär Worn Farbe anpassen'));
+            secondaryColorMenu.AddItem(secondaryWornColor);
+            let secondarySonstigeColor = (new NativeUI.UIMenuItem('> Sonstige Farben', 'Primär Sonstige Farbe anpassen'));
+            secondaryColorMenu.AddItem(secondarySonstigeColor);
+
+                //secondary Metallic Menu
+                const secondaryMetallicColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                secondaryMetallicColorMenu.GetTitle().Scale = 1.2;
+                secondaryMetallicColorMenu.GetTitle().DropShadow = true;
+                secondaryColorMenu.AddSubMenu(secondaryMetallicColorMenu, secondaryMetallicColor);
+
+                secondaryMetallicColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = metallicColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('secondaryColor', colorIndex);            
+                });
+
+                //secondary Matt Menu
+                const secondaryMattColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                secondaryMattColorMenu.GetTitle().Scale = 1.2;
+                secondaryMattColorMenu.GetTitle().DropShadow = true;
+                secondaryColorMenu.AddSubMenu(secondaryMattColorMenu, secondaryMattColor);
+
+                secondaryMattColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = mattColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('secondaryColor', colorIndex);            
+                });
+
+                //secondary Util Menu
+                const secondaryUtilColorMenu = new NativeUI.Menu("", "Util Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                secondaryUtilColorMenu.GetTitle().Scale = 1.2;
+                secondaryUtilColorMenu.GetTitle().DropShadow = true;
+                secondaryColorMenu.AddSubMenu(secondaryUtilColorMenu, secondaryUtilColor);
+
+                secondaryUtilColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = utilColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('secondaryColor', colorIndex);            
+                });
+
+                //secondary Worn Menu
+                const secondaryWornColorMenu = new NativeUI.Menu("", "Worn Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                secondaryWornColorMenu.GetTitle().Scale = 1.2;
+                secondaryWornColorMenu.GetTitle().DropShadow = true;
+                secondaryColorMenu.AddSubMenu(secondaryWornColorMenu, secondaryWornColor);
+
+                secondaryWornColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = wornColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('secondaryColor', colorIndex);            
+                });
+
+                //secondary Sonstige Menu
+                const secondarySonstigeColorMenu = new NativeUI.Menu("", "Sonstige Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                secondarySonstigeColorMenu.GetTitle().Scale = 1.2;
+                secondarySonstigeColorMenu.GetTitle().DropShadow = true;
+                secondaryColorMenu.AddSubMenu(secondarySonstigeColorMenu, secondarySonstigeColor);
+
+                secondarySonstigeColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = sonstigeColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('secondaryColor', colorIndex);            
+                });
 
         //Pearl Color Menu
         const pearlColorMenu = new NativeUI.Menu("", "Perleffekt ändern", new NativeUI.Point(1450, 50));
@@ -1255,9 +1380,76 @@ bennys.AddItem(plates);
         pearlColorMenu.GetTitle().DropShadow = true;
         paintMenu.AddSubMenu(pearlColorMenu, pearlColor);
             
-            pearlColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
-                alt.emitServer('pearlColor', selectedItemIndex);
-            });
+            let pearlMetallicColor = (new NativeUI.UIMenuItem('> Metallic Farben', 'Primär Metallic Farbe anpassen'));
+            pearlColorMenu.AddItem(pearlMetallicColor);
+            let pearlMattColor = (new NativeUI.UIMenuItem('> Matte Farben', 'Primär Matte Farbe anpassen'));
+            pearlColorMenu.AddItem(pearlMattColor);
+            let pearlUtilColor = (new NativeUI.UIMenuItem('> Util Farben', 'Primär Util Farbe anpassen'));
+            pearlColorMenu.AddItem(pearlUtilColor);
+            let pearlWornColor = (new NativeUI.UIMenuItem('> Worn Farben', 'Primär Worn Farbe anpassen'));
+            pearlColorMenu.AddItem(pearlWornColor);
+            let pearlSonstigeColor = (new NativeUI.UIMenuItem('> Sonstige Farben', 'Primär Sonstige Farbe anpassen'));
+            pearlColorMenu.AddItem(pearlSonstigeColor);
+
+                //pearl Metallic Menu
+                const pearlMetallicColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                pearlMetallicColorMenu.GetTitle().Scale = 1.2;
+                pearlMetallicColorMenu.GetTitle().DropShadow = true;
+                pearlColorMenu.AddSubMenu(pearlMetallicColorMenu, pearlMetallicColor);
+
+                pearlMetallicColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = metallicColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('pearlColor', colorIndex);            
+                });
+
+                //pearl Matt Menu
+                const pearlMattColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                pearlMattColorMenu.GetTitle().Scale = 1.2;
+                pearlMattColorMenu.GetTitle().DropShadow = true;
+                pearlColorMenu.AddSubMenu(pearlMattColorMenu, pearlMattColor);
+
+                pearlMattColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = mattColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('pearlColor', colorIndex);            
+                });
+
+                //pearl Util Menu
+                const pearlUtilColorMenu = new NativeUI.Menu("", "Util Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                pearlUtilColorMenu.GetTitle().Scale = 1.2;
+                pearlUtilColorMenu.GetTitle().DropShadow = true;
+                pearlColorMenu.AddSubMenu(pearlUtilColorMenu, pearlUtilColor);
+
+                pearlUtilColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = utilColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('pearlColor', colorIndex);            
+                });
+
+                //pearl Worn Menu
+                const pearlWornColorMenu = new NativeUI.Menu("", "Worn Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                pearlWornColorMenu.GetTitle().Scale = 1.2;
+                pearlWornColorMenu.GetTitle().DropShadow = true;
+                pearlColorMenu.AddSubMenu(pearlWornColorMenu, pearlWornColor);
+
+                pearlWornColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = wornColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('pearlColor', colorIndex);            
+                });
+
+                //pearl Sonstige Menu
+                const pearlSonstigeColorMenu = new NativeUI.Menu("", "Sonstige Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                pearlSonstigeColorMenu.GetTitle().Scale = 1.2;
+                pearlSonstigeColorMenu.GetTitle().DropShadow = true;
+                pearlColorMenu.AddSubMenu(pearlSonstigeColorMenu, pearlSonstigeColor);
+
+                pearlSonstigeColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = sonstigeColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('pearlColor', colorIndex);            
+                });
                     
         //Livery Menu
         const liveryMenu = new NativeUI.Menu("", "Livery ändern", new NativeUI.Point(1450, 50));
@@ -1270,21 +1462,205 @@ bennys.AddItem(plates);
         wheelColorMenu.GetTitle().Scale = 1.2;
         wheelColorMenu.GetTitle().DropShadow = true;
         paintMenu.AddSubMenu(wheelColorMenu, wheelColor);
+            
+            let wheelMetallicColor = (new NativeUI.UIMenuItem('> Metallic Farben', 'Primär Metallic Farbe anpassen'));
+            wheelColorMenu.AddItem(wheelMetallicColor);
+            let wheelMattColor = (new NativeUI.UIMenuItem('> Matte Farben', 'Primär Matte Farbe anpassen'));
+            wheelColorMenu.AddItem(wheelMattColor);
+            let wheelUtilColor = (new NativeUI.UIMenuItem('> Util Farben', 'Primär Util Farbe anpassen'));
+            wheelColorMenu.AddItem(wheelUtilColor);
+            let wheelWornColor = (new NativeUI.UIMenuItem('> Worn Farben', 'Primär Worn Farbe anpassen'));
+            wheelColorMenu.AddItem(wheelWornColor);
+            let wheelSonstigeColor = (new NativeUI.UIMenuItem('> Sonstige Farben', 'Primär Sonstige Farbe anpassen'));
+            wheelColorMenu.AddItem(wheelSonstigeColor);
 
-            //Wheel Colors
-            wheelColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
-                alt.emitServer('wheelColor', selectedItemIndex);
-            });
+                //wheel Metallic Menu
+                const wheelMetallicColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                wheelMetallicColorMenu.GetTitle().Scale = 1.2;
+                wheelMetallicColorMenu.GetTitle().DropShadow = true;
+                wheelColorMenu.AddSubMenu(wheelMetallicColorMenu, wheelMetallicColor);
+
+                wheelMetallicColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = metallicColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('wheelColor', colorIndex);            
+                });
+
+                //wheel Matt Menu
+                const wheelMattColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                wheelMattColorMenu.GetTitle().Scale = 1.2;
+                wheelMattColorMenu.GetTitle().DropShadow = true;
+                wheelColorMenu.AddSubMenu(wheelMattColorMenu, wheelMattColor);
+
+                wheelMattColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = mattColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('wheelColor', colorIndex);            
+                });
+
+                //wheel Util Menu
+                const wheelUtilColorMenu = new NativeUI.Menu("", "Util Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                wheelUtilColorMenu.GetTitle().Scale = 1.2;
+                wheelUtilColorMenu.GetTitle().DropShadow = true;
+                wheelColorMenu.AddSubMenu(wheelUtilColorMenu, wheelUtilColor);
+
+                wheelUtilColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = utilColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('wheelColor', colorIndex);            
+                });
+
+                //wheel Worn Menu
+                const wheelWornColorMenu = new NativeUI.Menu("", "Worn Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                wheelWornColorMenu.GetTitle().Scale = 1.2;
+                wheelWornColorMenu.GetTitle().DropShadow = true;
+                wheelColorMenu.AddSubMenu(wheelWornColorMenu, wheelWornColor);
+
+                wheelWornColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = wornColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('wheelColor', colorIndex);            
+                });
+
+                //wheel Sonstige Menu
+                const wheelSonstigeColorMenu = new NativeUI.Menu("", "Sonstige Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                wheelSonstigeColorMenu.GetTitle().Scale = 1.2;
+                wheelSonstigeColorMenu.GetTitle().DropShadow = true;
+                wheelColorMenu.AddSubMenu(wheelSonstigeColorMenu, wheelSonstigeColor);
+
+                wheelSonstigeColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = sonstigeColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('wheelColor', colorIndex);            
+                });
+
+        //Interior Colors
+        const interiorColorMenu = new NativeUI.Menu("", "Reifenfarbe ändern", new NativeUI.Point(1450, 50));
+        interiorColorMenu.GetTitle().Scale = 1.2;
+        interiorColorMenu.GetTitle().DropShadow = true;
+        paintMenu.AddSubMenu(interiorColorMenu, interiorColor);
+
+            
+            let interiorMetallicColor = (new NativeUI.UIMenuItem('> Metallic Farben', 'Primär Metallic Farbe anpassen'));
+            interiorColorMenu.AddItem(interiorMetallicColor);
+            let interiorMattColor = (new NativeUI.UIMenuItem('> Matte Farben', 'Primär Matte Farbe anpassen'));
+            interiorColorMenu.AddItem(interiorMattColor);
+            let interiorUtilColor = (new NativeUI.UIMenuItem('> Util Farben', 'Primär Util Farbe anpassen'));
+            interiorColorMenu.AddItem(interiorUtilColor);
+            let interiorWornColor = (new NativeUI.UIMenuItem('> Worn Farben', 'Primär Worn Farbe anpassen'));
+            interiorColorMenu.AddItem(interiorWornColor);
+            let interiorSonstigeColor = (new NativeUI.UIMenuItem('> Sonstige Farben', 'Primär Sonstige Farbe anpassen'));
+            interiorColorMenu.AddItem(interiorSonstigeColor);
+
+                //interior Metallic Menu
+                const interiorMetallicColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                interiorMetallicColorMenu.GetTitle().Scale = 1.2;
+                interiorMetallicColorMenu.GetTitle().DropShadow = true;
+                interiorColorMenu.AddSubMenu(interiorMetallicColorMenu, interiorMetallicColor);
+
+                interiorMetallicColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = metallicColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('interiorColor', colorIndex);            
+                });
+
+                //interior Matt Menu
+                const interiorMattColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                interiorMattColorMenu.GetTitle().Scale = 1.2;
+                interiorMattColorMenu.GetTitle().DropShadow = true;
+                interiorColorMenu.AddSubMenu(interiorMattColorMenu, interiorMattColor);
+
+                interiorMattColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = mattColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('interiorColor', colorIndex);            
+                });
+
+                //interior Util Menu
+                const interiorUtilColorMenu = new NativeUI.Menu("", "Util Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                interiorUtilColorMenu.GetTitle().Scale = 1.2;
+                interiorUtilColorMenu.GetTitle().DropShadow = true;
+                interiorColorMenu.AddSubMenu(interiorUtilColorMenu, interiorUtilColor);
+
+                interiorUtilColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = utilColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('interiorColor', colorIndex);            
+                });
+
+                //interior Worn Menu
+                const interiorWornColorMenu = new NativeUI.Menu("", "Worn Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                interiorWornColorMenu.GetTitle().Scale = 1.2;
+                interiorWornColorMenu.GetTitle().DropShadow = true;
+                interiorColorMenu.AddSubMenu(interiorWornColorMenu, interiorWornColor);
+
+                interiorWornColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = wornColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('interiorColor', colorIndex);            
+                });
+
+                //interior Sonstige Menu
+                const interiorSonstigeColorMenu = new NativeUI.Menu("", "Sonstige Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                interiorSonstigeColorMenu.GetTitle().Scale = 1.2;
+                interiorSonstigeColorMenu.GetTitle().DropShadow = true;
+                interiorColorMenu.AddSubMenu(interiorSonstigeColorMenu, interiorSonstigeColor);
+
+                interiorSonstigeColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    let colorIndex = sonstigeColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
+                    alt.emitServer('interiorColor', colorIndex);            
+                });
 
     //Create Color Items
-    colors.forEach(createItemColor);                       
+    metallicColors.forEach(createMetallicItemColor);                       
         
-    function createItemColor(item, index, arr) {
-        arr[index] = item.description;
-        primaryColorMenu.AddItem((new NativeUI.UIMenuItem(arr[index], "Fahrzeug "+arr[index]+" Färben")));
-        secondaryColorMenu.AddItem((new NativeUI.UIMenuItem(arr[index], "Fahrzeug "+arr[index]+" Färben")));
-        pearlColorMenu.AddItem((new NativeUI.UIMenuItem(arr[index], "Perleffekt "+arr[index]+" Färben")));
-        wheelColorMenu.AddItem((new NativeUI.UIMenuItem(arr[index], "Reifen "+arr[index]+" Färben")));
+    function createMetallicItemColor(item, index, arr) {
+        primaryMetallicColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Fahrzeug "+item.description+" Färben")));
+        secondaryMetallicColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Fahrzeug "+item.description+" Färben")));
+        pearlMetallicColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Perleffekt "+item.description+" Färben")));
+        wheelMetallicColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Reifen "+item.description+" Färben")));
+        interiorMetallicColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Reifen "+item.description+" Färben")));
+    }
+
+    mattColors.forEach(createMattItemColor);                       
+        
+    function createMattItemColor(item, index, arr) {
+        primaryMattColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Fahrzeug "+item.description+" Färben")));
+        secondaryMattColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Fahrzeug "+item.description+" Färben")));
+        pearlMattColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Perleffekt "+item.description+" Färben")));
+        wheelMattColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Reifen "+item.description+" Färben")));
+        interiorMattColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Reifen "+item.description+" Färben")));
+    }
+
+    utilColors.forEach(createUtilItemColor);                       
+        
+    function createUtilItemColor(item, index, arr) {
+        primaryUtilColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Fahrzeug "+item.description+" Färben")));
+        secondaryUtilColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Fahrzeug "+item.description+" Färben")));
+        pearlUtilColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Perleffekt "+item.description+" Färben")));
+        wheelUtilColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Reifen "+item.description+" Färben")));
+        interiorUtilColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Reifen "+item.description+" Färben")));
+    }
+
+    wornColors.forEach(createWornItemColor);                       
+        
+    function createWornItemColor(item, index, arr) {
+        primaryWornColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Fahrzeug "+item.description+" Färben")));
+        secondaryWornColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Fahrzeug "+item.description+" Färben")));
+        pearlWornColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Perleffekt "+item.description+" Färben")));
+        wheelWornColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Reifen "+item.description+" Färben")));
+        interiorWornColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Reifen "+item.description+" Färben")));
+    }
+
+    sonstigeColors.forEach(createSonstigeItemColor);                       
+        
+    function createSonstigeItemColor(item, index, arr) {
+        primarySonstigeColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Fahrzeug "+item.description+" Färben")));
+        secondarySonstigeColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Fahrzeug "+item.description+" Färben")));
+        pearlSonstigeColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Perleffekt "+item.description+" Färben")));
+        wheelSonstigeColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Reifen "+item.description+" Färben")));
+        interiorSonstigeColorMenu.AddItem((new NativeUI.UIMenuItem(item.description, "Reifen "+item.description+" Färben")));
     }
 
     //Parts Menu
@@ -1325,7 +1701,8 @@ bennys.AddItem(plates);
                 var spoilers = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(spoiler_x)
+                    new NativeUI.ItemsCollection(spoiler_x),
+                    currentmods.spoiler
                 ));
             }
 
@@ -1349,7 +1726,8 @@ bennys.AddItem(plates);
                 var fbumpers = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(fbumper_x)
+                    new NativeUI.ItemsCollection(fbumper_x),
+                    currentmods.fbumper
                 ));
             }
 
@@ -1373,7 +1751,8 @@ bennys.AddItem(plates);
                 var rbumpers = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(rbumper_x)
+                    new NativeUI.ItemsCollection(rbumper_x),
+                    currentmods.rbumper
                 ));
             }
 
@@ -1397,7 +1776,8 @@ bennys.AddItem(plates);
                 var sskirts = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(sskirt_x)
+                    new NativeUI.ItemsCollection(sskirt_x),
+                    currentmods.sskirt
                 ));
             }
 
@@ -1421,7 +1801,8 @@ bennys.AddItem(plates);
                 var exhaust = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(exhaust_x)
+                    new NativeUI.ItemsCollection(exhaust_x),
+                    currentmods.exhaust
                 ));
             }
 
@@ -1445,7 +1826,8 @@ bennys.AddItem(plates);
                 var frame = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(frame_x)
+                    new NativeUI.ItemsCollection(frame_x),
+                    currentmods.frame
                 ));
             }
             
@@ -1469,7 +1851,8 @@ bennys.AddItem(plates);
                 var grille = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(grille_x)
+                    new NativeUI.ItemsCollection(grille_x),
+                    currentmods.grille
                 ));
             }
 
@@ -1493,7 +1876,8 @@ bennys.AddItem(plates);
                 var hood = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(hood_x)
+                    new NativeUI.ItemsCollection(hood_x),
+                    currentmods.hood
                 ));
             }
 
@@ -1517,7 +1901,8 @@ bennys.AddItem(plates);
                 var lwing = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(lwing_x)
+                    new NativeUI.ItemsCollection(lwing_x),
+                    currentmods.lwing
                 ));
             }
 
@@ -1541,7 +1926,8 @@ bennys.AddItem(plates);
                 var rwing = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(rwing_x)
+                    new NativeUI.ItemsCollection(rwing_x),
+                    currentmods.rwing
                 ));
             }
 
@@ -1565,7 +1951,8 @@ bennys.AddItem(plates);
                 var roof = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(roof_x)
+                    new NativeUI.ItemsCollection(roof_x),
+                    currentmods.roof
                 ));
             }
 
@@ -1589,7 +1976,8 @@ bennys.AddItem(plates);
                 var engine = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(engine_x)
+                    new NativeUI.ItemsCollection(engine_x),
+                    currentmods.engine
                 ));
             }
 
@@ -1613,7 +2001,8 @@ bennys.AddItem(plates);
                 var brakes = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(brakes_x)
+                    new NativeUI.ItemsCollection(brakes_x),
+                    currentmods.brakes
                 ));
             }
 
@@ -1637,7 +2026,8 @@ bennys.AddItem(plates);
                 var trans = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(trans_x)
+                    new NativeUI.ItemsCollection(trans_x),
+                    currentmods.trans
                 ));
             }
             
@@ -1661,7 +2051,8 @@ bennys.AddItem(plates);
                 var horns = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(horns_x)
+                    new NativeUI.ItemsCollection(horns_x),
+                    currentmods.horns
                 ));
             }
 
@@ -1685,7 +2076,8 @@ bennys.AddItem(plates);
                 var suspension = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(suspension_x)
+                    new NativeUI.ItemsCollection(suspension_x),
+                    currentmods.suspension
                 ));
             }
 
@@ -1709,7 +2101,8 @@ bennys.AddItem(plates);
                 var armor = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(armor_x)
+                    new NativeUI.ItemsCollection(armor_x),
+                    currentmods.armor
                 ));
             }
 
@@ -1733,7 +2126,8 @@ bennys.AddItem(plates);
                 var turbo = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(turbo_x)
+                    new NativeUI.ItemsCollection(turbo_x),
+                    currentmods.turbo
                 ));
             }
             
@@ -1757,7 +2151,8 @@ bennys.AddItem(plates);
                 var plateh = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(plateh_x)
+                    new NativeUI.ItemsCollection(plateh_x),
+                    currentmods.plateh
                 ));
             }
 
@@ -1781,7 +2176,8 @@ bennys.AddItem(plates);
                 var platev = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(platev_x)
+                    new NativeUI.ItemsCollection(platev_x),
+                    currentmods.platev
                 ));
             }
 
@@ -1805,7 +2201,8 @@ bennys.AddItem(plates);
                 var trimdesign = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(trimdesign_x)
+                    new NativeUI.ItemsCollection(trimdesign_x),
+                    currentmods.trimdesign
                 ));
             }
 
@@ -1829,7 +2226,8 @@ bennys.AddItem(plates);
                 var ornaments = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(ornaments_x)
+                    new NativeUI.ItemsCollection(ornaments_x),
+                    currentmods.ornaments
                 ));
             }
 
@@ -1853,7 +2251,8 @@ bennys.AddItem(plates);
                 var dialdesign = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(dialdesign_x)
+                    new NativeUI.ItemsCollection(dialdesign_x),
+                    currentmods.dialdesign
                 ));
             }
 
@@ -1877,7 +2276,8 @@ bennys.AddItem(plates);
                 var doorint = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(doorint_x)
+                    new NativeUI.ItemsCollection(doorint_x),
+                    currentmods.doorint
                 ));
             }
 
@@ -1901,7 +2301,8 @@ bennys.AddItem(plates);
                 var seats = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(seats_x)
+                    new NativeUI.ItemsCollection(seats_x),
+                    currentmods.seats
                 ));
             }
 
@@ -1925,7 +2326,8 @@ bennys.AddItem(plates);
                 var steeringw = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(steeringw_x)
+                    new NativeUI.ItemsCollection(steeringw_x),
+                    currentmods.steeringw
                 ));
             }
 
@@ -1949,7 +2351,8 @@ bennys.AddItem(plates);
                 var shiftlever = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(shiftlever_x)
+                    new NativeUI.ItemsCollection(shiftlever_x),
+                    currentmods.shiftlever
                 ));
             }
 
@@ -1973,7 +2376,8 @@ bennys.AddItem(plates);
                 var plaques = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(plaques_x)
+                    new NativeUI.ItemsCollection(plaques_x),
+                    currentmods.plaques
                 ));
             }
 
@@ -1997,7 +2401,8 @@ bennys.AddItem(plates);
                 var hydraulics = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(hydraulics_x)
+                    new NativeUI.ItemsCollection(hydraulics_x),
+                    currentmods.hydraulics
                 ));
             }
 
@@ -2021,7 +2426,8 @@ bennys.AddItem(plates);
                 var engineb = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(engineb_x)
+                    new NativeUI.ItemsCollection(engineb_x),
+                    currentmods.engineb
                 ));
             }
 
@@ -2045,7 +2451,8 @@ bennys.AddItem(plates);
                 var airfilter = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(airfilter_x)
+                    new NativeUI.ItemsCollection(airfilter_x),
+                    currentmods.airfilter
                 ));
             }
             
@@ -2069,7 +2476,8 @@ bennys.AddItem(plates);
                 var strutbar = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(strutbar_x)
+                    new NativeUI.ItemsCollection(strutbar_x),
+                    currentmods.strutbar
                 ));
             }
             
@@ -2093,7 +2501,8 @@ bennys.AddItem(plates);
                 var archcover = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(archcover_x)
+                    new NativeUI.ItemsCollection(archcover_x),
+                    currentmods.archcover
                 ));
             }
 
@@ -2117,7 +2526,8 @@ bennys.AddItem(plates);
                 var antenna = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(antenna_x)
+                    new NativeUI.ItemsCollection(antenna_x),
+                    currentmods.antenna
                 ));
             }
 
@@ -2141,7 +2551,8 @@ bennys.AddItem(plates);
                 var exteriorp = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(exteriorp_x)
+                    new NativeUI.ItemsCollection(exteriorp_x),
+                    currentmods.exteriorp
                 ));
             }
 
@@ -2165,7 +2576,8 @@ bennys.AddItem(plates);
                 var tank = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(tank_x)
+                    new NativeUI.ItemsCollection(tank_x),
+                    currentmods.tank
                 ));
             }
 
@@ -2189,7 +2601,8 @@ bennys.AddItem(plates);
                 var door = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(door_x)
+                    new NativeUI.ItemsCollection(door_x),
+                    currentmods.door
                 ));
             }
 
@@ -2213,7 +2626,8 @@ bennys.AddItem(plates);
                 var wroh = (new NativeUI.UIMenuListItem(
                     partList[modtype],
                     partList[modtype]+" anpassen",
-                    new NativeUI.ItemsCollection(wroh_x)
+                    new NativeUI.ItemsCollection(wroh_x),
+                    currentmods.wroh
                 ));
             }
 
@@ -2555,9 +2969,9 @@ bennys.AddItem(plates);
     lightsMenu.GetTitle().DropShadow = true;
     bennys.AddSubMenu(lightsMenu, lights);
 
-    let spotlight = (new NativeUI.UIMenuItem("Scheinwerfer", "Scheinwerfer ändern"));
+    let spotlight = (new NativeUI.UIMenuItem("> Scheinwerfer", "Scheinwerfer ändern"));
     lightsMenu.AddItem(spotlight);
-    let neon = (new NativeUI.UIMenuItem("Unterboden", "Unterboden ändern"));
+    let neon = (new NativeUI.UIMenuItem("> Unterboden", "Unterboden ändern"));
     lightsMenu.AddItem(neon);
 
 
@@ -3025,44 +3439,335 @@ bennys.AddItem(plates);
                 alt.emitServer('changeWheels', 12, mod_index);
             }
         });
+
+    //SonstigesMenu
+    const sonstigesMenu = new NativeUI.Menu("", "Reifen ändern", new NativeUI.Point(1450, 50));
+    sonstigesMenu.GetTitle().Scale = 1.2;
+    sonstigesMenu.GetTitle().DropShadow = true;
+    bennys.AddSubMenu(sonstigesMenu, sonstiges);
+
+        let plates = new NativeUI.UIMenuListItem(
+            "Kennzeichen",
+            "Kennzeichen ändern",
+            new NativeUI.ItemsCollection(plateCollection)
+        );
+        
+        sonstigesMenu.AddItem(plates);
+        
+        sonstigesMenu.ItemSelect.on(item => {
+            if(item.Text == "Kennzeichen"){
+                let index = JSON.parse(item.Index);
+                alt.emitServer('changePlate', index);
+            }         
+        });
+
+        let extras = (new NativeUI.UIMenuItem("> Extras", "Extras ändern"));
+        sonstigesMenu.AddItem(extras);
+
+        let windows = (new NativeUI.UIMenuItem("> Fensterönung", "Fensterönung ändern"));
+        sonstigesMenu.AddItem(windows);
+
+        //ExtraMenu
+        const extraMenu = new NativeUI.Menu("", "Extras ändern", new NativeUI.Point(1450, 50));
+        extraMenu.GetTitle().Scale = 1.2;
+        extraMenu.GetTitle().DropShadow = true;
+        sonstigesMenu.AddSubMenu(extraMenu, extras);
+        
+            alt.onServer('sendExtraCount', (vehicle) => {
+                extraMenu.Clear();
+                let extra_exists = false;
+                let existing_extras = [];
+                for (let i = 0; i <= 20; i++) { 
+                    if (native.doesExtraExist(vehicle, i)){
+                        extra_exists = true;
+                        existing_extras.push(i);
+                        let item;
+                        if(native.isVehicleExtraTurnedOn(vehicle, i)){
+                            item = new NativeUI.UIMenuItem(`Extra ${i}`, `Extra ${i} ändern`, i);
+                            extraMenu.AddItem(item);
+                            item.SetRightBadge(12);
+                        } else {
+                            item = new NativeUI.UIMenuItem(`Extra ${i}`, `Extra ${i} ändern`, i);
+                            extraMenu.AddItem(item);
+                        }
+                    }
+                }
+                if(extra_exists == false) {
+                    extraMenu.AddItem(new NativeUI.UIMenuItem(`Keine Extras`, `Keine Extras gefunden!`));
+                }
+
+                extraMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    alt.log("selectedItemIndex",selectedItemIndex);
+                    let extra_index = existing_extras[selectedItemIndex];
+                    alt.log(extra_index);
+                    
+                    if(native.isVehicleExtraTurnedOn(vehicle, extra_index)){
+                        native.setVehicleExtra(vehicle, extra_index, 1);
+                        selectedItem.SetRightBadge(0);
+                    } else {
+                        native.setVehicleExtra(vehicle, extra_index, 0);
+                        selectedItem.SetRightBadge(12);
+                    }
+                });
+            });
+        
+        //WindowMenu
+        const windowMenu = new NativeUI.Menu("", "Fenstertönung ändern", new NativeUI.Point(1450, 50));
+        windowMenu.GetTitle().Scale = 1.2;
+        windowMenu.GetTitle().DropShadow = true;
+        sonstigesMenu.AddSubMenu(windowMenu, windows);
+
+        let window_none = (new NativeUI.UIMenuItem("None", "None ändern"));
+        windowMenu.AddItem(window_none);
+        
+        let window_pureBlack = (new NativeUI.UIMenuItem("Pure Black", "Pure Black ändern"));
+        windowMenu.AddItem(window_pureBlack);
+        
+        let window_darkSmoke = (new NativeUI.UIMenuItem("Dark Smoke", "Dark Smoke ändern"));
+        windowMenu.AddItem(window_darkSmoke);
+        
+        let window_lightSmoke = (new NativeUI.UIMenuItem("Light Smoke", "Light Smoke ändern"));
+        windowMenu.AddItem(window_lightSmoke);
+        
+        let window_stock = (new NativeUI.UIMenuItem("Stock", "Stock ändern"));
+        windowMenu.AddItem(window_stock);
+        
+        let window_limo = (new NativeUI.UIMenuItem("Limo", "Limo ändern"));
+        windowMenu.AddItem(window_limo);
+        
+        let window_green = (new NativeUI.UIMenuItem("Green", "Green ändern"));
+        windowMenu.AddItem(window_green);
+
+        windowMenu.ItemSelect.on(item => {
+            if(item.Text == "None"){
+                alt.emitServer('setWindow', 0);                    
+            }
+            if(item.Text == "Pure Black"){
+                alt.emitServer('setWindow', 1);                    
+            }
+            if(item.Text == "Dark Smoke"){
+                alt.emitServer('setWindow', 2);                    
+            }
+            if(item.Text == "Light Smoke"){
+                alt.emitServer('setWindow', 3);                    
+            }
+            if(item.Text == "Stock"){
+                alt.emitServer('setWindow', 4);                    
+            }
+            if(item.Text == "Limo"){
+                alt.emitServer('setWindow', 5);                    
+            }
+            if(item.Text == "Green"){
+                alt.emitServer('setWindow', 6);                    
+            }
+        });
+
+
+
    
 //Keys zuweisen
 alt.on('keyup', (key) => {
     if (key === 116) {
-        if (bennys.Visible || paintMenu.Visible || primaryColorMenu.Visible || secondaryColorMenu.Visible || lightsMenu.Visible || spotlight.Visible || liveryMenu.Visible || partsMenu.Visible || performanceMenu.Visible || wheelsMenu.Visible || wheelColorMenu.Visible || pearlColorMenu.Visible){
-            bennys.Close();
-            paintMenu.Close();
-            primaryColorMenu.Close();
-            secondaryColorMenu.Close();
-            lightsMenu.Close();
-            spotlightMenu.Close();
-            neonMenu.Close();
-            liveryMenu.Close();
-            partsMenu.Close();
-            performanceMenu.Close();
-            wheelsMenu.Close();
-            wheelColorMenu.Close();
+        if(alt.Player.local.vehicle){
+            if (
+                bennys.Visible || 
+                paintMenu.Visible ||
+                primaryColorMenu.Visible || 
+                secondaryColorMenu.Visible || 
+                lightsMenu.Visible || 
+                spotlight.Visible || 
+                liveryMenu.Visible || 
+                partsMenu.Visible || 
+                performanceMenu.Visible || 
+                wheelsMenu.Visible || 
+                wheelColorMenu.Visible || 
+                pearlColorMenu.Visible || 
+                sonstigesMenu.Visible || 
+                extraMenu.Visible || 
+                windowMenu.Visible || 
+                interiorColorMenu.Visible || 
+    
+                primaryMetallicColorMenu.Visible ||
+                primaryMattColorMenu.Visible ||
+                primaryUtilColorMenu.Visible ||
+                primaryWornColorMenu.Visible ||
+                primarySonstigeColorMenu.Visible ||
+    
+                secondaryMetallicColorMenu.Visible ||
+                secondaryMattColorMenu.Visible ||
+                secondaryUtilColorMenu.Visible ||
+                secondaryWornColorMenu.Visible ||
+                secondarySonstigeColorMenu.Visible ||
+    
+                pearlMetallicColorMenu.Visible ||
+                pearlMattColorMenu.Visible ||
+                pearlUtilColorMenu.Visible ||
+                pearlWornColorMenu.Visible ||
+                pearlSonstigeColorMenu.Visible ||
+    
+                wheelMetallicColorMenu.Visible ||
+                wheelMattColorMenu.Visible ||
+                wheelUtilColorMenu.Visible ||
+                wheelWornColorMenu.Visible ||
+                wheelSonstigeColorMenu.Visible ||
+    
+                interiorMetallicColorMenu.Visible ||
+                interiorMattColorMenu.Visible ||
+                interiorUtilColorMenu.Visible ||
+                interiorWornColorMenu.Visible ||
+                interiorSonstigeColorMenu.Visible
+            ){
+                bennys.Close();
+                paintMenu.Close();
+                primaryColorMenu.Close();
+                secondaryColorMenu.Close();
+                lightsMenu.Close();
+                spotlightMenu.Close();
+                neonMenu.Close();
+                liveryMenu.Close();
+                partsMenu.Close();
+                performanceMenu.Close();
+                wheelsMenu.Close();
+                wheelColorMenu.Close();
+                sonstigesMenu.Close();
+                extraMenu.Close();
+                windowMenu.Close();
+                interiorColorMenu.Close();
 
-        } else{
-            bennys.Open();
-            alt.emitServer('getModsCount');
+                primaryMetallicColorMenu.Close();
+                primaryMattColorMenu.Close();
+                primaryUtilColorMenu.Close();
+                primaryWornColorMenu.Close();
+                primarySonstigeColorMenu.Close();
+
+                secondaryMetallicColorMenu.Close();
+                secondaryMattColorMenu.Close();
+                secondaryUtilColorMenu.Close();
+                secondaryWornColorMenu.Close();
+                secondarySonstigeColorMenu.Close();
+
+                pearlMetallicColorMenu.Close();
+                pearlMattColorMenu.Close();
+                pearlUtilColorMenu.Close();
+                pearlWornColorMenu.Close();
+                pearlSonstigeColorMenu.Close();
+
+                wheelMetallicColorMenu.Close();
+                wheelMattColorMenu.Close();
+                wheelUtilColorMenu.Close();
+                wheelWornColorMenu.Close();
+                wheelSonstigeColorMenu.Close();
+
+                interiorMetallicColorMenu.Close();
+                interiorMattColorMenu.Close();
+                interiorUtilColorMenu.Close();
+                interiorWornColorMenu.Close();
+                interiorSonstigeColorMenu.Close();
+
+            } else{
+                bennys.Open();
+                alt.emitServer('getModsCount');
+                alt.emitServer('getExtraCount');
+            }
         }
     }
-    if (key === 27 || key === 70) {
-        if (bennys.Visible || paintMenu.Visible || primaryColorMenu.Visible || secondaryColorMenu.Visible || lightsMenu.Visible || spotlight.Visible || liveryMenu.Visible || partsMenu.Visible || performanceMenu.Visible || wheelsMenu.Visible || wheelColorMenu.Visible || pearlColorMenu.Visible){
-            bennys.Close();
-            paintMenu.Close();
-            primaryColorMenu.Close();
-            secondaryColorMenu.Close();
-            lightsMenu.Close();
-            spotlightMenu.Close();
-            neonMenu.Close();
-            liveryMenu.Close();
-            partsMenu.Close();
-            performanceMenu.Close();
-            wheelsMenu.Close();
-            wheelColorMenu.Close();
-            pearlColorMenu.Close();
+    if (key === 27) {
+        extraMenu.Close();
+        if (
+            bennys.Visible || 
+            paintMenu.Visible ||
+            primaryColorMenu.Visible || 
+            secondaryColorMenu.Visible || 
+            lightsMenu.Visible || 
+            spotlight.Visible || 
+            liveryMenu.Visible || 
+            partsMenu.Visible || 
+            performanceMenu.Visible || 
+            wheelsMenu.Visible || 
+            wheelColorMenu.Visible || 
+            pearlColorMenu.Visible || 
+            sonstigesMenu.Visible || 
+            extraMenu.Visible || 
+            windowMenu.Visible || 
+            interiorColorMenu.Visible || 
+
+            primaryMetallicColorMenu.Visible ||
+            primaryMattColorMenu.Visible ||
+            primaryUtilColorMenu.Visible ||
+            primaryWornColorMenu.Visible ||
+            primarySonstigeColorMenu.Visible ||
+
+            secondaryMetallicColorMenu.Visible ||
+            secondaryMattColorMenu.Visible ||
+            secondaryUtilColorMenu.Visible ||
+            secondaryWornColorMenu.Visible ||
+            secondarySonstigeColorMenu.Visible ||
+
+            pearlMetallicColorMenu.Visible ||
+            pearlMattColorMenu.Visible ||
+            pearlUtilColorMenu.Visible ||
+            pearlWornColorMenu.Visible ||
+            pearlSonstigeColorMenu.Visible ||
+
+            wheelMetallicColorMenu.Visible ||
+            wheelMattColorMenu.Visible ||
+            wheelUtilColorMenu.Visible ||
+            wheelWornColorMenu.Visible ||
+            wheelSonstigeColorMenu.Visible ||
+
+            interiorMetallicColorMenu.Visible ||
+            interiorMattColorMenu.Visible ||
+            interiorUtilColorMenu.Visible ||
+            interiorWornColorMenu.Visible ||
+            interiorSonstigeColorMenu.Visible
+        ){
+        bennys.Close();
+        paintMenu.Close();
+        primaryColorMenu.Close();
+        secondaryColorMenu.Close();
+        lightsMenu.Close();
+        spotlightMenu.Close();
+        neonMenu.Close();
+        liveryMenu.Close();
+        partsMenu.Close();
+        performanceMenu.Close();
+        wheelsMenu.Close();
+        wheelColorMenu.Close();
+        pearlColorMenu.Close();
+        sonstigesMenu.Close();
+        extraMenu.Close();
+        windowMenu.Close();
+        interiorColorMenu.Close();
+
+        primaryMetallicColorMenu.Close();
+        primaryMattColorMenu.Close();
+        primaryUtilColorMenu.Close();
+        primaryWornColorMenu.Close();
+        primarySonstigeColorMenu.Close();
+
+        secondaryMetallicColorMenu.Close();
+        secondaryMattColorMenu.Close();
+        secondaryUtilColorMenu.Close();
+        secondaryWornColorMenu.Close();
+        secondarySonstigeColorMenu.Close();
+
+        pearlMetallicColorMenu.Close();
+        pearlMattColorMenu.Close();
+        pearlUtilColorMenu.Close();
+        pearlWornColorMenu.Close();
+        pearlSonstigeColorMenu.Close();
+
+        wheelMetallicColorMenu.Close();
+        wheelMattColorMenu.Close();
+        wheelUtilColorMenu.Close();
+        wheelWornColorMenu.Close();
+        wheelSonstigeColorMenu.Close();
+
+        interiorMetallicColorMenu.Close();
+        interiorMattColorMenu.Close();
+        interiorUtilColorMenu.Close();
+        interiorWornColorMenu.Close();
+        interiorSonstigeColorMenu.Close();
         }
     }
 });
@@ -3118,6 +3823,39 @@ performanceMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, curr
 wheelsMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
 wheelColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
 pearlColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+sonstigesMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+extraMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+windowMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+interiorColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+primaryMetallicColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+primaryMattColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+primaryUtilColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+primaryWornColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+primarySonstigeColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+
+secondaryMetallicColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+secondaryMattColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+secondaryUtilColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+secondaryWornColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+secondarySonstigeColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+
+pearlMetallicColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+pearlMattColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+pearlUtilColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+pearlWornColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+pearlSonstigeColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+
+wheelMetallicColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+wheelMattColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+wheelUtilColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+wheelWornColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+wheelSonstigeColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+
+interiorMetallicColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+interiorMattColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+interiorUtilColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+interiorWornColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+interiorSonstigeColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
 
 alt.onServer('getNumVehicleMods', (vehicle, modType) => {
     let modTypeCount = native.getNumVehicleMods(vehicle, modType);
