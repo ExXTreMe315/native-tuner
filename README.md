@@ -1,9 +1,9 @@
 # Alt:V Native-UI Tunung Menü (Outdated)
 
 Einfaches Tuning Menü mit NativeUI für Alt:V von [ExXTreMe](https://github.com/ExXTreMe315)
-<span style="color:red">ACHTUNG!</span>
-Das Menü ist seid AltV Version 13 nicht mehr aktuell und funktioniert nicht voll umfänglich
-Eine Funktionierende Version folgt bald
+<br><span style="color:red">ACHTUNG!</span>
+<br>Das Menü ist seid AltV Version 13 nicht mehr aktuell und funktioniert nicht voll umfänglich
+<br>Eine Funktionierende Version folgt bald
 
 ## Features
 
