@@ -12,6 +12,6 @@ export default class InstructionalButton {
         this._itemBind = item;
     }
     GetButtonId() {
-        return this._usingControls ? game.getControlInstructionalButton(2, this._buttonControl, false) : "t_" + this._buttonString;
+        return this._usingControls ? game.getControlInstructionalButtonsString(2, this._buttonControl, false) : "t_" + this._buttonString;
     }
 }

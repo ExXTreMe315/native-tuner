@@ -439,7 +439,7 @@ export default class NativeUI {
         return false;
     }
     IsMouseInListItemArrows(item, topLeft, safezone) {
-        game.beginTextCommandGetWidth("jamyfafi");
+        game.beginTextCommandGetScreenWidthOfDisplayText("jamyfafi");
         game.addTextComponentSubstringPlayerName(item.Text);
         let res = Screen.ResolutionMaintainRatio;
         let screenw = res.Width;
@@ -447,7 +447,7 @@ export default class NativeUI {
         const height = 1080.0;
         const ratio = screenw / screenh;
         let width = height * ratio;
-        const labelSize = game.endTextCommandGetWidth(false) * width * 0.35;
+        const labelSize = game.endTextCommandGetScreenWidthOfDisplayText(false) * width * 0.35;
         const labelSizeX = 5 + labelSize + 10;
         const arrowSizeX = 431 - labelSizeX;
         return Screen.IsMouseInBounds(topLeft, new Size(labelSizeX, 38))
@@ -744,8 +744,8 @@ export default class NativeUI {
         this._instructionalButtonsScaleform.callFunction("CLEAR_ALL");
         this._instructionalButtonsScaleform.callFunction("TOGGLE_MOUSE_BUTTONS", 0);
         this._instructionalButtonsScaleform.callFunction("CREATE_CONTAINER");
-        this._instructionalButtonsScaleform.callFunction("SET_DATA_SLOT", 0, game.getControlInstructionalButton(2, Control.PhoneSelect, false), this.SelectTextLocalized);
-        this._instructionalButtonsScaleform.callFunction("SET_DATA_SLOT", 1, game.getControlInstructionalButton(2, Control.PhoneCancel, false), this.BackTextLocalized);
+        this._instructionalButtonsScaleform.callFunction("SET_DATA_SLOT", 0, game.getControlInstructionalButtonsString(2, Control.PhoneSelect, false), this.SelectTextLocalized);
+        this._instructionalButtonsScaleform.callFunction("SET_DATA_SLOT", 1, game.getControlInstructionalButtonsString(2, Control.PhoneCancel, false), this.BackTextLocalized);
         let count = 2;
         this._instructionalButtons.filter(b => b.ItemBind == null || this.MenuItems[this.CurrentSelection] == b.ItemBind).forEach((button) => {
             this._instructionalButtonsScaleform.callFunction("SET_DATA_SLOT", count, button.GetButtonId(), button.Text);

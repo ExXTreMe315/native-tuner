@@ -2,7 +2,7 @@ import * as alt from 'alt-client';
 import game from 'natives';
 import Size from "./Size";
 import Text from '../modules/Text';
-const gameScreen = game.getActiveScreenResolution(0, 0);
+const gameScreen = game.getActualScreenResolution(0, 0);
 export default class Screen {
     static get ResolutionMaintainRatio() {
         const ratio = Screen.Width / Screen.Height;
@@ -27,16 +27,16 @@ export default class Screen {
             (mousePosition.Y > topLeft.Y && mousePosition.Y < topLeft.Y + boxSize.Height));
     }
     static GetTextWidth(text, font, scale) {
-        game.beginTextCommandGetWidth("CELL_EMAIL_BCON");
+        game.beginTextCommandGetScreenWidthOfDisplayText("CELL_EMAIL_BCON");
         Text.AddLongString(text);
         game.setTextFont(font);
         game.setTextScale(1.0, scale);
-        const width = game.endTextCommandGetWidth(true);
+        const width = game.endTextCommandGetScreenWidthOfDisplayText(true);
         const res = Screen.ResolutionMaintainRatio;
         return res.Width * width;
     }
     static GetLineCount(text, position, font, scale, wrap) {
-        game.beginTextCommandLineCount("CELL_EMAIL_BCON");
+        game.beginTextCommandGetNumberOfLinesForString("CELL_EMAIL_BCON");
         Text.AddLongString(text);
         const res = Screen.ResolutionMaintainRatio;
         const x = position.X / res.Width;
@@ -48,7 +48,7 @@ export default class Screen {
             const end = start + (wrap / res.Width);
             game.setTextWrap(x, end);
         }
-        let lineCount = game.endTextCommandLineCount(x, y);
+        let lineCount = game.endTextCommandGetNumberOfLinesForString(x, y);
         return lineCount;
     }
 }
