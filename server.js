@@ -8,6 +8,7 @@ alt.onClient('getModsCount', (player, type, nblivery, nbroofs) => {
         vehicle.modKit = 1;
     } catch (error) {
         vehicle.modKit = 0;
+        console.log(error);
     }
     
     let modscount = {}
