@@ -3473,7 +3473,8 @@ bennys.AddItem(sonstiges);
         extraMenu.GetTitle().DropShadow = true;
         sonstigesMenu.AddSubMenu(extraMenu, extras);
         
-            alt.onServer('sendExtraCount', (vehicle) => {
+            alt.on('setExtra', () => {
+                let vehicle = alt.Player.local.vehicle
                 extraMenu.Clear();
                 let extra_exists = false;
                 let existing_extras = [];
@@ -3502,10 +3503,10 @@ bennys.AddItem(sonstiges);
                     alt.log(extra_index);
                     
                     if(native.isVehicleExtraTurnedOn(vehicle, extra_index)){
-                        native.setVehicleExtra(vehicle, extra_index, 1);
+                        native.setVehicleExtra(vehicle, extra_index, true);
                         selectedItem.SetRightBadge(0);
                     } else {
-                        native.setVehicleExtra(vehicle, extra_index, 0);
+                        native.setVehicleExtra(vehicle, extra_index, false);
                         selectedItem.SetRightBadge(12);
                     }
                 });
@@ -3667,7 +3668,7 @@ alt.on('keyup', (key) => {
             } else{
                 bennys.Open();
                 alt.emitServer('getModsCount');
-                alt.emitServer('getExtraCount');
+                alt.emit('setExtra');
             }
         }
     }

@@ -187,7 +187,7 @@ export default class NativeUI {
                 }
             }
             if (menuPool.length === 0) {
-                game.setMouseCursorSprite(1);
+                game.setMouseCursorStyle(1);
             }
         }
     }
@@ -439,7 +439,7 @@ export default class NativeUI {
         return false;
     }
     IsMouseInListItemArrows(item, topLeft, safezone) {
-        game.beginTextCommandGetWidth("jamyfafi");
+        game.beginTextCommandGetScreenWidthOfDisplayText("jamyfafi");
         game.addTextComponentSubstringPlayerName(item.Text);
         let res = Screen.ResolutionMaintainRatio;
         let screenw = res.Width;
@@ -447,7 +447,7 @@ export default class NativeUI {
         const height = 1080.0;
         const ratio = screenw / screenh;
         let width = height * ratio;
-        const labelSize = game.endTextCommandGetWidth(false) * width * 0.35;
+        const labelSize = game.endTextCommandGetScreenWidthOfDisplayText(false) * width * 0.35;
         const labelSizeX = 5 + labelSize + 10;
         const arrowSizeX = 431 - labelSizeX;
         return Screen.IsMouseInBounds(topLeft, new Size(labelSizeX, 38))
@@ -468,14 +468,14 @@ export default class NativeUI {
             limit = this._maxItem;
         if (Screen.IsMouseInBounds(new Point(0, 0), new Size(30, 1080)) && this._mouseEdgeEnabled) {
             game.setGameplayCamRelativeHeading(game.getGameplayCamRelativeHeading() + 5.0);
-            game.setMouseCursorSprite(6);
+            game.setMouseCursorStyle(6);
         }
         else if (Screen.IsMouseInBounds(new Point(Screen.ResolutionMaintainRatio.Width - 30.0, 0), new Size(30, 1080)) && this._mouseEdgeEnabled) {
             game.setGameplayCamRelativeHeading(game.getGameplayCamRelativeHeading() - 5.0);
-            game.setMouseCursorSprite(7);
+            game.setMouseCursorStyle(7);
         }
         else if (this._mouseEdgeEnabled) {
-            game.setMouseCursorSprite(1);
+            game.setMouseCursorStyle(1);
         }
         for (let i = this._minItem; i <= limit; i++) {
             let xpos = this._offset.X;
@@ -488,7 +488,7 @@ export default class NativeUI {
                 uiMenuItem.Hovered = true;
                 const res = this.IsMouseInListItemArrows(this.MenuItems[i], new Point(xpos, ypos), 0);
                 if (uiMenuItem.Hovered && res == 1 && (this.MenuItems[i] instanceof UIMenuListItem || this.MenuItems[i] instanceof UIMenuAutoListItem || this.MenuItems[i] instanceof UIMenuDynamicListItem)) {
-                    game.setMouseCursorSprite(5);
+                    game.setMouseCursorStyle(5);
                 }
                 if (game.isControlJustReleased(0, 24) || game.isDisabledControlJustReleased(0, 24))
                     if (uiMenuItem.Selected && uiMenuItem.Enabled) {
@@ -744,8 +744,8 @@ export default class NativeUI {
         this._instructionalButtonsScaleform.callFunction("CLEAR_ALL");
         this._instructionalButtonsScaleform.callFunction("TOGGLE_MOUSE_BUTTONS", 0);
         this._instructionalButtonsScaleform.callFunction("CREATE_CONTAINER");
-        this._instructionalButtonsScaleform.callFunction("SET_DATA_SLOT", 0, game.getControlInstructionalButton(2, Control.PhoneSelect, false), this.SelectTextLocalized);
-        this._instructionalButtonsScaleform.callFunction("SET_DATA_SLOT", 1, game.getControlInstructionalButton(2, Control.PhoneCancel, false), this.BackTextLocalized);
+        this._instructionalButtonsScaleform.callFunction("SET_DATA_SLOT", 0, game.getControlInstructionalButtonsString(2, Control.PhoneSelect, false), this.SelectTextLocalized);
+        this._instructionalButtonsScaleform.callFunction("SET_DATA_SLOT", 1, game.getControlInstructionalButtonsString(2, Control.PhoneCancel, false), this.BackTextLocalized);
         let count = 2;
         this._instructionalButtons.filter(b => b.ItemBind == null || this.MenuItems[this.CurrentSelection] == b.ItemBind).forEach((button) => {
             this._instructionalButtonsScaleform.callFunction("SET_DATA_SLOT", count, button.GetButtonId(), button.Text);
