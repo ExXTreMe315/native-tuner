@@ -1,5 +1,10 @@
 import * as alt from "alt-server";
 
+console.log(" ============================================================================ ");
+console.log("                                 Native Tuner                                 ");
+console.log("                 © 2022 - 2023 ExXTreMe - All Rights Reserved.                ");
+console.log(" ============================================================================ ");
+
 alt.onClient('getModsCount', (player, type, nblivery, nbroofs) => {
 
     let vehicle = player.vehicle
