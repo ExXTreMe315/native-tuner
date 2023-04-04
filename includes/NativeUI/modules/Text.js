@@ -1,7 +1,7 @@
 import game from 'natives';
-import Color from "../utils/Color";
-import Point from "../utils/Point";
-import IElement from "./IElement";
+import Color from "../utils/Color.js";
+import Point from "../utils/Point.js";
+import IElement from "./IElement.js";
 export default class Text extends IElement {
     constructor(caption, pos, scale, color, font, centered) {
         super();

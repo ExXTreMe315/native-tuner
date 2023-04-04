@@ -1,7 +1,7 @@
 import * as alt from "alt-client";
 import * as native from 'natives';
-import * as NativeUI from './includes/NativeUI/NativeUi';
-import * as data from './data';
+import * as NativeUI from './includes/NativeUI/NativeUi.js';
+import * as data from './data.js';
 
 //Hauptmenu
 const bennys = new NativeUI.Menu("", "Bennys Original Motorwork's", new NativeUI.Point(1450, 50));
@@ -2262,7 +2262,7 @@ bennys.AddItem(sonstiges);
         });
 
     //SonstigesMenu
-    const sonstigesMenu = new NativeUI.Menu("", "Reifen ändern", new NativeUI.Point(1450, 50));
+    const sonstigesMenu = new NativeUI.Menu("", "Sonstiges ändern", new NativeUI.Point(1450, 50));
     sonstigesMenu.GetTitle().Scale = 1.2;
     sonstigesMenu.GetTitle().DropShadow = true;
     bennys.AddSubMenu(sonstigesMenu, sonstiges);

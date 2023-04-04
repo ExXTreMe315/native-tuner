@@ -1,7 +1,7 @@
 import * as alt from 'alt-client';
 import game from 'natives';
-import Color from "../utils/Color";
-import Screen from "../utils/Screen";
+import Color from "../utils/Color.js";
+import Screen from "../utils/Screen.js";
 export default class Sprite {
     constructor(textureDict, textureName, pos, size, heading = 0, color = new Color(255, 255, 255)) {
         this.TextureDict = textureDict;

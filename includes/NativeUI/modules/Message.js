@@ -1,5 +1,5 @@
 import * as alt from 'alt-client';
-import Scaleform from '../utils/Scaleform';
+import Scaleform from '../utils/Scaleform.js';
 export default class Message {
     static Initialize(scaleForm, transitionOutAnimName) {
         this._transitionOutAnimName = transitionOutAnimName;
