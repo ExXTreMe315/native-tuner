@@ -1,7 +1,7 @@
 import * as alt from 'alt-client';
 import game from 'natives';
-import Size from "./Size";
-import Text from '../modules/Text';
+import Size from "./Size.js";
+import Text from '../modules/Text.js';
 const gameScreen = game.getActualScreenResolution(0, 0);
 export default class Screen {
     static get ResolutionMaintainRatio() {

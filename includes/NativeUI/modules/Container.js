@@ -1,7 +1,7 @@
 import game from 'natives';
-import Size from "../utils/Size";
-import Rectangle from "./Rectangle";
-import Screen from "../utils/Screen";
+import Size from "../utils/Size.js";
+import Rectangle from "./Rectangle.js";
+import Screen from "../utils/Screen.js";
 export default class Container extends Rectangle {
     constructor(pos, size, color) {
         super(pos, size, color);

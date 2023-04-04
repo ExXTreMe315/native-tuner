@@ -1,8 +1,8 @@
-import Sprite from "../modules/Sprite";
-import Color from "../utils/Color";
-import Point from "../utils/Point";
-import Size from "../utils/Size";
-import UIMenuItem from "./UIMenuItem";
+import Sprite from "../modules/Sprite.js";
+import Color from "../utils/Color.js";
+import Point from "../utils/Point.js";
+import Size from "../utils/Size.js";
+import UIMenuItem from "./UIMenuItem.js";
 export default class UIMenuCheckboxItem extends UIMenuItem {
     constructor(text, check = false, description = "") {
         super(text, description);

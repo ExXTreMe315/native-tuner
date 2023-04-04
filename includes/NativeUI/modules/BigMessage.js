@@ -1,5 +1,5 @@
 import * as alt from 'alt-client';
-import Message from './Message';
+import Message from './Message.js';
 export default class BigMessage extends Message {
     static Initialize(scaleForm, transitionOutAnimName) {
         super.Initialize(scaleForm, transitionOutAnimName);

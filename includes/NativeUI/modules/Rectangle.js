@@ -1,7 +1,7 @@
 import game from 'natives';
-import Point from "../utils/Point";
-import Size from "../utils/Size";
-import IElement from "./IElement";
+import Point from "../utils/Point.js";
+import Size from "../utils/Size.js";
+import IElement from "./IElement.js";
 export default class Rectangle extends IElement {
     constructor(pos, size, color) {
         super();
