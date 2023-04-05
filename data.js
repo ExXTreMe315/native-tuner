@@ -1177,3 +1177,38 @@ export const plateCollection = [
     'SA Exempt',
     'Yankton'
 ]
+
+export const banners = [
+    { dict: "commonmenu", name: "interaction_bgd" },
+    { dict: "shopui_title_barber", name: "shopui_title_barber" },
+    { dict: "shopui_title_barber2", name: "shopui_title_barber2" },
+    { dict: "shopui_title_barber3", name: "shopui_title_barber3" },
+    { dict: "shopui_title_barber4", name: "shopui_title_barber4" },
+    { dict: "shopui_title_carmod", name: "shopui_title_carmod" },
+    { dict: "shopui_title_carmod2", name: "shopui_title_carmod2" },
+    { dict: "shopui_title_supermod", name: "shopui_title_supermod" },
+    { dict: "shopui_title_conveniencestore", name: "shopui_title_tennisstore" },
+    { dict: "shopui_title_conveniencestore", name: "shopui_title_conveniencestore" },
+    { dict: "shopui_title_darts", name: "shopui_title_darts" },
+    { dict: "shopui_title_gasstation", name: "shopui_title_gasstation" },
+    { dict: "shopui_title_golfshop", name: "shopui_title_golfshop" },
+    { dict: "shopui_title_graphics_franklin", name: "shopui_title_graphics_franklin" },
+    { dict: "shopui_title_graphics_micheal", name: "shopui_title_graphics_micheal" },
+    { dict: "shopui_title_graphics_trevor", name: "shopui_title_graphics_trevor" },
+    { dict: "shopui_title_gunclub", name: "shopui_title_gunclub" },
+    { dict: "shopui_title_highendfashion", name: "shopui_title_highendfashion" },
+    { dict: "shopui_title_highendsalon", name: "shopui_title_highendsalon" },
+    { dict: "shopui_title_liqourstore", name: "shopui_title_liqourstore" },
+    { dict: "shopui_title_liqourstore2", name: "shopui_title_liqourstore2" },
+    { dict: "shopui_title_liqourstore3", name: "shopui_title_liqourstore3" },
+    { dict: "shopui_title_lowendfashion", name: "shopui_title_lowendfashion" },
+    { dict: "shopui_title_lowendfashion2", name: "shopui_title_lowendfashion2" },
+    { dict: "shopui_title_midfashion", name: "shopui_title_midfashion" },
+    { dict: "shopui_title_movie_masks", name: "shopui_title_movie_masks" },
+    { dict: "shopui_title_tattoos", name: "shopui_title_tattoos" },
+    { dict: "shopui_title_tattoos2", name: "shopui_title_tattoos2" },
+    { dict: "shopui_title_tattoos3", name: "shopui_title_tattoos3" },
+    { dict: "shopui_title_tattoos4", name: "shopui_title_tattoos4" },
+    { dict: "shopui_title_tattoos5", name: "shopui_title_tattoos5" },
+    { dict: "shopui_title_tennis", name: "shopui_title_tennis" }
+];

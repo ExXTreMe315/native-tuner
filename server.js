@@ -120,13 +120,11 @@ alt.onClient('getModsCount', (player, type, nblivery, nbroofs) => {
 alt.onClient('primaryColor', (player, id) => {
     let vehicle = player.vehicle ? player.vehicle : null;
     vehicle.primaryColor = id;
-    console.log(player.name+" changed the Primary Color of Veh to "+id);
 });
 
 alt.onClient('secondaryColor', (player, id) => {
     let vehicle = player.vehicle ? player.vehicle : null;
     vehicle.secondaryColor = id;
-    console.log(player.name+" changed the Secondary Color of Veh to "+id);
 });
 
 alt.onClient('lightsColor', (player, id) => {
@@ -136,7 +134,6 @@ alt.onClient('lightsColor', (player, id) => {
     vehicle.modKit = 1;
     vehicle.setMod(22, id);
     vehicle.headlightColor = id;
-    console.log(player.name+" changed the Lights Color of Veh to "+id);
 });
 
 alt.onClient('vehNeon', (player, neonConfig) => {
@@ -152,8 +149,6 @@ alt.onClient('vehNeon', (player, neonConfig) => {
     if(neonConfig == 4){
         vehicle.neon = { left: true, right: true, front: true, back: true }
     }
-    
-    console.log(player.name+" changed the Neons of a Veh to "+neonConfig);
 });
 
 alt.onClient('neoncolor', (player, rgb) => {
@@ -203,12 +198,8 @@ alt.onClient('setExtra', (player, index) => {
 
     if(vehicle.getExtra(index)){
         vehicle.setExtra(index, false);
-        console.log(index);
-        console.log(vehicle.getExtra(index));
     } else if(!vehicle.getExtra(index)){
         vehicle.setExtra(index, true);
-        console.log(index);
-        console.log(vehicle.getExtra(index));
     }
 });
 

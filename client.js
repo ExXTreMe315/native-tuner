@@ -3,8 +3,11 @@ import * as native from 'natives';
 import * as NativeUI from './includes/NativeUI/NativeUi.js';
 import * as data from './data.js';
 
+const menus = []
+
 //Hauptmenu
 const bennys = new NativeUI.Menu("", "Bennys Original Motorwork's", new NativeUI.Point(1450, 50));
+menus.push(bennys)
 bennys.GetTitle().Scale = 1.2;
 bennys.GetTitle().DropShadow = true;
 
@@ -24,6 +27,7 @@ bennys.AddItem(sonstiges);
 
     //Paintmenu
     const paintMenu = new NativeUI.Menu("", "Lackierung ändern", new NativeUI.Point(1450, 50));
+    menus.push(paintMenu)
     paintMenu.GetTitle().Scale = 1.2;
     paintMenu.GetTitle().DropShadow = true;
     bennys.AddSubMenu(paintMenu, paintJob);
@@ -43,6 +47,7 @@ bennys.AddItem(sonstiges);
         
         //Primary Color Menu
         const primaryColorMenu = new NativeUI.Menu("", "Primärfarbe ändern", new NativeUI.Point(1450, 50));
+        menus.push(primaryColorMenu)
         primaryColorMenu.GetTitle().Scale = 1.2;
         primaryColorMenu.GetTitle().DropShadow = true;
         paintMenu.AddSubMenu(primaryColorMenu, primaryColor);
@@ -60,66 +65,67 @@ bennys.AddItem(sonstiges);
 
                 //Primary Metallic Menu
                 const primaryMetallicColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(primaryMetallicColorMenu)
                 primaryMetallicColorMenu.GetTitle().Scale = 1.2;
                 primaryMetallicColorMenu.GetTitle().DropShadow = true;
                 primaryColorMenu.AddSubMenu(primaryMetallicColorMenu, primaryMetallicColor);
 
                 primaryMetallicColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.metallicColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('primaryColor', colorIndex);            
                 });
 
                 //Primary Matt Menu
                 const primaryMattColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(primaryMattColorMenu)
                 primaryMattColorMenu.GetTitle().Scale = 1.2;
                 primaryMattColorMenu.GetTitle().DropShadow = true;
                 primaryColorMenu.AddSubMenu(primaryMattColorMenu, primaryMattColor);
 
                 primaryMattColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.mattColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('primaryColor', colorIndex);            
                 });
 
                 //Primary Util Menu
                 const primaryUtilColorMenu = new NativeUI.Menu("", "Util Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(primaryUtilColorMenu)
                 primaryUtilColorMenu.GetTitle().Scale = 1.2;
                 primaryUtilColorMenu.GetTitle().DropShadow = true;
                 primaryColorMenu.AddSubMenu(primaryUtilColorMenu, primaryUtilColor);
 
                 primaryUtilColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.utilColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('primaryColor', colorIndex);            
                 });
 
                 //Primary Worn Menu
                 const primaryWornColorMenu = new NativeUI.Menu("", "Worn Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(primaryWornColorMenu)
                 primaryWornColorMenu.GetTitle().Scale = 1.2;
                 primaryWornColorMenu.GetTitle().DropShadow = true;
                 primaryColorMenu.AddSubMenu(primaryWornColorMenu, primaryWornColor);
 
                 primaryWornColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.wornColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('primaryColor', colorIndex);            
                 });
 
                 //Primary Sonstige Menu
                 const primarySonstigeColorMenu = new NativeUI.Menu("", "Sonstige Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(primarySonstigeColorMenu)
                 primarySonstigeColorMenu.GetTitle().Scale = 1.2;
                 primarySonstigeColorMenu.GetTitle().DropShadow = true;
                 primaryColorMenu.AddSubMenu(primarySonstigeColorMenu, primarySonstigeColor);
 
                 primarySonstigeColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.sonstigeColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('primaryColor', colorIndex);            
                 });
             
         //Secondary Color Menu
         const secondaryColorMenu = new NativeUI.Menu("", "Sekundärfarbe ändern", new NativeUI.Point(1450, 50));
+        menus.push(secondaryColorMenu)
         secondaryColorMenu.GetTitle().Scale = 1.2;
         secondaryColorMenu.GetTitle().DropShadow = true;
         paintMenu.AddSubMenu(secondaryColorMenu, secondaryColor);
@@ -137,66 +143,67 @@ bennys.AddItem(sonstiges);
 
                 //secondary Metallic Menu
                 const secondaryMetallicColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(secondaryMetallicColorMenu)
                 secondaryMetallicColorMenu.GetTitle().Scale = 1.2;
                 secondaryMetallicColorMenu.GetTitle().DropShadow = true;
                 secondaryColorMenu.AddSubMenu(secondaryMetallicColorMenu, secondaryMetallicColor);
 
                 secondaryMetallicColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.metallicColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('secondaryColor', colorIndex);            
                 });
 
                 //secondary Matt Menu
                 const secondaryMattColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(secondaryMattColorMenu)
                 secondaryMattColorMenu.GetTitle().Scale = 1.2;
                 secondaryMattColorMenu.GetTitle().DropShadow = true;
                 secondaryColorMenu.AddSubMenu(secondaryMattColorMenu, secondaryMattColor);
 
                 secondaryMattColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.mattColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('secondaryColor', colorIndex);            
                 });
 
                 //secondary Util Menu
                 const secondaryUtilColorMenu = new NativeUI.Menu("", "Util Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(secondaryUtilColorMenu)
                 secondaryUtilColorMenu.GetTitle().Scale = 1.2;
                 secondaryUtilColorMenu.GetTitle().DropShadow = true;
                 secondaryColorMenu.AddSubMenu(secondaryUtilColorMenu, secondaryUtilColor);
 
                 secondaryUtilColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.utilColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('secondaryColor', colorIndex);            
                 });
 
                 //secondary Worn Menu
                 const secondaryWornColorMenu = new NativeUI.Menu("", "Worn Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(secondaryWornColorMenu)
                 secondaryWornColorMenu.GetTitle().Scale = 1.2;
                 secondaryWornColorMenu.GetTitle().DropShadow = true;
                 secondaryColorMenu.AddSubMenu(secondaryWornColorMenu, secondaryWornColor);
 
                 secondaryWornColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.wornColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('secondaryColor', colorIndex);            
                 });
 
                 //secondary Sonstige Menu
                 const secondarySonstigeColorMenu = new NativeUI.Menu("", "Sonstige Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(secondarySonstigeColorMenu)
                 secondarySonstigeColorMenu.GetTitle().Scale = 1.2;
                 secondarySonstigeColorMenu.GetTitle().DropShadow = true;
                 secondaryColorMenu.AddSubMenu(secondarySonstigeColorMenu, secondarySonstigeColor);
 
                 secondarySonstigeColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.sonstigeColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('secondaryColor', colorIndex);            
                 });
 
         //Pearl Color Menu
         const pearlColorMenu = new NativeUI.Menu("", "Perleffekt ändern", new NativeUI.Point(1450, 50));
+        menus.push(pearlColorMenu)
         pearlColorMenu.GetTitle().Scale = 1.2;
         pearlColorMenu.GetTitle().DropShadow = true;
         paintMenu.AddSubMenu(pearlColorMenu, pearlColor);
@@ -214,72 +221,74 @@ bennys.AddItem(sonstiges);
 
                 //pearl Metallic Menu
                 const pearlMetallicColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(pearlMetallicColorMenu)
                 pearlMetallicColorMenu.GetTitle().Scale = 1.2;
                 pearlMetallicColorMenu.GetTitle().DropShadow = true;
                 pearlColorMenu.AddSubMenu(pearlMetallicColorMenu, pearlMetallicColor);
 
                 pearlMetallicColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.metallicColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('pearlColor', colorIndex);            
                 });
 
                 //pearl Matt Menu
                 const pearlMattColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(pearlMattColorMenu)
                 pearlMattColorMenu.GetTitle().Scale = 1.2;
                 pearlMattColorMenu.GetTitle().DropShadow = true;
                 pearlColorMenu.AddSubMenu(pearlMattColorMenu, pearlMattColor);
 
                 pearlMattColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.mattColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('pearlColor', colorIndex);            
                 });
 
                 //pearl Util Menu
                 const pearlUtilColorMenu = new NativeUI.Menu("", "Util Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(pearlUtilColorMenu)
                 pearlUtilColorMenu.GetTitle().Scale = 1.2;
                 pearlUtilColorMenu.GetTitle().DropShadow = true;
                 pearlColorMenu.AddSubMenu(pearlUtilColorMenu, pearlUtilColor);
 
                 pearlUtilColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.utilColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('pearlColor', colorIndex);            
                 });
 
                 //pearl Worn Menu
                 const pearlWornColorMenu = new NativeUI.Menu("", "Worn Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(pearlWornColorMenu)
                 pearlWornColorMenu.GetTitle().Scale = 1.2;
                 pearlWornColorMenu.GetTitle().DropShadow = true;
                 pearlColorMenu.AddSubMenu(pearlWornColorMenu, pearlWornColor);
 
                 pearlWornColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.wornColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('pearlColor', colorIndex);            
                 });
 
                 //pearl Sonstige Menu
                 const pearlSonstigeColorMenu = new NativeUI.Menu("", "Sonstige Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(pearlSonstigeColorMenu)
                 pearlSonstigeColorMenu.GetTitle().Scale = 1.2;
                 pearlSonstigeColorMenu.GetTitle().DropShadow = true;
                 pearlColorMenu.AddSubMenu(pearlSonstigeColorMenu, pearlSonstigeColor);
 
                 pearlSonstigeColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.sonstigeColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('pearlColor', colorIndex);            
                 });
                     
         //Livery Menu
         const liveryMenu = new NativeUI.Menu("", "Livery ändern", new NativeUI.Point(1450, 50));
+        menus.push(liveryMenu)
         liveryMenu.GetTitle().Scale = 1.2;
         liveryMenu.GetTitle().DropShadow = true;
         paintMenu.AddSubMenu(liveryMenu, livery);
 
         //Wheel Colors
         const wheelColorMenu = new NativeUI.Menu("", "Reifenfarbe ändern", new NativeUI.Point(1450, 50));
+        menus.push(wheelColorMenu)
         wheelColorMenu.GetTitle().Scale = 1.2;
         wheelColorMenu.GetTitle().DropShadow = true;
         paintMenu.AddSubMenu(wheelColorMenu, wheelColor);
@@ -297,66 +306,67 @@ bennys.AddItem(sonstiges);
 
                 //wheel Metallic Menu
                 const wheelMetallicColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(wheelMetallicColorMenu)
                 wheelMetallicColorMenu.GetTitle().Scale = 1.2;
                 wheelMetallicColorMenu.GetTitle().DropShadow = true;
                 wheelColorMenu.AddSubMenu(wheelMetallicColorMenu, wheelMetallicColor);
 
                 wheelMetallicColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.metallicColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('wheelColor', colorIndex);            
                 });
 
                 //wheel Matt Menu
                 const wheelMattColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(wheelMattColorMenu)
                 wheelMattColorMenu.GetTitle().Scale = 1.2;
                 wheelMattColorMenu.GetTitle().DropShadow = true;
                 wheelColorMenu.AddSubMenu(wheelMattColorMenu, wheelMattColor);
 
                 wheelMattColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.mattColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('wheelColor', colorIndex);            
                 });
 
                 //wheel Util Menu
                 const wheelUtilColorMenu = new NativeUI.Menu("", "Util Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(wheelUtilColorMenu)
                 wheelUtilColorMenu.GetTitle().Scale = 1.2;
                 wheelUtilColorMenu.GetTitle().DropShadow = true;
                 wheelColorMenu.AddSubMenu(wheelUtilColorMenu, wheelUtilColor);
 
                 wheelUtilColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.utilColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('wheelColor', colorIndex);            
                 });
 
                 //wheel Worn Menu
                 const wheelWornColorMenu = new NativeUI.Menu("", "Worn Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(wheelWornColorMenu)
                 wheelWornColorMenu.GetTitle().Scale = 1.2;
                 wheelWornColorMenu.GetTitle().DropShadow = true;
                 wheelColorMenu.AddSubMenu(wheelWornColorMenu, wheelWornColor);
 
                 wheelWornColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.wornColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('wheelColor', colorIndex);            
                 });
 
                 //wheel Sonstige Menu
                 const wheelSonstigeColorMenu = new NativeUI.Menu("", "Sonstige Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(wheelSonstigeColorMenu)
                 wheelSonstigeColorMenu.GetTitle().Scale = 1.2;
                 wheelSonstigeColorMenu.GetTitle().DropShadow = true;
                 wheelColorMenu.AddSubMenu(wheelSonstigeColorMenu, wheelSonstigeColor);
 
                 wheelSonstigeColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.sonstigeColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('wheelColor', colorIndex);            
                 });
 
         //Interior Colors
         const interiorColorMenu = new NativeUI.Menu("", "Reifenfarbe ändern", new NativeUI.Point(1450, 50));
+        menus.push(interiorColorMenu)
         interiorColorMenu.GetTitle().Scale = 1.2;
         interiorColorMenu.GetTitle().DropShadow = true;
         paintMenu.AddSubMenu(interiorColorMenu, interiorColor);
@@ -375,61 +385,61 @@ bennys.AddItem(sonstiges);
 
                 //interior Metallic Menu
                 const interiorMetallicColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(interiorMetallicColorMenu)
                 interiorMetallicColorMenu.GetTitle().Scale = 1.2;
                 interiorMetallicColorMenu.GetTitle().DropShadow = true;
                 interiorColorMenu.AddSubMenu(interiorMetallicColorMenu, interiorMetallicColor);
 
                 interiorMetallicColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.metallicColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('interiorColor', colorIndex);            
                 });
 
                 //interior Matt Menu
                 const interiorMattColorMenu = new NativeUI.Menu("", "Matte Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(interiorMattColorMenu)
                 interiorMattColorMenu.GetTitle().Scale = 1.2;
                 interiorMattColorMenu.GetTitle().DropShadow = true;
                 interiorColorMenu.AddSubMenu(interiorMattColorMenu, interiorMattColor);
 
                 interiorMattColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.mattColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('interiorColor', colorIndex);            
                 });
 
                 //interior Util Menu
                 const interiorUtilColorMenu = new NativeUI.Menu("", "Util Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(interiorUtilColorMenu)
                 interiorUtilColorMenu.GetTitle().Scale = 1.2;
                 interiorUtilColorMenu.GetTitle().DropShadow = true;
                 interiorColorMenu.AddSubMenu(interiorUtilColorMenu, interiorUtilColor);
 
                 interiorUtilColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.utilColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('interiorColor', colorIndex);            
                 });
 
                 //interior Worn Menu
                 const interiorWornColorMenu = new NativeUI.Menu("", "Worn Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(interiorWornColorMenu)
                 interiorWornColorMenu.GetTitle().Scale = 1.2;
                 interiorWornColorMenu.GetTitle().DropShadow = true;
                 interiorColorMenu.AddSubMenu(interiorWornColorMenu, interiorWornColor);
 
                 interiorWornColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.wornColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('interiorColor', colorIndex);            
                 });
 
                 //interior Sonstige Menu
                 const interiorSonstigeColorMenu = new NativeUI.Menu("", "Sonstige Primärfarbe ändern", new NativeUI.Point(1450, 50));
+                menus.push(interiorSonstigeColorMenu)
                 interiorSonstigeColorMenu.GetTitle().Scale = 1.2;
                 interiorSonstigeColorMenu.GetTitle().DropShadow = true;
                 interiorColorMenu.AddSubMenu(interiorSonstigeColorMenu, interiorSonstigeColor);
 
                 interiorSonstigeColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.sonstigeColors[selectedItemIndex].id;
-                    alt.log(colorIndex);
                     alt.emitServer('interiorColor', colorIndex);            
                 });
 
@@ -486,6 +496,7 @@ bennys.AddItem(sonstiges);
 
     //Parts Menu
     const partsMenu = new NativeUI.Menu("", "Karosserie ändern", new NativeUI.Point(1450, 50));
+    menus.push(partsMenu)
     partsMenu.GetTitle().Scale = 1.2;
     partsMenu.GetTitle().DropShadow = true;
     bennys.AddSubMenu(partsMenu, parts);
@@ -493,6 +504,7 @@ bennys.AddItem(sonstiges);
         
         //Performance Menu
         const performanceMenu = new NativeUI.Menu("", "Performance ändern", new NativeUI.Point(1450, 50));
+        menus.push(performanceMenu)
         performanceMenu.GetTitle().Scale = 1.2;
         performanceMenu.GetTitle().DropShadow = true;
         bennys.AddSubMenu(performanceMenu, performance);
@@ -1497,256 +1509,20 @@ bennys.AddItem(sonstiges);
             partsMenu.ItemSelect.on(item => {
                 let mod_index = JSON.parse(item.Index);
                 
-                if(item.Text == data.partList[0]){
-                    alt.emitServer('changeVehMod', 0, mod_index);                    
-                }
-                if(item.Text == data.partList[1]){
-                    alt.emitServer('changeVehMod', 1, mod_index);                    
-                }
-                if(item.Text == data.partList[2]){
-                    alt.emitServer('changeVehMod', 2, mod_index);                    
-                }
-                if(item.Text == data.partList[3]){
-                    alt.emitServer('changeVehMod', 3, mod_index);                    
-                }
-                if(item.Text == data.partList[4]){
-                    alt.emitServer('changeVehMod', 4, mod_index);                    
-                }
-                if(item.Text == data.partList[5]){
-                    alt.emitServer('changeVehMod', 5, mod_index);                    
-                }
-                if(item.Text == data.partList[6]){
-                    alt.emitServer('changeVehMod', 6, mod_index);                    
-                }
-                if(item.Text == data.partList[7]){
-                    alt.emitServer('changeVehMod', 7, mod_index);                    
-                }
-                if(item.Text == data.partList[8]){
-                    alt.emitServer('changeVehMod', 8, mod_index);                    
-                }
-                if(item.Text == data.partList[9]){
-                    alt.emitServer('changeVehMod', 9, mod_index);                    
-                }
-                if(item.Text == data.partList[10]){
-                    alt.emitServer('changeVehMod', 10, mod_index);                    
-                }
-                if(item.Text == data.partList[11]){
-                    alt.emitServer('changeVehMod', 11, mod_index);
-                }
-                if(item.Text == data.partList[12]){
-                    alt.emitServer('changeVehMod', 12, mod_index);
-                }
-                if(item.Text == data.partList[13]){
-                    alt.emitServer('changeVehMod', 13, mod_index);
-                }
-                if(item.Text == data.partList[14]){
-                    alt.emitServer('changeVehMod', 14, mod_index);
-                }
-                if(item.Text == data.partList[15]){
-                    alt.emitServer('changeVehMod', 15, mod_index);
-                }
-                if(item.Text == data.partList[16]){
-                    alt.emitServer('changeVehMod', 16, mod_index);
-                }
-                if(item.Text == data.partList[18]){
-                    alt.emitServer('changeVehMod', 18, mod_index);
-                }
-                if(item.Text == data.partList[22]){
-                    alt.emitServer('changeVehMod', 22, mod_index);
-                }
-                if(item.Text == data.partList[23]){
-                    alt.emitServer('changeVehMod', 23, mod_index);
-                }
-                if(item.Text == data.partList[24]){
-                    alt.emitServer('changeVehMod', 24, mod_index);
-                }
-                if(item.Text == data.partList[25]){
-                    alt.emitServer('changeVehMod', 25, mod_index);
-                }
-                if(item.Text == data.partList[26]){
-                    alt.emitServer('changeVehMod', 26, mod_index);
-                }
-                if(item.Text == data.partList[27]){
-                    alt.emitServer('changeVehMod', 27, mod_index);
-                }
-                if(item.Text == data.partList[28]){
-                    alt.emitServer('changeVehMod', 28, mod_index);
-                }
-                if(item.Text == data.partList[30]){
-                    alt.emitServer('changeVehMod', 30, mod_index);
-                }
-                if(item.Text == data.partList[31]){
-                    alt.emitServer('changeVehMod', 31, mod_index);
-                }
-                if(item.Text == data.partList[32]){
-                    alt.emitServer('changeVehMod', 32, mod_index);
-                }
-                if(item.Text == data.partList[33]){
-                    alt.emitServer('changeVehMod', 33, mod_index);
-                }
-                if(item.Text == data.partList[34]){
-                    alt.emitServer('changeVehMod', 34, mod_index);
-                }
-                if(item.Text == data.partList[35]){
-                    alt.emitServer('changeVehMod', 35, mod_index);
-                }
-                if(item.Text == data.partList[36]){
-                    alt.emitServer('changeVehMod', 36, mod_index);
-                }
-                if(item.Text == data.partList[37]){
-                    alt.emitServer('changeVehMod', 37, mod_index);
-                }
-                if(item.Text == data.partList[38]){
-                    alt.emitServer('changeVehMod', 38, mod_index);
-                }
-                if(item.Text == data.partList[39]){
-                    alt.emitServer('changeVehMod', 39, mod_index);
-                }
-                if(item.Text == data.partList[40]){
-                    alt.emitServer('changeVehMod', 40, mod_index);
-                }
-                if(item.Text == data.partList[41]){
-                    alt.emitServer('changeVehMod', 41, mod_index);
-                }
-                if(item.Text == data.partList[42]){
-                    alt.emitServer('changeVehMod', 42, mod_index);
-                }
-                if(item.Text == data.partList[43]){
-                    alt.emitServer('changeVehMod', 43, mod_index);
-                }
-                if(item.Text == data.partList[44]){
-                    alt.emitServer('changeVehMod', 44, mod_index);
-                }
-                if(item.Text == data.partList[45]){
-                    alt.emitServer('changeVehMod', 45, mod_index);
-                }
-                if(item.Text == data.partList[46]){
-                    alt.emitServer('changeVehMod', 46, mod_index);
-                }
-                if(item.Text == data.partList[47]){
-                    alt.emitServer('changeVehMod', 47, mod_index);
-                }
-                if(item.Text == data.partList[48]){
-                    alt.emitServer('changeVehMod', 48, mod_index);
-                }
-                if(item.Text == data.partList[62]){
-                    alt.emitServer('changeVehMod', 62, mod_index);
-                }
-                if(item.Text == data.partList[66]){
-                    alt.emitServer('changeVehMod', 66, mod_index);
-                }
-                if(item.Text == data.partList[67]){
-                    alt.emitServer('changeVehMod', 67, mod_index);
+                for (let index = 0; index <= 67; index++) {
+                    if(item.Text == data.partList[index]){
+                        alt.emitServer('changeVehMod', index, mod_index);                    
+                    } 
                 }
             });
 
             performanceMenu.ItemSelect.on(item => {
                 let mod_index = JSON.parse(item.Index);
                 
-                if(item.Text == data.partList[0]){
-                    alt.emitServer('changeVehMod', 0, mod_index);                    
-                }
-                if(item.Text == data.partList[1]){
-                    alt.emitServer('changeVehMod', 1, mod_index);                    
-                }
-                if(item.Text == data.partList[2]){
-                    alt.emitServer('changeVehMod', 2, mod_index);                    
-                }
-                if(item.Text == data.partList[3]){
-                    alt.emitServer('changeVehMod', 3, mod_index);                    
-                }
-                if(item.Text == data.partList[4]){
-                    alt.emitServer('changeVehMod', 4, mod_index);                    
-                }
-                if(item.Text == data.partList[5]){
-                    alt.emitServer('changeVehMod', 5, mod_index);                    
-                }
-                if(item.Text == data.partList[6]){
-                    alt.emitServer('changeVehMod', 6, mod_index);                    
-                }
-                if(item.Text == data.partList[7]){
-                    alt.emitServer('changeVehMod', 7, mod_index);                    
-                }
-                if(item.Text == data.partList[8]){
-                    alt.emitServer('changeVehMod', 8, mod_index);                    
-                }
-                if(item.Text == data.partList[9]){
-                    alt.emitServer('changeVehMod', 9, mod_index);                    
-                }
-                if(item.Text == data.partList[10]){
-                    alt.emitServer('changeVehMod', 10, mod_index);                    
-                }
-                if(item.Text == data.partList[11]){
-                    alt.emitServer('changeVehMod', 11, mod_index);
-                }
-                if(item.Text == data.partList[12]){
-                    alt.emitServer('changeVehMod', 12, mod_index);
-                }
-                if(item.Text == data.partList[13]){
-                    alt.emitServer('changeVehMod', 13, mod_index);
-                }
-                if(item.Text == data.partList[14]){
-                    alt.emitServer('changeVehMod', 14, mod_index);
-                }
-                if(item.Text == data.partList[15]){
-                    alt.emitServer('changeVehMod', 15, mod_index);
-                }
-                if(item.Text == data.partList[16]){
-                    alt.emitServer('changeVehMod', 16, mod_index);
-                }
-                if(item.Text == data.partList[18]){
-                    alt.emitServer('changeVehMod', 18, mod_index);
-                }
-                if(item.Text == data.partList[20]){
-                    alt.emitServer('changeVehMod', 20, mod_index);
-                }
-                if(item.Text == data.partList[22]){
-                    alt.emitServer('changeVehMod', 22, mod_index);
-                }
-                if(item.Text == data.partList[23]){
-                    alt.emitServer('changeVehMod', 23, mod_index);
-                }
-                if(item.Text == data.partList[25]){
-                    alt.emitServer('changeVehMod', 25, mod_index);
-                }
-                if(item.Text == data.partList[27]){
-                    alt.emitServer('changeVehMod', 27, mod_index);
-                }
-                if(item.Text == data.partList[28]){
-                    alt.emitServer('changeVehMod', 28, mod_index);
-                }
-                if(item.Text == data.partList[30]){
-                    alt.emitServer('changeVehMod', 30, mod_index);
-                }
-                if(item.Text == data.partList[33]){
-                    alt.emitServer('changeVehMod', 33, mod_index);
-                }
-                if(item.Text == data.partList[34]){
-                    alt.emitServer('changeVehMod', 34, mod_index);
-                }
-                if(item.Text == data.partList[35]){
-                    alt.emitServer('changeVehMod', 35, mod_index);
-                }
-                if(item.Text == data.partList[38]){
-                    alt.emitServer('changeVehMod', 38, mod_index);
-                }
-                if(item.Text == data.partList[40]){
-                    alt.emitServer('changeVehMod', 40, mod_index);
-                }
-                if(item.Text == data.partList[48]){
-                    alt.emitServer('changeVehMod', 48, mod_index);
-                }
-                if(item.Text == data.partList[55]){
-                    alt.emitServer('changeVehMod', 55, mod_index);
-                }
-                if(item.Text == data.partList[62]){
-                    alt.emitServer('changeVehMod', 62, mod_index);
-                }
-                if(item.Text == data.partList[66]){
-                    alt.emitServer('changeVehMod', 66, mod_index);
-                }
-                if(item.Text == data.partList[67]){
-                    alt.emitServer('changeVehMod', 67, mod_index);
+                for (let index = 0; index <= 67; index++) {
+                    if(item.Text == data.partList[index]){
+                        alt.emitServer('changeVehMod', index, mod_index);                    
+                    } 
                 }
             });
 
@@ -1786,6 +1562,7 @@ bennys.AddItem(sonstiges);
 
     //LightsMenu
     const lightsMenu = new NativeUI.Menu("", "Scheinwerfer/Unterboden ändern", new NativeUI.Point(1450, 50));
+    menus.push(lightsMenu)
     lightsMenu.GetTitle().Scale = 1.2;
     lightsMenu.GetTitle().DropShadow = true;
     bennys.AddSubMenu(lightsMenu, lights);
@@ -1798,6 +1575,7 @@ bennys.AddItem(sonstiges);
 
         //SpotlightsMenu (scheinwerfer)
         const spotlightMenu = new NativeUI.Menu("", "Scheinwerfer ändern", new NativeUI.Point(1450, 50));
+        menus.push(spotlightMenu)
         spotlightMenu.GetTitle().Scale = 1.2;
         spotlightMenu.GetTitle().DropShadow = true;
         lightsMenu.AddSubMenu(spotlightMenu, spotlight);
@@ -1892,6 +1670,7 @@ bennys.AddItem(sonstiges);
 
         //NeonMenu (Unterbodenbeleuchtung)
         const neonMenu = new NativeUI.Menu("", "Unterbodenbeleuchtung ändern", new NativeUI.Point(1450, 50));
+        menus.push(neonMenu)
         neonMenu.GetTitle().Scale = 1.2;
         neonMenu.GetTitle().DropShadow = true;
         lightsMenu.AddSubMenu(neonMenu, neon);
@@ -1929,6 +1708,7 @@ bennys.AddItem(sonstiges);
 
         //NeonFarben (Unterbodenbeleuchtung)
         const neonColors = new NativeUI.Menu("", "Neon Farbe ändern", new NativeUI.Point(1450, 50));
+        menus.push(neonColors)
         neonColors.GetTitle().Scale = 1.2;
         neonColors.GetTitle().DropShadow = true;
         neonMenu.AddSubMenu(neonColors, neon_color);
@@ -2004,6 +1784,7 @@ bennys.AddItem(sonstiges);
 
     //Wheelsmenu
     const wheelsMenu = new NativeUI.Menu("", "Reifen ändern", new NativeUI.Point(1450, 50));
+    menus.push(wheelsMenu)
     wheelsMenu.GetTitle().Scale = 1.2;
     wheelsMenu.GetTitle().DropShadow = true;
     bennys.AddSubMenu(wheelsMenu, wheels);
@@ -2263,6 +2044,7 @@ bennys.AddItem(sonstiges);
 
     //SonstigesMenu
     const sonstigesMenu = new NativeUI.Menu("", "Sonstiges ändern", new NativeUI.Point(1450, 50));
+    menus.push(sonstigesMenu)
     sonstigesMenu.GetTitle().Scale = 1.2;
     sonstigesMenu.GetTitle().DropShadow = true;
     bennys.AddSubMenu(sonstigesMenu, sonstiges);
@@ -2290,6 +2072,7 @@ bennys.AddItem(sonstiges);
 
         //ExtraMenu
         const extraMenu = new NativeUI.Menu("", "Extras ändern", new NativeUI.Point(1450, 50));
+        menus.push(extraMenu)
         extraMenu.GetTitle().Scale = 1.2;
         extraMenu.GetTitle().DropShadow = true;
         sonstigesMenu.AddSubMenu(extraMenu, extras);
@@ -2319,9 +2102,7 @@ bennys.AddItem(sonstiges);
                 }
 
                 extraMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
-                    alt.log("selectedItemIndex",selectedItemIndex);
                     let extra_index = existing_extras[selectedItemIndex];
-                    alt.log(extra_index);
                     
                     if(native.isVehicleExtraTurnedOn(vehicle, extra_index)){
                         native.setVehicleExtra(vehicle, extra_index, true);
@@ -2335,6 +2116,7 @@ bennys.AddItem(sonstiges);
         
         //WindowMenu
         const windowMenu = new NativeUI.Menu("", "Fenstertönung ändern", new NativeUI.Point(1450, 50));
+        menus.push(windowMenu)
         windowMenu.GetTitle().Scale = 1.2;
         windowMenu.GetTitle().DropShadow = true;
         sonstigesMenu.AddSubMenu(windowMenu, windows);
@@ -2391,101 +2173,8 @@ bennys.AddItem(sonstiges);
 alt.on('keyup', (key) => {
     if (key === 116) {
         if(alt.Player.local.vehicle){
-            if (
-                bennys.Visible || 
-                paintMenu.Visible ||
-                primaryColorMenu.Visible || 
-                secondaryColorMenu.Visible || 
-                lightsMenu.Visible || 
-                spotlight.Visible || 
-                liveryMenu.Visible || 
-                partsMenu.Visible || 
-                performanceMenu.Visible || 
-                wheelsMenu.Visible || 
-                wheelColorMenu.Visible || 
-                pearlColorMenu.Visible || 
-                sonstigesMenu.Visible || 
-                extraMenu.Visible || 
-                windowMenu.Visible || 
-                interiorColorMenu.Visible || 
-    
-                primaryMetallicColorMenu.Visible ||
-                primaryMattColorMenu.Visible ||
-                primaryUtilColorMenu.Visible ||
-                primaryWornColorMenu.Visible ||
-                primarySonstigeColorMenu.Visible ||
-    
-                secondaryMetallicColorMenu.Visible ||
-                secondaryMattColorMenu.Visible ||
-                secondaryUtilColorMenu.Visible ||
-                secondaryWornColorMenu.Visible ||
-                secondarySonstigeColorMenu.Visible ||
-    
-                pearlMetallicColorMenu.Visible ||
-                pearlMattColorMenu.Visible ||
-                pearlUtilColorMenu.Visible ||
-                pearlWornColorMenu.Visible ||
-                pearlSonstigeColorMenu.Visible ||
-    
-                wheelMetallicColorMenu.Visible ||
-                wheelMattColorMenu.Visible ||
-                wheelUtilColorMenu.Visible ||
-                wheelWornColorMenu.Visible ||
-                wheelSonstigeColorMenu.Visible ||
-    
-                interiorMetallicColorMenu.Visible ||
-                interiorMattColorMenu.Visible ||
-                interiorUtilColorMenu.Visible ||
-                interiorWornColorMenu.Visible ||
-                interiorSonstigeColorMenu.Visible
-            ){
-                bennys.Close();
-                paintMenu.Close();
-                primaryColorMenu.Close();
-                secondaryColorMenu.Close();
-                lightsMenu.Close();
-                spotlightMenu.Close();
-                neonMenu.Close();
-                liveryMenu.Close();
-                partsMenu.Close();
-                performanceMenu.Close();
-                wheelsMenu.Close();
-                wheelColorMenu.Close();
-                sonstigesMenu.Close();
-                extraMenu.Close();
-                windowMenu.Close();
-                interiorColorMenu.Close();
-
-                primaryMetallicColorMenu.Close();
-                primaryMattColorMenu.Close();
-                primaryUtilColorMenu.Close();
-                primaryWornColorMenu.Close();
-                primarySonstigeColorMenu.Close();
-
-                secondaryMetallicColorMenu.Close();
-                secondaryMattColorMenu.Close();
-                secondaryUtilColorMenu.Close();
-                secondaryWornColorMenu.Close();
-                secondarySonstigeColorMenu.Close();
-
-                pearlMetallicColorMenu.Close();
-                pearlMattColorMenu.Close();
-                pearlUtilColorMenu.Close();
-                pearlWornColorMenu.Close();
-                pearlSonstigeColorMenu.Close();
-
-                wheelMetallicColorMenu.Close();
-                wheelMattColorMenu.Close();
-                wheelUtilColorMenu.Close();
-                wheelWornColorMenu.Close();
-                wheelSonstigeColorMenu.Close();
-
-                interiorMetallicColorMenu.Close();
-                interiorMattColorMenu.Close();
-                interiorUtilColorMenu.Close();
-                interiorWornColorMenu.Close();
-                interiorSonstigeColorMenu.Close();
-
+            if (somemenuVisible()){
+                closeAllMenus()
             } else{
                 bennys.Open();
                 alt.emitServer('getModsCount');
@@ -2494,192 +2183,33 @@ alt.on('keyup', (key) => {
         }
     }
     if (key === 27) {
-        extraMenu.Close();
-        if (
-            bennys.Visible || 
-            paintMenu.Visible ||
-            primaryColorMenu.Visible || 
-            secondaryColorMenu.Visible || 
-            lightsMenu.Visible || 
-            spotlight.Visible || 
-            liveryMenu.Visible || 
-            partsMenu.Visible || 
-            performanceMenu.Visible || 
-            wheelsMenu.Visible || 
-            wheelColorMenu.Visible || 
-            pearlColorMenu.Visible || 
-            sonstigesMenu.Visible || 
-            extraMenu.Visible || 
-            windowMenu.Visible || 
-            interiorColorMenu.Visible || 
-
-            primaryMetallicColorMenu.Visible ||
-            primaryMattColorMenu.Visible ||
-            primaryUtilColorMenu.Visible ||
-            primaryWornColorMenu.Visible ||
-            primarySonstigeColorMenu.Visible ||
-
-            secondaryMetallicColorMenu.Visible ||
-            secondaryMattColorMenu.Visible ||
-            secondaryUtilColorMenu.Visible ||
-            secondaryWornColorMenu.Visible ||
-            secondarySonstigeColorMenu.Visible ||
-
-            pearlMetallicColorMenu.Visible ||
-            pearlMattColorMenu.Visible ||
-            pearlUtilColorMenu.Visible ||
-            pearlWornColorMenu.Visible ||
-            pearlSonstigeColorMenu.Visible ||
-
-            wheelMetallicColorMenu.Visible ||
-            wheelMattColorMenu.Visible ||
-            wheelUtilColorMenu.Visible ||
-            wheelWornColorMenu.Visible ||
-            wheelSonstigeColorMenu.Visible ||
-
-            interiorMetallicColorMenu.Visible ||
-            interiorMattColorMenu.Visible ||
-            interiorUtilColorMenu.Visible ||
-            interiorWornColorMenu.Visible ||
-            interiorSonstigeColorMenu.Visible
-        ){
-        bennys.Close();
-        paintMenu.Close();
-        primaryColorMenu.Close();
-        secondaryColorMenu.Close();
-        lightsMenu.Close();
-        spotlightMenu.Close();
-        neonMenu.Close();
-        liveryMenu.Close();
-        partsMenu.Close();
-        performanceMenu.Close();
-        wheelsMenu.Close();
-        wheelColorMenu.Close();
-        pearlColorMenu.Close();
-        sonstigesMenu.Close();
-        extraMenu.Close();
-        windowMenu.Close();
-        interiorColorMenu.Close();
-
-        primaryMetallicColorMenu.Close();
-        primaryMattColorMenu.Close();
-        primaryUtilColorMenu.Close();
-        primaryWornColorMenu.Close();
-        primarySonstigeColorMenu.Close();
-
-        secondaryMetallicColorMenu.Close();
-        secondaryMattColorMenu.Close();
-        secondaryUtilColorMenu.Close();
-        secondaryWornColorMenu.Close();
-        secondarySonstigeColorMenu.Close();
-
-        pearlMetallicColorMenu.Close();
-        pearlMattColorMenu.Close();
-        pearlUtilColorMenu.Close();
-        pearlWornColorMenu.Close();
-        pearlSonstigeColorMenu.Close();
-
-        wheelMetallicColorMenu.Close();
-        wheelMattColorMenu.Close();
-        wheelUtilColorMenu.Close();
-        wheelWornColorMenu.Close();
-        wheelSonstigeColorMenu.Close();
-
-        interiorMetallicColorMenu.Close();
-        interiorMattColorMenu.Close();
-        interiorUtilColorMenu.Close();
-        interiorWornColorMenu.Close();
-        interiorSonstigeColorMenu.Close();
-        }
+        if (somemenuVisible()) closeAllMenus()
     }
 });
 
 // Banners
-const banners = [
-    { dict: "commonmenu", name: "interaction_bgd" },
-    { dict: "shopui_title_barber", name: "shopui_title_barber" },
-    { dict: "shopui_title_barber2", name: "shopui_title_barber2" },
-    { dict: "shopui_title_barber3", name: "shopui_title_barber3" },
-    { dict: "shopui_title_barber4", name: "shopui_title_barber4" },
-    { dict: "shopui_title_carmod", name: "shopui_title_carmod" },
-    { dict: "shopui_title_carmod2", name: "shopui_title_carmod2" },
-    { dict: "shopui_title_supermod", name: "shopui_title_supermod" },
-    { dict: "shopui_title_conveniencestore", name: "shopui_title_tennisstore" },
-    { dict: "shopui_title_conveniencestore", name: "shopui_title_conveniencestore" },
-    { dict: "shopui_title_darts", name: "shopui_title_darts" },
-    { dict: "shopui_title_gasstation", name: "shopui_title_gasstation" },
-    { dict: "shopui_title_golfshop", name: "shopui_title_golfshop" },
-    { dict: "shopui_title_graphics_franklin", name: "shopui_title_graphics_franklin" },
-    { dict: "shopui_title_graphics_micheal", name: "shopui_title_graphics_micheal" },
-    { dict: "shopui_title_graphics_trevor", name: "shopui_title_graphics_trevor" },
-    { dict: "shopui_title_gunclub", name: "shopui_title_gunclub" },
-    { dict: "shopui_title_highendfashion", name: "shopui_title_highendfashion" },
-    { dict: "shopui_title_highendsalon", name: "shopui_title_highendsalon" },
-    { dict: "shopui_title_liqourstore", name: "shopui_title_liqourstore" },
-    { dict: "shopui_title_liqourstore2", name: "shopui_title_liqourstore2" },
-    { dict: "shopui_title_liqourstore3", name: "shopui_title_liqourstore3" },
-    { dict: "shopui_title_lowendfashion", name: "shopui_title_lowendfashion" },
-    { dict: "shopui_title_lowendfashion2", name: "shopui_title_lowendfashion2" },
-    { dict: "shopui_title_midfashion", name: "shopui_title_midfashion" },
-    { dict: "shopui_title_movie_masks", name: "shopui_title_movie_masks" },
-    { dict: "shopui_title_tattoos", name: "shopui_title_tattoos" },
-    { dict: "shopui_title_tattoos2", name: "shopui_title_tattoos2" },
-    { dict: "shopui_title_tattoos3", name: "shopui_title_tattoos3" },
-    { dict: "shopui_title_tattoos4", name: "shopui_title_tattoos4" },
-    { dict: "shopui_title_tattoos5", name: "shopui_title_tattoos5" },
-    { dict: "shopui_title_tennis", name: "shopui_title_tennis" }
-];
-
-let currentBanner = banners[7];
-bennys.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-paintMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-primaryColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-secondaryColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-lightsMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-spotlightMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-neonMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-neonColors.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-liveryMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-partsMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-performanceMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-wheelsMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-wheelColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-pearlColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-sonstigesMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-extraMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-windowMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-interiorColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-primaryMetallicColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-primaryMattColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-primaryUtilColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-primaryWornColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-primarySonstigeColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-
-secondaryMetallicColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-secondaryMattColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-secondaryUtilColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-secondaryWornColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-secondarySonstigeColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-
-pearlMetallicColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-pearlMattColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-pearlUtilColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-pearlWornColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-pearlSonstigeColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-
-wheelMetallicColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-wheelMattColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-wheelUtilColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-wheelWornColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-wheelSonstigeColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-
-interiorMetallicColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-interiorMattColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-interiorUtilColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-interiorWornColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
-interiorSonstigeColorMenu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+let currentBanner = data.banners[7];
+menus.forEach(menu => {
+    menu.SetSpriteBannerType(new NativeUI.Sprite(currentBanner.dict, currentBanner.name, new NativeUI.Point(0, 0), new NativeUI.Size()));
+})
 
 alt.onServer('getNumVehicleMods', (vehicle, modType) => {
     let modTypeCount = native.getNumVehicleMods(vehicle, modType);
     alt.emitServer('NumVehicleMods', modTypeCount);
 });
+
+//Extra functions
+
+function somemenuVisible() {
+    let someVisible = false
+    menus.forEach(menu => {
+        if(menu.Visible) someVisible = true
+    });
+    return someVisible
+}
+
+function closeAllMenus() {
+    menus.forEach(menu => {
+        menu.Close();
+    });
+}
