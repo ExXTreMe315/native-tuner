@@ -1,33 +1,41 @@
-# Alt:V Native-UI Tunung Menü
+# Alt:V Native-Tuner
 
-Einfaches Tuning Menü Basierend auf dem NativeUI (siehe Credits) für Alt:V
+Easy tuning menu based on the NativeUi for Alt:V (see credits)
 
 ## Features
 
-- Farben von Lack, Reifen & Lichtern anpassen
-- Karosserie & Leistungstuning
-- Extras Anpassbar
+- Paintings, Wheels Lights
+- Body Kits & Performance
+- Extras 
 
 ## Installation
 
-1. Ordner in das Resourcen verzeichniss von Alt:V kopieren
-2. Resource in der server.toml hinzufügen
+1. Copy the resource in your Alt:V main resource directory
+2. add the resource to your server.toml
 
-## Nutzung
-- F5 drücken um das Menü zu öffnen (im Fahrzeug)
+## Usage
+- Press F5 in vehicle to open
+- Press enter to apply selected Tuning
 
-## Nutzungsbedingungen 
+## Terms of use // Nutzungsbedingungen
+
+### ENG
+You are allowed to use this Script on your server as resource or bind it into a already existing resource. You are allowed to modify some points in the script. But if someone ask where you get the tuner please leave credits to me.
+If you find errors please contact me via [Discord](https://discordapp.com/users/396472444388376577) or 
+[GitHub](https://github.com/ExXTreMe315/native-tuner/issues)
+
+### GER
 Gerne dürft ihr dieses Script auf eurem Server verwenden und auch einzelne Punkte in dem Script bearbeiten. Sollte jedoch jemand fragen woher das Script stammt ist auf mich zu verweisen! Schön wäre auch ein verweis auf mich in den Credits oder ähnlichem. Dies ist aber kein muss, würde mich aber freuen. 
 
 Bei Fehlern Problemen oder sonstigem kontaktiert mich gerne per 
 [Discord](https://discordapp.com/users/396472444388376577) oder per 
 [GitHub](https://github.com/ExXTreMe315/native-tuner/issues)
 
-## Kommentar
+## Comment for my friends in Germany // Kommentar
 - Das Tuning Menü verfügt aktuell nicht über die Funktion Benutzerdefinierte farben zu verwenden, da Alt:V auf diesen keine Perleffekte unterstützt. Vielleicht kommen diese in einer späteren Version dies ist aber nicht zu 100% sicher.
 - Mir ist bewusst, dass es vielleicht den einen oder anderen weg gibt um dieses Script zu verbessern oder einzelne Codestücke zu verkürtzen, ich selber lerne aber auch noch und weiß auch noch nicht alles über JS.
 
-## Kontakt
+## Contact
 - [Discord](https://discordapp.com/users/396472444388376577)
 
 - [GitHub](https://github.com/ExXTreMe315)
