@@ -1,4 +1,5 @@
-client-files = [ 'client.js', 'data.js', 'includes/*' ]
-client-main = 'client.js'
-main = 'server.js'
+client-files = [ 'client/*', 'data.js' ]
+server-files = [ 'server/*' ]
+client-main = 'client/client.js'
+main = 'server/server.js'
 type = 'js'

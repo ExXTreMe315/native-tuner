@@ -1,7 +1,7 @@
 import * as alt from "alt-client";
 import * as native from 'natives';
 import * as NativeUI from './includes/NativeUI/NativeUi.js';
-import * as data from './data.js';
+import * as data from '../shared/data.js';
 
 const menus = []
 
@@ -72,6 +72,7 @@ bennys.AddItem(sonstiges);
 
                 primaryMetallicColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.metallicColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('primaryColor', colorIndex);            
                 });
 
@@ -84,6 +85,7 @@ bennys.AddItem(sonstiges);
 
                 primaryMattColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.mattColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('primaryColor', colorIndex);            
                 });
 
@@ -96,6 +98,7 @@ bennys.AddItem(sonstiges);
 
                 primaryUtilColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.utilColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('primaryColor', colorIndex);            
                 });
 
@@ -108,6 +111,7 @@ bennys.AddItem(sonstiges);
 
                 primaryWornColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.wornColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('primaryColor', colorIndex);            
                 });
 
@@ -120,6 +124,7 @@ bennys.AddItem(sonstiges);
 
                 primarySonstigeColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.sonstigeColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('primaryColor', colorIndex);            
                 });
             
@@ -150,6 +155,7 @@ bennys.AddItem(sonstiges);
 
                 secondaryMetallicColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.metallicColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('secondaryColor', colorIndex);            
                 });
 
@@ -162,6 +168,7 @@ bennys.AddItem(sonstiges);
 
                 secondaryMattColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.mattColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('secondaryColor', colorIndex);            
                 });
 
@@ -174,6 +181,7 @@ bennys.AddItem(sonstiges);
 
                 secondaryUtilColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.utilColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('secondaryColor', colorIndex);            
                 });
 
@@ -186,6 +194,7 @@ bennys.AddItem(sonstiges);
 
                 secondaryWornColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.wornColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('secondaryColor', colorIndex);            
                 });
 
@@ -198,6 +207,7 @@ bennys.AddItem(sonstiges);
 
                 secondarySonstigeColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.sonstigeColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('secondaryColor', colorIndex);            
                 });
 
@@ -228,6 +238,7 @@ bennys.AddItem(sonstiges);
 
                 pearlMetallicColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.metallicColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('pearlColor', colorIndex);            
                 });
 
@@ -240,6 +251,7 @@ bennys.AddItem(sonstiges);
 
                 pearlMattColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.mattColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('pearlColor', colorIndex);            
                 });
 
@@ -252,6 +264,7 @@ bennys.AddItem(sonstiges);
 
                 pearlUtilColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.utilColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('pearlColor', colorIndex);            
                 });
 
@@ -264,6 +277,7 @@ bennys.AddItem(sonstiges);
 
                 pearlWornColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.wornColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('pearlColor', colorIndex);            
                 });
 
@@ -276,6 +290,7 @@ bennys.AddItem(sonstiges);
 
                 pearlSonstigeColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.sonstigeColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('pearlColor', colorIndex);            
                 });
                     
@@ -313,6 +328,7 @@ bennys.AddItem(sonstiges);
 
                 wheelMetallicColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.metallicColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('wheelColor', colorIndex);            
                 });
 
@@ -325,6 +341,7 @@ bennys.AddItem(sonstiges);
 
                 wheelMattColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.mattColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('wheelColor', colorIndex);            
                 });
 
@@ -337,6 +354,7 @@ bennys.AddItem(sonstiges);
 
                 wheelUtilColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.utilColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('wheelColor', colorIndex);            
                 });
 
@@ -349,6 +367,7 @@ bennys.AddItem(sonstiges);
 
                 wheelWornColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.wornColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('wheelColor', colorIndex);            
                 });
 
@@ -361,6 +380,7 @@ bennys.AddItem(sonstiges);
 
                 wheelSonstigeColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.sonstigeColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('wheelColor', colorIndex);            
                 });
 
@@ -392,6 +412,7 @@ bennys.AddItem(sonstiges);
 
                 interiorMetallicColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.metallicColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('interiorColor', colorIndex);            
                 });
 
@@ -404,6 +425,7 @@ bennys.AddItem(sonstiges);
 
                 interiorMattColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.mattColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('interiorColor', colorIndex);            
                 });
 
@@ -416,6 +438,7 @@ bennys.AddItem(sonstiges);
 
                 interiorUtilColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.utilColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('interiorColor', colorIndex);            
                 });
 
@@ -428,6 +451,7 @@ bennys.AddItem(sonstiges);
 
                 interiorWornColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.wornColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('interiorColor', colorIndex);            
                 });
 
@@ -440,6 +464,7 @@ bennys.AddItem(sonstiges);
 
                 interiorSonstigeColorMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
                     let colorIndex = data.sonstigeColors[selectedItemIndex].id;
+                    alt.log(colorIndex);
                     alt.emitServer('interiorColor', colorIndex);            
                 });
 
@@ -2102,7 +2127,9 @@ bennys.AddItem(sonstiges);
                 }
 
                 extraMenu.ItemSelect.on((selectedItem, selectedItemIndex) => {
+                    alt.log("selectedItemIndex",selectedItemIndex);
                     let extra_index = existing_extras[selectedItemIndex];
+                    alt.log(extra_index);
                     
                     if(native.isVehicleExtraTurnedOn(vehicle, extra_index)){
                         native.setVehicleExtra(vehicle, extra_index, true);
