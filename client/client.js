@@ -1635,61 +1635,77 @@ bennys.AddItem(sonstiges);
             spotlightMenu.AddItem(blackLight);
 
             spotlightMenu.ItemSelect.on(item => {
-                if(item == white){
-                    let id = 0;
-                    alt.emitServer('lightsColor', id);
-                }
-                if(item == xenon){
-                    let id = -1;
-                    alt.emitServer('lightsColor', id);
-                }
-                if(item == blue){
-                    let id = 1;
-                    alt.emitServer('lightsColor', id);
-                }
-                if(item == electric){
-                    let id = 2;
-                    alt.emitServer('lightsColor', id);
-                }
-                if(item == green){
-                    let id = 3;
-                    alt.emitServer('lightsColor', id);
-                }
-                if(item == lightGreen){
-                    let id = 4;
-                    alt.emitServer('lightsColor', id);
-                }
-                if(item == yellow){
-                    let id = 5;
-                    alt.emitServer('lightsColor', id);
-                }
-                if(item == goldenShower){
-                    let id = 6;
-                    alt.emitServer('lightsColor', id);
-                }
-                if(item == orange){
-                    let id = 7;
-                    alt.emitServer('lightsColor', id);
-                }
-                if(item == red){
-                    let id = 8;
-                    alt.emitServer('lightsColor', id);
-                }
-                if(item == ponyPink){
-                    let id = 9;
-                    alt.emitServer('lightsColor', id);
-                }
-                if(item == hotPink){
-                    let id = 10;
-                    alt.emitServer('lightsColor', id);
-                }
-                if(item == purple){
-                    let id = 11;
-                    alt.emitServer('lightsColor', id);
-                }
-                if(item == blackLight){
-                    let id = 12;
-                    alt.emitServer('lightsColor', id);
+                let id
+                switch (item) {
+                    case white:
+                        id = 0;
+                        alt.emitServer('lightsColor', id);                        
+                        break;
+                        
+                    case xenon:
+                        id = -1;
+                        alt.emitServer('lightsColor', id);                   
+                        break;
+
+                    case blue:
+                        id = 1;
+                        alt.emitServer('lightsColor', id);
+                        break;
+                
+                    case electric:
+                        id = 2;
+                        alt.emitServer('lightsColor', id);
+                        break;
+                
+                    case green:
+                        id = 3;
+                        alt.emitServer('lightsColor', id);
+                        break;
+                
+                    case lightGreen:
+                        id = 4;
+                        alt.emitServer('lightsColor', id);
+                        break;
+                
+                    case yellow:
+                        id = 5;
+                        alt.emitServer('lightsColor', id);
+                        break;
+                
+                    case goldenShower:
+                        id = 6;
+                        alt.emitServer('lightsColor', id);
+                        break;
+                
+                    case orange:
+                        id = 7;
+                        alt.emitServer('lightsColor', id);
+                        break;
+                
+                    case red:
+                        id = 8;
+                        alt.emitServer('lightsColor', id);
+                        break;
+                
+                    case ponyPink:
+                        id = 9;
+                        alt.emitServer('lightsColor', id);
+                        break;
+                
+                    case hotPink:
+                        id = 10;
+                        alt.emitServer('lightsColor', id);
+                        break;
+                
+                    case purple:
+                        id = 11;
+                        alt.emitServer('lightsColor', id);
+                        break;
+                
+                    case blackLight:
+                        id = 12;
+                        alt.emitServer('lightsColor', id);
+                        break;
                 }
             });
 
@@ -1753,57 +1769,61 @@ bennys.AddItem(sonstiges);
         neonColors.AddItem(blackLight);
 
         neonColors.ItemSelect.on(item => {
-            if(item == white){
-                var rgb = data.neonColorList[1].rgb;
-                alt.emitServer('neoncolor', rgb);
-            }
-            if(item == blue){
-                var rgb = data.neonColorList[2].rgb;
-                alt.emitServer('neoncolor', rgb);
-            }
-            if(item == electric){
-                var rgb = data.neonColorList[3].rgb;
-                alt.emitServer('neoncolor', rgb);
-            }
-            if(item == green){
-                var rgb = data.neonColorList[4].rgb;
-                alt.emitServer('neoncolor', rgb);
-            }
-            if(item == lightGreen){
-                var rgb = data.neonColorList[5].rgb;
-                alt.emitServer('neoncolor', rgb);
-            }
-            if(item == yellow){
-                var rgb = data.neonColorList[6].rgb;
-                alt.emitServer('neoncolor', rgb);
-            }
-            if(item == goldenShower){
-                var rgb = data.neonColorList[7].rgb;
-                alt.emitServer('neoncolor', rgb);
-            }
-            if(item == orange){
-                var rgb = data.neonColorList[8].rgb;
-                alt.emitServer('neoncolor', rgb);
-            }
-            if(item == red){
-                var rgb = data.neonColorList[9].rgb;
-                alt.emitServer('neoncolor', rgb);
-            }
-            if(item == ponyPink){
-                var rgb = data.neonColorList[10].rgb;
-                alt.emitServer('neoncolor', rgb);
-            }
-            if(item == hotPink){
-                var rgb = data.neonColorList[11].rgb;
-                alt.emitServer('neoncolor', rgb);
-            }
-            if(item == purple){
-                var rgb = data.neonColorList[12].rgb;
-                alt.emitServer('neoncolor', rgb);
-            }
-            if(item == blackLight){
-                var rgb = data.neonColorList[13].rgb;
-                alt.emitServer('neoncolor', rgb);
+            let rgb
+            switch (item) {
+                case white:
+                    rgb = data.neonColorList[1].rgb;
+                    alt.emitServer('neoncolor', rgb);                    
+                    break;
+
+                case blue:
+                    rgb = data.neonColorList[2].rgb;
+                    alt.emitServer('neoncolor', rgb);                    
+                    break;
+                case electric:
+                    rgb = data.neonColorList[3].rgb;
+                    alt.emitServer('neoncolor', rgb);                    
+                    break;  
+                case green:
+                    rgb = data.neonColorList[4].rgb;
+                    alt.emitServer('neoncolor', rgb);                    
+                    break;
+                case lightGreen:
+                    rgb = data.neonColorList[5].rgb;
+                    alt.emitServer('neoncolor', rgb);                    
+                    break;
+                case yellow:
+                    rgb = data.neonColorList[6].rgb;
+                    alt.emitServer('neoncolor', rgb);                    
+                    break;
+                case goldenShower:
+                    rgb = data.neonColorList[7].rgb;
+                    alt.emitServer('neoncolor', rgb);                    
+                    break;
+                case orange:
+                    rgb = data.neonColorList[8].rgb;
+                    alt.emitServer('neoncolor', rgb);                    
+                    break;
+                case red:
+                    rgb = data.neonColorList[9].rgb;
+                    alt.emitServer('neoncolor', rgb);                    
+                    break;
+                case ponyPink:
+                    rgb = data.neonColorList[10].rgb;
+                    alt.emitServer('neoncolor', rgb);                    
+                    break;
+                case hotPink:
+                    rgb = data.neonColorList[11].rgb;
+                    alt.emitServer('neoncolor', rgb);                    
+                    break;
+                case purple:
+                    rgb = data.neonColorList[12].rgb;
+                    alt.emitServer('neoncolor', rgb);                    
+                    break;
+                case blackLight:
+                    rgb = data.neonColorList[13].rgb;
+                    alt.emitServer('neoncolor', rgb);                    
+                    break;
             }
         });
 
@@ -2026,44 +2046,46 @@ bennys.AddItem(sonstiges);
         wheelsMenu.ItemSelect.on(item => {
             let mod_index = JSON.parse(item.Index);
             
-            if(item.Text == data.wheelList[0].name){
-                alt.emitServer('changeWheels', 0, mod_index);                    
-            }
-            if(item.Text == data.wheelList[1].name){
-                alt.emitServer('changeWheels', 1, mod_index);                    
-            }
-            if(item.Text == data.wheelList[2].name){
-                alt.emitServer('changeWheels', 2, mod_index);                    
-            }
-            if(item.Text == data.wheelList[3].name){
-                alt.emitServer('changeWheels', 3, mod_index);                    
-            }
-            if(item.Text == data.wheelList[4].name){
-                alt.emitServer('changeWheels', 4, mod_index);                    
-            }
-            if(item.Text == data.wheelList[5].name){
-                alt.emitServer('changeWheels', 5, mod_index);                    
-            }
-            if(item.Text == data.wheelList[6].name){
-                alt.emitServer('changeWheels', 6, mod_index);                    
-            }
-            if(item.Text == data.wheelList[7].name){
-                alt.emitServer('changeWheels', 7, mod_index);                    
-            }
-            if(item.Text == data.wheelList[8].name){
-                alt.emitServer('changeWheels', 8, mod_index);                    
-            }
-            if(item.Text == data.wheelList[9].name){
-                alt.emitServer('changeWheels', 9, mod_index);                    
-            }
-            if(item.Text == data.wheelList[10].name){
-                alt.emitServer('changeWheels', 10, mod_index);                    
-            }
-            if(item.Text == data.wheelList[11].name){
-                alt.emitServer('changeWheels', 11, mod_index);                    
-            }
-            if(item.Text == data.wheelList[12].name){
-                alt.emitServer('changeWheels', 12, mod_index);
+            switch (item.Text) {
+                case data.wheelList[0].name:
+                    alt.emitServer('changeWheels', 0, mod_index);                    
+                    break;
+                case data.wheelList[1].name:
+                    alt.emitServer('changeWheels', 1, mod_index);                    
+                    break;
+                case data.wheelList[2].name:
+                    alt.emitServer('changeWheels', 2, mod_index);                    
+                    break;
+                case data.wheelList[3].name:
+                    alt.emitServer('changeWheels', 3, mod_index);                    
+                    break;
+                case data.wheelList[4].name:
+                    alt.emitServer('changeWheels', 4, mod_index);                    
+                    break;
+                case data.wheelList[5].name:
+                    alt.emitServer('changeWheels', 5, mod_index);                    
+                    break;
+                case data.wheelList[6].name:
+                    alt.emitServer('changeWheels', 6, mod_index);                    
+                    break;
+                case data.wheelList[7].name:
+                    alt.emitServer('changeWheels', 7, mod_index);                    
+                    break;
+                case data.wheelList[8].name:
+                    alt.emitServer('changeWheels', 8, mod_index);                    
+                    break;
+                case data.wheelList[9].name:
+                    alt.emitServer('changeWheels', 9, mod_index);                    
+                    break;
+                case data.wheelList[10].name:
+                    alt.emitServer('changeWheels', 10, mod_index);                    
+                    break;
+                case data.wheelList[11].name:
+                    alt.emitServer('changeWheels', 11, mod_index);                    
+                    break;
+                case data.wheelList[12].name:
+                    alt.emitServer('changeWheels', 12, mod_index);                    
+                    break;
             }
         });
 
@@ -2170,32 +2192,31 @@ bennys.AddItem(sonstiges);
         windowMenu.AddItem(window_green);
 
         windowMenu.ItemSelect.on(item => {
-            if(item.Text == "None"){
-                alt.emitServer('setWindow', 0);                    
-            }
-            if(item.Text == "Pure Black"){
-                alt.emitServer('setWindow', 1);                    
-            }
-            if(item.Text == "Dark Smoke"){
-                alt.emitServer('setWindow', 2);                    
-            }
-            if(item.Text == "Light Smoke"){
-                alt.emitServer('setWindow', 3);                    
-            }
-            if(item.Text == "Stock"){
-                alt.emitServer('setWindow', 4);                    
-            }
-            if(item.Text == "Limo"){
-                alt.emitServer('setWindow', 5);                    
-            }
-            if(item.Text == "Green"){
-                alt.emitServer('setWindow', 6);                    
+            switch (item.Text) {
+                case "None":
+                    alt.emitServer('setWindow', 0);                    
+                    break;
+                case "Pure Black":
+                    alt.emitServer('setWindow', 1);                    
+                    break;
+                case "Dark Smoke":
+                    alt.emitServer('setWindow', 2);                    
+                    break;
+                case "Light Smoke":
+                    alt.emitServer('setWindow', 3);                    
+                    break;
+                case "Stock":
+                    alt.emitServer('setWindow', 4);                    
+                    break;
+                case "Limo":
+                    alt.emitServer('setWindow', 5);                    
+                    break;
+                case "Green":
+                    alt.emitServer('setWindow', 6);                    
+                    break;
             }
         });
 
-
-
-   
 //Keys zuweisen
 alt.on('keyup', (key) => {
     if (key === 116) {
